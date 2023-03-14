@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sq.zbnss.dao.IssueDao">
+
+    <resultMap type="org.sq.zbnss.entity.Issue" id="TbIssueMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="issueId" column="issue_id" jdbcType="VARCHAR"/>
+        <result property="issueCount" column="issue_count" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="INTEGER"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <association property="systemId" javaType="org.sq.zbnss.entity.RecordSystem" select="org.sq.zbnss.dao.SystemDao.queryById" column="system_id" />
+        <association property="companyId" javaType="org.sq.zbnss.entity.Company" select="org.sq.zbnss.dao.CompanyDao.queryById" column="company_id" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TbIssueMap">
+        select
+          id, company_id, issue_id, issue_count, type, description, create_time, update_time, system_id
+        from tb_issue
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="selectIssues" resultMap="TbIssueMap" parameterType="org.sq.zbnss.entity.Issue">
+        select
+        id, company_id, issue_id, issue_count, type, description, create_time, update_time, system_id
+        from tb_issue
+        <where>
+            <if test="issue != null and issue.id != null">
+                and id = #{issue.id}
+            </if>
+            <if test="issue != null and issue.companyId != null">
+                and company_id = #{issue.companyId.id}
+            </if>
+            <if test="issue != null and issue.issueId != null and issue != null and issue.issueId != ''">
+                and issue_id = #{issue.issueId}
+            </if>
+            <if test="issue != null and issue.issueCount != null">
+                and issue_count = #{issue.issueCount}
+            </if>
+            <if test="issue != null and issue.type != null">
+                and type = #{issue.type}
+            </if>
+            <if test="issue != null and issue.description != null and issue != null and issue.description != ''">
+                and description = #{issue.description}
+            </if>
+            <if test="issue != null and issue.createTime != null">
+                and create_time = #{issue.createTime}
+            </if>
+            <if test="issue != null and issue.updateTime != null">
+                and update_time = #{issue.updateTime}
+            </if>
+            <if test="issue != null and issue.systemId != null">
+                and system_id = #{issue.systemId.id}
+            </if>
+        </where>
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TbIssueMap">
+        select
+          id, company_id, issue_id, issue_count, type, description, create_time, update_time, system_id
+        from tb_issue
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="companyId != null">
+                and company_id = #{companyId.id}
+            </if>
+            <if test="issueId != null and issueId != ''">
+                and issue_id = #{issueId}
+            </if>
+            <if test="issueCount != null">
+                and issue_count = #{issueCount}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="systemId != null">
+                and system_id = #{systemId.id}
+            </if>
+        </where>
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from tb_issue
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="companyId != null">
+                and company_id = #{companyId.id}
+            </if>
+            <if test="issueId != null and issueId != ''">
+                and issue_id = #{issueId}
+            </if>
+            <if test="issueCount != null">
+                and issue_count = #{issueCount}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="systemId != null">
+                and system_id = #{systemId.id}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_issue(company_id, issue_id, issue_count, type, description, create_time, update_time
+        <if test="systemId != null and systemId.id > 0">
+            , system_id
+        </if>
+       )
+        values (#{companyId.id}, #{issueId}, #{issueCount}, #{type}, #{description}, now(), now()
+        <if test="systemId != null and systemId.id > 0">
+            , #{systemId.id}
+        </if>)
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_issue(company_id, issue_id, issue_count, type, description, create_time, update_time, system_id)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.companyId}, #{entity.issueId}, #{entity.issueCount}, #{entity.type}, #{entity.description}, #{entity.createTime}, #{entity.updateTime}, #{entity.systemId})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_issue(company_id, issue_id, issue_count, type, description, create_time, update_time, system_id)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.companyId}, #{entity.issueId}, #{entity.issueCount}, #{entity.type}, #{entity.description}, #{entity.createTime}, #{entity.updateTime}, #{entity.systemId})
+        </foreach>
+        on duplicate key update
+        company_id = values(company_id),
+        issue_id = values(issue_id),
+        issue_count = values(issue_count),
+        type = values(type),
+        description = values(description),
+        create_time = values(create_time),
+        update_time = values(update_time),
+        system_id = values(system_id)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update tb_issue
+        <set>
+            <if test="companyId != null">
+                company_id = #{companyId},
+            </if>
+            <if test="issueId != null and issueId != ''">
+                issue_id = #{issueId},
+            </if>
+            <if test="issueCount != null">
+                issue_count = #{issueCount},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="description != null and description != ''">
+                description = #{description},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="systemId != null">
+                system_id = #{systemId},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from tb_issue where id = #{id}
+    </delete>
+
+</mapper>
+

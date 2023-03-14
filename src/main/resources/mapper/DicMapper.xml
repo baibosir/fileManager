@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sq.zbnss.dao.DicDao">
+
+    <resultMap type="org.sq.zbnss.entity.Dic" id="TbDicMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="key" column="dic_key" jdbcType="VARCHAR"/>
+        <result property="value" column="dic_value" jdbcType="VARCHAR"/>
+        <result property="description" column="dic_description" jdbcType="VARCHAR"/>
+<!--        <result property="type" column="type" jdbcType="INTEGER"/>-->
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <association property="type" column="dic_type" select="org.sq.zbnss.dao.DictypeDao.queryById" javaType="org.sq.zbnss.entity.Dictype"></association>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TbDicMap">
+        select
+          id, dic_key, dic_value, dic_description, dic_type, create_time, update_time
+        from tb_dic
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TbDicMap" parameterType="org.sq.zbnss.entity.Dic">
+        select
+          id, dic_key, dic_value, dic_description, dic_type, create_time, update_time
+        from tb_dic
+        <where>
+            <if test="dic != null and dic.id != null">
+                and id = #{dic.id}
+            </if>
+            <if test="dic != null and dic.key != null and dic.key != ''">
+                and dic_key = #{dic.key}
+            </if>
+            <if test="dic != null and dic.value != null and dic.value != ''">
+                and dic_value = #{dic.value}
+            </if>
+            <if test="dic != null and dic.description != null and dic.description != ''">
+                and dic_description = #{dic.description}
+            </if>
+            <if test="dic != null and dic.type != null">
+                and dic_type = #{dic.type.id}
+            </if>
+            <if test="dic != null and dic.createTime != null">
+                and create_time = #{dic.createTime}
+            </if>
+            <if test="dic != null and dic.updateTime != null">
+                and update_time = #{dic.updateTime}
+            </if>
+        </where>
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from tb_dic
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="key != null and key != ''">
+                and dic_key = #{key}
+            </if>
+            <if test="value != null and value != ''">
+                and dic_value = #{value}
+            </if>
+            <if test="description != null and description != ''">
+                and dic_description = #{description}
+            </if>
+            <if test="type != null">
+                and dic_type = #{type.id}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_dic(dic_key, dic_value, dic_description, dic_type, create_time, update_time)
+        values (#{key}, #{value}, #{description}, #{type.id}, now(), now())
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_dic(dic_key, dic_value, dic_description, dic_type, create_time, update_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.key}, #{entity.value}, #{entity.description}, #{entity.type.id}, now(), now())
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_dic(dic_key, dic_value, dic_description, dic_type, create_time, update_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.key}, #{entity.value}, #{entity.description}, #{entity.type.id}, now(), now()
+        </foreach>
+        on duplicate key update
+        dic_key = values(key),
+        dic_value = values(value),
+        dic_description = values(description),
+        dic_type = values(type.id),
+        update_time = values(now())
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update tb_dic
+        <set>
+            <if test="key != null and key != ''">
+                dic_key = #{key},
+            </if>
+            <if test="value != null and value != ''">
+                dic_value = #{value},
+            </if>
+            <if test="description != null and description != ''">
+                dic_description = #{description},
+            </if>
+            <if test="type != null">
+                dic_type = #{type.id},
+            </if>
+            <if test="updateTime != null">
+                update_time = now(),
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from tb_dic where id = #{id}
+    </delete>
+
+</mapper>
+

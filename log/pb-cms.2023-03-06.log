@@ -1,0 +1,447 @@
+2023-03-06 22:39:11.419  INFO 3152 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 3152 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 22:39:11.421  INFO 3152 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 22:39:14.556  WARN 3152 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 22:39:15.534  INFO 3152 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 22:39:15.534  INFO 3152 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 22:39:15.657  INFO 3152 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 22:39:15.735  INFO 3152 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 22:39:19.218  INFO 3152 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 22:39:21.194  WARN 3152 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c7f9ed06-3bb6-49f9-b794-a1ac6ff5089b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-03-06 22:39:21.591  INFO 3152 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 10.715 seconds (JVM running for 12.424)
+2023-03-06 22:39:21.923  INFO 3152 --- [RMI TCP Connection(4)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 22:42:04.480  INFO 3152 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 22:42:04.527  INFO 3152 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 22:42:08.910  INFO 14012 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 14012 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 22:42:08.911  INFO 14012 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 22:42:10.303  WARN 14012 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 22:42:10.897  INFO 14012 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 22:42:10.897  INFO 14012 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 22:42:11.000  INFO 14012 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 22:42:11.068  INFO 14012 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 22:42:14.606  INFO 14012 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 22:42:16.615  INFO 14012 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 8.094 seconds (JVM running for 9.116)
+2023-03-06 22:42:17.009  INFO 14012 --- [RMI TCP Connection(3)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 22:42:41.716  INFO 14012 --- [http-nio-12023-exec-8] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-06 22:46:41.099  INFO 14012 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 22:46:41.109  INFO 14012 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 22:46:41.111  INFO 14012 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-06 22:46:47.662  INFO 9836 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 9836 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 22:46:47.663  INFO 9836 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 22:46:49.097  WARN 9836 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 22:46:49.756  INFO 9836 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 22:46:49.756  INFO 9836 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 22:46:49.870  INFO 9836 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 22:46:49.942  INFO 9836 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 22:46:53.277  INFO 9836 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 22:46:55.251  WARN 9836 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException: Cannot invoke "org.springframework.web.servlet.mvc.condition.PatternsRequestCondition.getPatterns()" because "this.condition" is null
+2023-03-06 22:46:55.271  INFO 9836 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 22:46:55.276  INFO 9836 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 22:46:55.289  INFO 9836 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-03-06 22:46:55.610 ERROR 9836 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException: Cannot invoke "org.springframework.web.servlet.mvc.condition.PatternsRequestCondition.getPatterns()" because "this.condition" is null
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.sq.zbnss.SqNssApplication.main(SqNssApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.springframework.web.servlet.mvc.condition.PatternsRequestCondition.getPatterns()" because "this.condition" is null
+	at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns(WebMvcPatternsRequestConditionWrapper.java:56)
+	at springfox.documentation.RequestHandler.sortedPaths(RequestHandler.java:113)
+	at springfox.documentation.spi.service.contexts.Orderings.lambda$byPatternsCondition$3(Orderings.java:89)
+	at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:469)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355)
+	at java.base/java.util.TimSort.sort(TimSort.java:234)
+	at java.base/java.util.Arrays.sort(Arrays.java:1306)
+	at java.base/java.util.ArrayList.sort(ArrayList.java:1721)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:392)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider.requestHandlers(WebMvcRequestHandlerProvider.java:81)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.withDefaults(AbstractDocumentationPluginsBootstrapper.java:107)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.buildContext(AbstractDocumentationPluginsBootstrapper.java:91)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
+	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	... 19 common frames omitted
+
+2023-03-06 22:48:10.140  INFO 11100 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 11100 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 22:48:10.141  INFO 11100 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 22:48:11.535  WARN 11100 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 22:48:12.156  INFO 11100 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 22:48:12.156  INFO 11100 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 22:48:12.263  INFO 11100 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 22:48:12.331  INFO 11100 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 22:48:15.143  INFO 11100 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 22:48:17.093  WARN 11100 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException: Cannot invoke "org.springframework.web.servlet.mvc.condition.PatternsRequestCondition.getPatterns()" because "this.condition" is null
+2023-03-06 22:48:17.118  INFO 11100 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 22:48:17.127  INFO 11100 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 22:48:17.141  INFO 11100 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-03-06 22:48:17.185 ERROR 11100 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException: Cannot invoke "org.springframework.web.servlet.mvc.condition.PatternsRequestCondition.getPatterns()" because "this.condition" is null
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.sq.zbnss.SqNssApplication.main(SqNssApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.springframework.web.servlet.mvc.condition.PatternsRequestCondition.getPatterns()" because "this.condition" is null
+	at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns(WebMvcPatternsRequestConditionWrapper.java:56)
+	at springfox.documentation.RequestHandler.sortedPaths(RequestHandler.java:113)
+	at springfox.documentation.spi.service.contexts.Orderings.lambda$byPatternsCondition$3(Orderings.java:89)
+	at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:469)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355)
+	at java.base/java.util.TimSort.sort(TimSort.java:234)
+	at java.base/java.util.Arrays.sort(Arrays.java:1306)
+	at java.base/java.util.ArrayList.sort(ArrayList.java:1721)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:392)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider.requestHandlers(WebMvcRequestHandlerProvider.java:81)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.withDefaults(AbstractDocumentationPluginsBootstrapper.java:107)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.buildContext(AbstractDocumentationPluginsBootstrapper.java:91)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
+	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	... 19 common frames omitted
+
+2023-03-06 22:50:12.495  INFO 6656 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 6656 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 22:50:12.497  INFO 6656 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 22:50:13.813  WARN 6656 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 22:50:14.413  INFO 6656 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 22:50:14.413  INFO 6656 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 22:50:14.527  INFO 6656 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 22:50:14.591  INFO 6656 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 22:50:18.094  INFO 6656 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 22:50:20.178  INFO 6656 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 8.076 seconds (JVM running for 9.126)
+2023-03-06 22:50:20.585  INFO 6656 --- [RMI TCP Connection(5)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 22:57:30.431  INFO 6656 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 22:57:30.436  INFO 6656 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 22:57:35.829  INFO 10516 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 10516 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 22:57:35.831  INFO 10516 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 22:57:36.953  WARN 10516 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 22:57:37.464  INFO 10516 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 22:57:37.465  INFO 10516 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 22:57:37.552  INFO 10516 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 22:57:37.607  INFO 10516 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 22:57:40.318  INFO 10516 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 22:57:41.944  INFO 10516 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.414 seconds (JVM running for 7.36)
+2023-03-06 22:57:42.392  INFO 10516 --- [RMI TCP Connection(2)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 22:57:47.623  INFO 10516 --- [http-nio-12023-exec-5] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-06 22:59:53.991  INFO 10516 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 22:59:54.032  INFO 10516 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 22:59:54.034  INFO 10516 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-06 22:59:59.483  INFO 1092 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 1092 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 22:59:59.484  INFO 1092 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 23:00:00.603  WARN 1092 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 23:00:01.099  INFO 1092 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 23:00:01.100  INFO 1092 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 23:00:01.185  INFO 1092 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 23:00:01.239  INFO 1092 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 23:00:03.923  INFO 1092 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 23:00:05.695  INFO 1092 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.513 seconds (JVM running for 7.449)
+2023-03-06 23:00:06.117  INFO 1092 --- [RMI TCP Connection(3)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 23:00:08.837  INFO 1092 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-06 23:04:22.703  INFO 1092 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 23:04:22.756  INFO 1092 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 23:04:22.760  INFO 1092 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-06 23:04:28.124  INFO 10912 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 10912 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 23:04:28.126  INFO 10912 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 23:04:29.346  WARN 10912 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 23:04:29.885  INFO 10912 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 23:04:29.885  INFO 10912 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 23:04:29.977  INFO 10912 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 23:04:30.031  INFO 10912 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 23:04:33.240  INFO 10912 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 23:04:34.922  INFO 10912 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 7.138 seconds (JVM running for 8.045)
+2023-03-06 23:04:35.099  INFO 10912 --- [RMI TCP Connection(1)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 23:06:22.556  INFO 10912 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 23:06:22.560  INFO 10912 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 23:06:30.032  INFO 3288 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 3288 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 23:06:30.034  INFO 3288 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 23:06:31.286  WARN 3288 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 23:06:31.835  INFO 3288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 23:06:31.836  INFO 3288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 23:06:31.933  INFO 3288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 23:06:31.990  INFO 3288 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 23:06:39.432  INFO 3288 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 23:06:41.201  INFO 3288 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 11.532 seconds (JVM running for 12.342)
+2023-03-06 23:06:41.376  INFO 3288 --- [RMI TCP Connection(3)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 23:06:45.541  INFO 3288 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-06 23:07:25.712 ERROR 3288 --- [commons-pool-evictor] redis.clients.jedis.JedisFactory         : Error while validating pooled Jedis object.
+
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.jedis.util.RedisInputStream.ensureFill(RedisInputStream.java:205)
+	at redis.clients.jedis.util.RedisInputStream.readByte(RedisInputStream.java:43)
+	at redis.clients.jedis.Protocol.process(Protocol.java:165)
+	at redis.clients.jedis.Protocol.read(Protocol.java:230)
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:352)
+	at redis.clients.jedis.Connection.getStatusCodeReply(Connection.java:270)
+	at redis.clients.jedis.BinaryJedis.ping(BinaryJedis.java:384)
+	at redis.clients.jedis.JedisFactory.validateObject(JedisFactory.java:214)
+	at org.apache.commons.pool2.impl.GenericObjectPool.evict(GenericObjectPool.java:745)
+	at org.apache.commons.pool2.impl.BaseGenericObjectPool$Evictor.run(BaseGenericObjectPool.java:160)
+	at org.apache.commons.pool2.impl.EvictionTimer$WeakRunner.run(EvictionTimer.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:981)
+	at java.base/java.io.InputStream.read(InputStream.java:218)
+	at redis.clients.jedis.util.RedisInputStream.ensureFill(RedisInputStream.java:199)
+	... 16 common frames omitted
+
+2023-03-06 23:08:55.909  INFO 3288 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 23:08:55.913  INFO 3288 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 23:08:55.914  INFO 3288 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-06 23:09:01.950  INFO 5172 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 5172 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 23:09:01.952  INFO 5172 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 23:09:03.069  WARN 5172 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 23:09:03.574  INFO 5172 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 23:09:03.574  INFO 5172 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 23:09:03.661  INFO 5172 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 23:09:03.714  INFO 5172 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 23:09:06.937  INFO 5172 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 23:09:08.623  INFO 5172 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.985 seconds (JVM running for 7.817)
+2023-03-06 23:09:09.185  INFO 5172 --- [RMI TCP Connection(1)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 23:09:19.602  INFO 5172 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-06 23:10:22.649  INFO 5172 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 23:10:22.659  INFO 5172 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 23:10:22.661  INFO 5172 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-06 23:10:28.537  INFO 8032 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 8032 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 23:10:28.539  INFO 8032 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 23:10:29.675  WARN 8032 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 23:10:30.173  INFO 8032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 23:10:30.173  INFO 8032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 23:10:30.261  INFO 8032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 23:10:30.314  INFO 8032 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 23:10:36.321  INFO 8032 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 23:10:37.964  INFO 8032 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 9.743 seconds (JVM running for 10.582)
+2023-03-06 23:10:38.339  INFO 8032 --- [RMI TCP Connection(2)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 23:10:47.365  INFO 8032 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-06 23:11:38.307  INFO 8032 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 23:11:38.312  INFO 8032 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 23:11:38.313  INFO 8032 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-06 23:11:43.877  INFO 8260 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 8260 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 23:11:43.878  INFO 8260 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 23:11:45.071  WARN 8260 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 23:11:45.602  INFO 8260 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 23:11:45.602  INFO 8260 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 23:11:45.696  INFO 8260 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 23:11:45.755  INFO 8260 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 23:11:48.545  INFO 8260 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 23:11:50.258  INFO 8260 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.754 seconds (JVM running for 7.611)
+2023-03-06 23:11:50.566  INFO 8260 --- [RMI TCP Connection(1)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 23:11:53.148  INFO 8260 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-06 23:15:56.987  INFO 8260 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 23:15:57.007  INFO 8260 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 23:15:57.009  INFO 8260 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-06 23:16:02.589  INFO 12736 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 12736 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 23:16:02.590  INFO 12736 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 23:16:03.725  WARN 12736 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 23:16:04.270  INFO 12736 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 23:16:04.270  INFO 12736 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 23:16:04.362  INFO 12736 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 23:16:04.416  INFO 12736 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 23:16:09.914  INFO 12736 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 23:16:11.564  INFO 12736 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 9.332 seconds (JVM running for 10.471)
+2023-03-06 23:16:12.091  INFO 12736 --- [RMI TCP Connection(1)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 23:16:16.403  INFO 12736 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-06 23:17:32.422  INFO 12736 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 23:17:32.440  INFO 12736 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 23:17:32.454  INFO 12736 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-06 23:17:37.730  INFO 1112 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 1112 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 23:17:37.731  INFO 1112 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 23:17:38.868  WARN 1112 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 23:17:39.403  INFO 1112 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 23:17:39.404  INFO 1112 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 23:17:39.494  INFO 1112 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 23:17:39.549  INFO 1112 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 23:17:43.915  INFO 1112 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 23:17:45.740  INFO 1112 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 8.306 seconds (JVM running for 9.339)
+2023-03-06 23:17:45.906  INFO 1112 --- [RMI TCP Connection(2)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 23:17:50.965  INFO 1112 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-06 23:19:31.553  WARN 1112 --- [commons-pool-evictor] redis.clients.jedis.JedisFactory         : Error while QUIT
+
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.jedis.util.RedisInputStream.ensureFill(RedisInputStream.java:205)
+	at redis.clients.jedis.util.RedisInputStream.readByte(RedisInputStream.java:43)
+	at redis.clients.jedis.Protocol.process(Protocol.java:165)
+	at redis.clients.jedis.Protocol.read(Protocol.java:230)
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:352)
+	at redis.clients.jedis.Connection.getStatusCodeReply(Connection.java:270)
+	at redis.clients.jedis.BinaryJedis.quit(BinaryJedis.java:475)
+	at redis.clients.jedis.JedisFactory.destroyObject(JedisFactory.java:160)
+	at org.apache.commons.pool2.PooledObjectFactory.destroyObject(PooledObjectFactory.java:127)
+	at org.apache.commons.pool2.impl.GenericObjectPool.destroy(GenericObjectPool.java:611)
+	at org.apache.commons.pool2.impl.GenericObjectPool.evict(GenericObjectPool.java:729)
+	at org.apache.commons.pool2.impl.BaseGenericObjectPool$Evictor.run(BaseGenericObjectPool.java:160)
+	at org.apache.commons.pool2.impl.EvictionTimer$WeakRunner.run(EvictionTimer.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:981)
+	at java.base/java.io.InputStream.read(InputStream.java:218)
+	at redis.clients.jedis.util.RedisInputStream.ensureFill(RedisInputStream.java:199)
+	... 18 common frames omitted
+
+2023-03-06 23:22:36.859  INFO 1112 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 23:22:36.868  INFO 1112 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 23:22:36.869  INFO 1112 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-06 23:22:42.051  INFO 7544 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 7544 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 23:22:42.052  INFO 7544 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 23:22:43.175  WARN 7544 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 23:22:43.673  INFO 7544 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 23:22:43.673  INFO 7544 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 23:22:43.772  INFO 7544 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 23:22:43.837  INFO 7544 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 23:22:48.270  INFO 7544 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 23:22:50.035  INFO 7544 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 8.3 seconds (JVM running for 9.126)
+2023-03-06 23:22:50.341  INFO 7544 --- [RMI TCP Connection(4)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 23:23:12.194  INFO 7544 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 23:23:12.201  INFO 7544 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 23:23:16.206  INFO 5348 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 5348 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 23:23:16.207  INFO 5348 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 23:23:17.328  WARN 5348 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 23:23:17.824  INFO 5348 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 23:23:17.825  INFO 5348 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 23:23:17.916  INFO 5348 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 23:23:17.970  INFO 5348 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 23:23:20.672  INFO 5348 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 23:23:22.362  INFO 5348 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.474 seconds (JVM running for 7.338)
+2023-03-06 23:23:22.849  INFO 5348 --- [RMI TCP Connection(7)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 23:23:26.460  INFO 5348 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-06 23:25:22.834  INFO 5348 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 23:25:22.839  INFO 5348 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 23:25:22.841  INFO 5348 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-06 23:25:28.282  INFO 8636 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 8636 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 23:25:28.283  INFO 8636 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 23:25:29.462  WARN 8636 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 23:25:29.976  INFO 8636 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 23:25:29.976  INFO 8636 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 23:25:30.066  INFO 8636 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 23:25:30.120  INFO 8636 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 23:25:33.329  INFO 8636 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 23:25:35.004  INFO 8636 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 7.024 seconds (JVM running for 8.166)
+2023-03-06 23:25:35.331  INFO 8636 --- [RMI TCP Connection(4)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 23:25:40.014  INFO 8636 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-06 23:27:44.788  INFO 8636 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 23:27:44.821  INFO 8636 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 23:27:44.825  INFO 8636 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-06 23:27:50.418  INFO 9944 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 9944 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 23:27:50.419  INFO 9944 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 23:27:51.553  WARN 9944 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 23:27:52.087  INFO 9944 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 23:27:52.087  INFO 9944 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 23:27:52.177  INFO 9944 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 23:27:52.229  INFO 9944 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 23:27:57.442  INFO 9944 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 23:27:59.156  INFO 9944 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 9.053 seconds (JVM running for 10.065)
+2023-03-06 23:27:59.529  INFO 9944 --- [RMI TCP Connection(3)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 23:28:03.300  INFO 9944 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-06 23:28:48.376  INFO 9944 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 23:28:48.381  INFO 9944 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 23:28:48.383  INFO 9944 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-06 23:28:53.691  INFO 13448 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 13448 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 23:28:53.693  INFO 13448 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 23:28:54.813  WARN 13448 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 23:28:55.313  INFO 13448 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 23:28:55.313  INFO 13448 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 23:28:55.403  INFO 13448 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 23:28:55.457  INFO 13448 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 23:28:58.939  INFO 13448 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 23:29:00.633  INFO 13448 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 7.247 seconds (JVM running for 8.343)
+2023-03-06 23:29:00.716  INFO 13448 --- [RMI TCP Connection(2)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 23:29:04.176  INFO 13448 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-06 23:32:10.484  INFO 13448 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-06 23:32:10.510  INFO 13448 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-06 23:32:10.520  INFO 13448 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-06 23:32:15.736  INFO 8272 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 8272 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-06 23:32:15.737  INFO 8272 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-06 23:32:16.923  WARN 8272 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-06 23:32:17.449  INFO 8272 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-06 23:32:17.450  INFO 8272 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-06 23:32:17.557  INFO 8272 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-06 23:32:17.622  INFO 8272 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-06 23:32:20.951  INFO 8272 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-06 23:32:22.596  INFO 8272 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 7.166 seconds (JVM running for 8.069)
+2023-03-06 23:32:22.789  INFO 8272 --- [RMI TCP Connection(4)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 23:32:30.128  INFO 8272 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...

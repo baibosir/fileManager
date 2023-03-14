@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sq.zbnss.dao.SystemDao">
+
+    <resultMap type="org.sq.zbnss.entity.RecordSystem" id="TbSystemMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="systemId" column="system_id" jdbcType="VARCHAR"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="level" column="level" jdbcType="VARCHAR"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="onlineDate" column="online_date" jdbcType="TIMESTAMP"/>
+        <result property="testStatus" column="test_status" jdbcType="INTEGER"/>
+        <result property="registTime" column="regist_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <association property="company" javaType="org.sq.zbnss.entity.Company"
+                     select="org.sq.zbnss.dao.CompanyDao.queryById" column="company_id" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TbSystemMap">
+        select
+          id, system_id, name, company_id, level, online_date, test_status, regist_time, update_time,description
+        from tb_system
+        where id = #{id}
+    </select>
+
+    <select id="selectRecord" resultMap="TbSystemMap" parameterType="org.sq.zbnss.entity.RecordSystem" >
+        select
+            id, system_id, name, company_id, level, online_date, test_status, regist_time, update_time,description
+        from tb_system
+        <where>
+        <if test="recordSystem != null and recordSystem.id != null">
+            and id = #{recordSystem.id}
+        </if>
+        <if test="recordSystem != null and recordSystem.systemId != null and recordSystem.systemId != ''">
+            and system_id = #{recordSystem.systemId}
+        </if>
+        <if test="recordSystem != null and recordSystem.name != null and recordSystem.name != ''">
+            and name = #{recordSystem.name}
+        </if>
+        <if test="recordSystem != null and recordSystem.company != null">
+            and company_id = #{recordSystem.company.id}
+        </if>
+        <if test="recordSystem != null and recordSystem.level != null and level != ''">
+            and level = #{recordSystem.level}
+        </if>
+        <if test="recordSystem != null and recordSystem.onlineDate != null">
+            and online_date = #{recordSystem.onlineDate}
+        </if>
+        <if test="recordSystem != null and recordSystem.testStatus != null">
+            and test_status = #{recordSystem.testStatus}
+        </if>
+        <if test="recordSystem != null and recordSystem.registTime != null">
+            and regist_time = #{recordSystem.registTime}
+        </if>
+        <if test="recordSystem != null and recordSystem.updateTime != null">
+            and update_time = #{recordSystem.updateTime}
+        </if>
+
+        <if test="recordSystem != null and recordSystem.updateTime != null">
+            and description = #{recordSystem.description}
+        </if>
+        </where>
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TbSystemMap"  parameterType="org.sq.zbnss.entity.RecordSystem" >
+        select
+          id, system_id, name, company_id, level, online_date, test_status, regist_time, update_time
+        from tb_system
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="systemId != null and systemId != ''">
+                and system_id = #{systemId}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="company != null">
+                and company_id = #{company.id}
+            </if>
+            <if test="level != null and level != ''">
+                and level = #{level}
+            </if>
+            <if test="onlineDate != null">
+                and online_date = #{onlineDate}
+            </if>
+            <if test="testStatus != null">
+                and test_status = #{testStatus}
+            </if>
+            <if test="registTime != null">
+                and regist_time = #{registTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+
+            <if test="updateTime != null">
+                and description = #{description}
+            </if>
+        </where>
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from tb_system
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="systemId != null and systemId != ''">
+                and system_id = #{systemId}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="company != null">
+                and company_id = #{company.id}
+            </if>
+            <if test="level != null and level != ''">
+                and level = #{level}
+            </if>
+            <if test="onlineDate != null">
+                and online_date = #{onlineDate}
+            </if>
+            <if test="testStatus != null">
+                and test_status = #{testStatus}
+            </if>
+            <if test="registTime != null">
+                and regist_time = #{registTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true"  parameterType="org.sq.zbnss.entity.RecordSystem" >
+        insert into tb_system(system_id, name, company_id, level, online_date, test_status,description, regist_time, update_time)
+        values (#{systemId}, #{name}, #{company.id}, #{level}, #{onlineDate}, #{testStatus}, #{description}, now(), now())
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_system(system_id, name, company_id, level, online_date, test_status, regist_time, update_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.systemId}, #{entity.name}, #{entity.company.id}, #{entity.level}, #{entity.onlineDate}, #{entity.testStatus}, #{entity.registTime}, #{entity.updateTime})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_system(system_id, name, company_id, level, online_date, test_status, regist_time, update_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.systemId}, #{entity.name}, #{entity.company.id}, #{entity.level}, #{entity.onlineDate}, #{entity.testStatus}, #{entity.registTime}, #{entity.updateTime})
+        </foreach>
+        on duplicate key update
+        system_id = values(system_id),
+        name = values(name),
+        company_id = values(company_id),
+        level = values(level),
+        online_date = values(online_date),
+        test_status = values(test_status),
+        regist_time = values(regist_time),
+        update_time = values(update_time)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update"  parameterType="org.sq.zbnss.entity.RecordSystem" >
+        update tb_system
+        <set>
+            <if test="systemId != null and systemId != ''">
+                system_id = #{systemId},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="company != null">
+                company_id = #{company.id},
+            </if>
+            <if test="level != null and level != ''">
+                level = #{level},
+            </if>
+            <if test="onlineDate != null">
+                online_date = #{onlineDate},
+            </if>
+            <if test="testStatus != null">
+                test_status = #{testStatus},
+            </if>
+            <if test="registTime != null">
+                regist_time = #{registTime},
+            </if>
+            update_time = now()
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from tb_system where id = #{id}
+    </delete>
+
+</mapper>
+

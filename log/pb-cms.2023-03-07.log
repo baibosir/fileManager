@@ -1,0 +1,984 @@
+2023-03-07 07:25:35.032  INFO 6784 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 6784 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 07:25:35.032  INFO 6784 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 07:25:38.980  WARN 6784 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 07:25:40.027  INFO 6784 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 07:25:40.027  INFO 6784 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 07:25:40.402  INFO 6784 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 07:25:40.589  INFO 6784 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 07:25:44.776  INFO 6784 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 07:25:47.375  INFO 6784 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 12.924 seconds (JVM running for 14.29)
+2023-03-07 07:25:47.744  INFO 6784 --- [RMI TCP Connection(12)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 07:27:04.038  INFO 6784 --- [http-nio-12023-exec-7] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 07:28:00.090  INFO 6784 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 07:28:00.098  INFO 6784 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 07:28:00.099  INFO 6784 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 07:28:05.888  INFO 6872 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 6872 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 07:28:05.889  INFO 6872 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 07:28:07.044  WARN 6872 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 07:28:07.566  INFO 6872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 07:28:07.566  INFO 6872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 07:28:07.656  INFO 6872 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 07:28:07.710  INFO 6872 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 07:28:11.132  INFO 6872 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 07:28:12.678  INFO 6872 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 7.129 seconds (JVM running for 8.177)
+2023-03-07 07:28:13.040  INFO 6872 --- [RMI TCP Connection(3)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 07:28:16.569  INFO 6872 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 07:30:17.578  INFO 6872 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 07:30:17.586  INFO 6872 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 07:30:17.588  INFO 6872 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 07:30:23.171  INFO 11464 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 11464 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 07:30:23.172  INFO 11464 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 07:30:24.270  WARN 11464 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 07:30:24.744  INFO 11464 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 07:30:24.744  INFO 11464 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 07:30:24.833  INFO 11464 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 07:30:24.884  INFO 11464 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 07:30:28.044  INFO 11464 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 07:30:29.621  INFO 11464 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.786 seconds (JVM running for 8.07)
+2023-03-07 07:30:29.939  INFO 11464 --- [RMI TCP Connection(4)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 07:30:40.288  INFO 11464 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 07:31:00.346  INFO 11464 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 07:31:00.350  INFO 11464 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 07:31:00.351  INFO 11464 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 07:31:05.767  INFO 4936 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 4936 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 07:31:05.769  INFO 4936 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 07:31:06.843  WARN 4936 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 07:31:07.317  INFO 4936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 07:31:07.317  INFO 4936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 07:31:07.400  INFO 4936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 07:31:07.451  INFO 4936 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 07:31:10.145  INFO 4936 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 07:31:11.843  INFO 4936 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.364 seconds (JVM running for 7.43)
+2023-03-07 07:31:11.939  INFO 4936 --- [RMI TCP Connection(1)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 07:31:16.926  INFO 4936 --- [http-nio-12023-exec-3] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 07:32:05.249  INFO 4936 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 07:32:05.253  INFO 4936 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 07:32:05.254  INFO 4936 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 07:32:21.146  INFO 6752 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 6752 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 07:32:21.147  INFO 6752 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 07:32:22.397  WARN 6752 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 07:32:22.966  INFO 6752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 07:32:22.966  INFO 6752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 07:32:23.046  INFO 6752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 07:32:23.111  INFO 6752 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 07:32:25.831  INFO 6752 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 07:34:38.370  INFO 6752 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 137.582 seconds (JVM running for 139.203)
+2023-03-07 07:34:38.647  INFO 6752 --- [RMI TCP Connection(1)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 07:34:39.027  WARN 6752 --- [RMI TCP Connection(4)-192.168.0.6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://42.192.150.235:3306/nss?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&allowMultiQueries=true, version : 1.2.8, lastPacketReceivedIdleMillis : 132962
+2023-03-07 07:34:39.062  WARN 6752 --- [RMI TCP Connection(4)-192.168.0.6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://42.192.150.235:3306/nss?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&allowMultiQueries=true, version : 1.2.8, lastPacketReceivedIdleMillis : 133701
+2023-03-07 07:34:39.099  WARN 6752 --- [RMI TCP Connection(4)-192.168.0.6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://42.192.150.235:3306/nss?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&allowMultiQueries=true, version : 1.2.8, lastPacketReceivedIdleMillis : 134093
+2023-03-07 07:34:39.145  WARN 6752 --- [RMI TCP Connection(4)-192.168.0.6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://42.192.150.235:3306/nss?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&allowMultiQueries=true, version : 1.2.8, lastPacketReceivedIdleMillis : 134503
+2023-03-07 07:34:39.182  WARN 6752 --- [RMI TCP Connection(4)-192.168.0.6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://42.192.150.235:3306/nss?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&allowMultiQueries=true, version : 1.2.8, lastPacketReceivedIdleMillis : 134916
+2023-03-07 07:34:46.804  INFO 6752 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 07:34:46.807  INFO 6752 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 07:34:52.917  INFO 12516 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 12516 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 07:34:52.918  INFO 12516 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 07:34:54.005  WARN 12516 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 07:34:54.484  INFO 12516 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 07:34:54.485  INFO 12516 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 07:34:54.570  INFO 12516 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 07:34:54.621  INFO 12516 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 07:34:56.719  INFO 12516 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 07:34:59.035  INFO 12516 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.423 seconds (JVM running for 7.62)
+2023-03-07 07:34:59.581  INFO 12516 --- [RMI TCP Connection(8)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 07:35:06.837  INFO 12516 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 07:39:21.351  INFO 12516 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 07:39:21.356  INFO 12516 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 07:39:21.357  INFO 12516 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 07:39:26.836  INFO 10300 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 10300 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 07:39:26.838  INFO 10300 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 07:39:27.985  WARN 10300 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 07:39:28.509  INFO 10300 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 07:39:28.509  INFO 10300 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 07:39:28.600  INFO 10300 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 07:39:28.649  INFO 10300 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 07:39:31.831  INFO 10300 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 07:39:33.389  INFO 10300 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.885 seconds (JVM running for 7.683)
+2023-03-07 07:39:33.590  INFO 10300 --- [RMI TCP Connection(5)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 07:39:37.012  INFO 10300 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 07:40:55.543  INFO 10300 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 07:40:55.543  INFO 10300 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 07:40:55.543  INFO 10300 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 07:41:01.014  INFO 12204 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 12204 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 07:41:01.014  INFO 12204 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 07:41:02.019  WARN 12204 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 07:41:02.394  INFO 12204 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 07:41:02.394  INFO 12204 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 07:41:02.472  INFO 12204 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 07:41:02.519  INFO 12204 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 07:41:04.597  INFO 12204 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 07:41:05.019  WARN 12204 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\controller\UserController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\service\impl\UserServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.crazycake.shiro.RedisSessionDAO' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-03-07 07:41:05.019  INFO 12204 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 07:41:05.019  INFO 12204 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 07:41:05.019  INFO 12204 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-03-07 07:41:05.081 ERROR 12204 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.sq.zbnss.service.impl.UserServiceImpl required a bean of type 'org.crazycake.shiro.RedisSessionDAO' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.crazycake.shiro.RedisSessionDAO' in your configuration.
+
+2023-03-07 07:42:01.037  INFO 1988 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 1988 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 07:42:01.037  INFO 1988 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 07:42:02.070  WARN 1988 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 07:42:02.523  INFO 1988 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 07:42:02.523  INFO 1988 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 07:42:02.617  INFO 1988 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 07:42:02.679  INFO 1988 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 07:42:06.101  INFO 1988 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 07:42:07.577  INFO 1988 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.816 seconds (JVM running for 7.602)
+2023-03-07 07:42:07.871  INFO 1988 --- [RMI TCP Connection(1)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 07:42:14.453  INFO 1988 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 07:42:22.703  INFO 1988 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 07:42:22.703  INFO 1988 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 07:42:22.703  INFO 1988 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 07:42:26.179  INFO 10288 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 10288 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 07:42:26.179  INFO 10288 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 07:42:27.330  WARN 10288 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 07:42:27.830  INFO 10288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 07:42:27.830  INFO 10288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 07:42:27.908  INFO 10288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 07:42:27.971  INFO 10288 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 07:42:30.076  INFO 10288 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 07:42:31.566  INFO 10288 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 5.675 seconds (JVM running for 6.46)
+2023-03-07 07:42:31.997  INFO 10288 --- [RMI TCP Connection(5)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 07:42:41.033  INFO 10288 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 20:38:49.878  INFO 10780 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 10780 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 20:38:49.878  INFO 10780 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 20:38:53.467  WARN 10780 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 20:38:54.232  INFO 10780 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 20:38:54.232  INFO 10780 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 20:38:54.341  INFO 10780 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 20:38:54.420  INFO 10780 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 20:38:57.841  INFO 10780 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 20:39:00.581  INFO 10780 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 11.285 seconds (JVM running for 12.669)
+2023-03-07 20:39:01.040  INFO 10780 --- [RMI TCP Connection(2)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 20:40:56.417  INFO 10780 --- [http-nio-12023-exec-33] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 20:46:08.903  INFO 10780 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 20:46:08.918  INFO 10780 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 20:46:08.918  INFO 10780 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 20:46:13.939  INFO 12120 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 12120 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 20:46:13.939  INFO 12120 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 20:46:15.025  WARN 12120 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 20:46:15.494  INFO 12120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 20:46:15.494  INFO 12120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 20:46:15.572  INFO 12120 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 20:46:15.619  INFO 12120 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 20:46:18.774  INFO 12120 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 20:46:20.281  INFO 12120 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.638 seconds (JVM running for 7.538)
+2023-03-07 20:46:20.714  INFO 12120 --- [RMI TCP Connection(3)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 20:54:21.802  INFO 12120 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 20:54:21.802  INFO 12120 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 20:54:27.126  INFO 7560 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 7560 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 20:54:27.126  INFO 7560 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 20:54:28.125  WARN 7560 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 20:54:28.594  INFO 7560 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 20:54:28.594  INFO 7560 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 20:54:28.672  INFO 7560 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 20:54:28.719  INFO 7560 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 20:54:33.190  INFO 7560 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 20:54:34.646  INFO 7560 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 7.811 seconds (JVM running for 8.693)
+2023-03-07 20:54:34.955  INFO 7560 --- [RMI TCP Connection(1)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 20:54:48.446  INFO 7560 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 21:12:35.362  INFO 7560 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 21:12:35.378  INFO 7560 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 21:12:35.378  INFO 7560 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 21:12:41.237  INFO 7872 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 7872 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 21:12:41.237  INFO 7872 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 21:12:42.257  WARN 7872 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 21:12:42.695  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 21:12:42.695  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 21:12:42.773  INFO 7872 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 21:12:42.820  INFO 7872 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 21:12:46.022  INFO 7872 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 21:12:47.564  INFO 7872 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.603 seconds (JVM running for 7.383)
+2023-03-07 21:12:48.064  INFO 7872 --- [RMI TCP Connection(1)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 21:12:55.905  INFO 7872 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 21:31:50.406  INFO 7872 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 21:31:50.421  INFO 7872 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 21:31:50.421  INFO 7872 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 21:31:54.196  INFO 7972 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 7972 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 21:31:54.196  INFO 7972 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 21:31:55.208  WARN 7972 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 21:31:55.645  INFO 7972 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 21:31:55.645  INFO 7972 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 21:31:55.739  INFO 7972 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 21:31:55.786  INFO 7972 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 21:31:58.942  INFO 7972 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 21:32:00.482  INFO 7972 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.571 seconds (JVM running for 7.639)
+2023-03-07 21:32:00.839  INFO 7972 --- [RMI TCP Connection(1)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 21:32:10.408  INFO 7972 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 21:33:50.995  WARN 7972 --- [commons-pool-evictor] redis.clients.jedis.JedisFactory         : Error while QUIT
+
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.jedis.util.RedisInputStream.ensureFill(RedisInputStream.java:205)
+	at redis.clients.jedis.util.RedisInputStream.readByte(RedisInputStream.java:43)
+	at redis.clients.jedis.Protocol.process(Protocol.java:165)
+	at redis.clients.jedis.Protocol.read(Protocol.java:230)
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:352)
+	at redis.clients.jedis.Connection.getStatusCodeReply(Connection.java:270)
+	at redis.clients.jedis.BinaryJedis.quit(BinaryJedis.java:475)
+	at redis.clients.jedis.JedisFactory.destroyObject(JedisFactory.java:160)
+	at org.apache.commons.pool2.PooledObjectFactory.destroyObject(PooledObjectFactory.java:127)
+	at org.apache.commons.pool2.impl.GenericObjectPool.destroy(GenericObjectPool.java:611)
+	at org.apache.commons.pool2.impl.GenericObjectPool.evict(GenericObjectPool.java:729)
+	at org.apache.commons.pool2.impl.BaseGenericObjectPool$Evictor.run(BaseGenericObjectPool.java:160)
+	at org.apache.commons.pool2.impl.EvictionTimer$WeakRunner.run(EvictionTimer.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:981)
+	at java.base/java.io.InputStream.read(InputStream.java:218)
+	at redis.clients.jedis.util.RedisInputStream.ensureFill(RedisInputStream.java:199)
+	... 18 common frames omitted
+
+2023-03-07 21:35:45.881  INFO 7972 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 21:35:45.889  INFO 7972 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 21:35:45.890  INFO 7972 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 21:35:51.084  INFO 11976 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 11976 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 21:35:51.086  INFO 11976 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 21:35:52.127  WARN 11976 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 21:35:52.537  INFO 11976 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 21:35:52.538  INFO 11976 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 21:35:52.611  INFO 11976 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 21:35:52.662  INFO 11976 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 21:35:57.855  INFO 11976 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 21:35:58.302  WARN 11976 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\controller\UserController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\service\impl\UserServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.crazycake.shiro.RedisSessionDAO' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-03-07 21:35:58.303  INFO 11976 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 21:35:58.308  INFO 11976 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 21:35:58.310  INFO 11976 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-03-07 21:35:58.386 ERROR 11976 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.sq.zbnss.service.impl.UserServiceImpl required a bean of type 'org.crazycake.shiro.RedisSessionDAO' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.crazycake.shiro.RedisSessionDAO' in your configuration.
+
+2023-03-07 21:42:40.037  INFO 7360 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 7360 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 21:42:40.038  INFO 7360 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 21:42:41.144  WARN 7360 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 21:42:41.631  INFO 7360 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 21:42:41.631  INFO 7360 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 21:42:41.716  INFO 7360 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 21:42:41.767  INFO 7360 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 21:42:44.913  INFO 7360 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 21:42:46.566  INFO 7360 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.827 seconds (JVM running for 7.599)
+2023-03-07 21:42:46.870  INFO 7360 --- [RMI TCP Connection(3)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 21:43:21.992  INFO 7360 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 21:53:28.738  INFO 7360 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 21:53:28.744  INFO 7360 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 21:53:28.745  INFO 7360 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 22:00:44.316  INFO 4988 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 4988 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:00:44.317  INFO 4988 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:00:44.478  WARN 4988 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+2023-03-07 22:00:44.515 ERROR 4988 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:609)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:310)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:310)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:198)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:303)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:206)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:174)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.sq.zbnss.SqNssApplication.main(SqNssApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:331)
+	at org.springframework.context.annotation.ConditionEvaluator.getCondition(ConditionEvaluator.java:124)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:96)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:225)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	... 28 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: springfox/documentation/common/ClassPresentInClassPathCondition
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:151)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:825)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:723)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:646)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:604)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 32 common frames omitted
+Caused by: java.lang.ClassNotFoundException: springfox.documentation.common.ClassPresentInClassPathCondition
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:606)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 49 common frames omitted
+
+2023-03-07 22:01:08.147  INFO 8864 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 8864 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:01:08.148  INFO 8864 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:01:08.665  WARN 8864 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: URL [jar:file:/D:/maven/repo/repository/io/springfox/springfox-oas/3.0.0/springfox-oas-3.0.0.jar!/springfox/documentation/oas/web/OpenApiControllerWebMvc.class]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+2023-03-07 22:01:08.690 ERROR 8864 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: URL [jar:file:/D:/maven/repo/repository/io/springfox/springfox-oas/3.0.0/springfox-oas-3.0.0.jar!/springfox/documentation/oas/web/OpenApiControllerWebMvc.class]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:457)
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:316)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:295)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:310)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	at org.springframework.context.annotation.ConfigurationClassParser.access$800(ConfigurationClassParser.java:110)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler.lambda$processGroupImports$1(ConfigurationClassParser.java:812)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler.processGroupImports(ConfigurationClassParser.java:809)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorHandler.process(ConfigurationClassParser.java:780)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:192)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.sq.zbnss.SqNssApplication.main(SqNssApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:331)
+	at org.springframework.context.annotation.ConditionEvaluator.getCondition(ConditionEvaluator.java:124)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:96)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:512)
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:495)
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
+	... 33 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: springfox/documentation/common/ClassPresentInClassPathCondition
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:151)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:825)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:723)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:646)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:604)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 40 common frames omitted
+Caused by: java.lang.ClassNotFoundException: springfox.documentation.common.ClassPresentInClassPathCondition
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:606)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 57 common frames omitted
+
+2023-03-07 22:01:36.559  INFO 8320 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 8320 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:01:36.560  INFO 8320 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:01:37.087  WARN 8320 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: URL [jar:file:/D:/maven/repo/repository/io/springfox/springfox-oas/3.0.0/springfox-oas-3.0.0.jar!/springfox/documentation/oas/web/OpenApiControllerWebMvc.class]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+2023-03-07 22:01:37.112 ERROR 8320 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: URL [jar:file:/D:/maven/repo/repository/io/springfox/springfox-oas/3.0.0/springfox-oas-3.0.0.jar!/springfox/documentation/oas/web/OpenApiControllerWebMvc.class]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:457)
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:316)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:276)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:295)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:310)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	at org.springframework.context.annotation.ConfigurationClassParser.access$800(ConfigurationClassParser.java:110)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler.lambda$processGroupImports$1(ConfigurationClassParser.java:812)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler.processGroupImports(ConfigurationClassParser.java:809)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorHandler.process(ConfigurationClassParser.java:780)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:192)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.sq.zbnss.SqNssApplication.main(SqNssApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:331)
+	at org.springframework.context.annotation.ConditionEvaluator.getCondition(ConditionEvaluator.java:124)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:96)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:512)
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:495)
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:430)
+	... 33 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: springfox/documentation/common/ClassPresentInClassPathCondition
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:151)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:825)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:723)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:646)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:604)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 40 common frames omitted
+Caused by: java.lang.ClassNotFoundException: springfox.documentation.common.ClassPresentInClassPathCondition
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:606)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 57 common frames omitted
+
+2023-03-07 22:04:41.107  INFO 1148 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 1148 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:04:41.109  INFO 1148 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:04:41.330  WARN 1148 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+2023-03-07 22:04:41.357 ERROR 1148 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:609)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:310)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:310)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:198)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:303)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:206)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:174)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.sq.zbnss.SqNssApplication.main(SqNssApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:331)
+	at org.springframework.context.annotation.ConditionEvaluator.getCondition(ConditionEvaluator.java:124)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:96)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:225)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	... 28 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: springfox/documentation/common/ClassPresentInClassPathCondition
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:151)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:825)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:723)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:646)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:604)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 32 common frames omitted
+Caused by: java.lang.ClassNotFoundException: springfox.documentation.common.ClassPresentInClassPathCondition
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:606)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 49 common frames omitted
+
+2023-03-07 22:06:45.935  INFO 2396 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 2396 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:06:45.937  INFO 2396 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:06:46.119  WARN 2396 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+2023-03-07 22:06:46.138 ERROR 2396 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:609)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:310)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:310)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:198)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:303)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:206)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:174)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.sq.zbnss.SqNssApplication.main(SqNssApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:331)
+	at org.springframework.context.annotation.ConditionEvaluator.getCondition(ConditionEvaluator.java:124)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:96)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:225)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	... 28 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: springfox/documentation/common/ClassPresentInClassPathCondition
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:151)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:825)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:723)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:646)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:604)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 32 common frames omitted
+Caused by: java.lang.ClassNotFoundException: springfox.documentation.common.ClassPresentInClassPathCondition
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:606)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 49 common frames omitted
+
+2023-03-07 22:06:54.010  INFO 10864 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 10864 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:06:54.012  INFO 10864 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:06:54.187  WARN 10864 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+2023-03-07 22:06:54.208 ERROR 10864 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:609)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:310)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:310)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:198)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:303)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:206)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:174)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.sq.zbnss.SqNssApplication.main(SqNssApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:331)
+	at org.springframework.context.annotation.ConditionEvaluator.getCondition(ConditionEvaluator.java:124)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:96)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:225)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	... 28 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: springfox/documentation/common/ClassPresentInClassPathCondition
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:151)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:825)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:723)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:646)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:604)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 32 common frames omitted
+Caused by: java.lang.ClassNotFoundException: springfox.documentation.common.ClassPresentInClassPathCondition
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:606)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 49 common frames omitted
+
+2023-03-07 22:07:27.060  INFO 1412 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 1412 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:07:27.061  INFO 1412 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:07:27.250  WARN 1412 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+2023-03-07 22:07:27.271 ERROR 1412 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:609)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:310)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:310)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:198)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:303)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:206)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:174)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.sq.zbnss.SqNssApplication.main(SqNssApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:331)
+	at org.springframework.context.annotation.ConditionEvaluator.getCondition(ConditionEvaluator.java:124)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:96)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:225)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	... 28 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: springfox/documentation/common/ClassPresentInClassPathCondition
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:151)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:825)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:723)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:646)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:604)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 32 common frames omitted
+Caused by: java.lang.ClassNotFoundException: springfox.documentation.common.ClassPresentInClassPathCondition
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:606)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 49 common frames omitted
+
+2023-03-07 22:08:02.897  INFO 13168 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 13168 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:08:02.900  INFO 13168 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:08:03.101  WARN 13168 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+2023-03-07 22:08:03.125 ERROR 13168 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:609)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:310)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:310)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:198)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:303)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:249)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:206)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:174)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.sq.zbnss.SqNssApplication.main(SqNssApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:331)
+	at org.springframework.context.annotation.ConditionEvaluator.getCondition(ConditionEvaluator.java:124)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:96)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:225)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:599)
+	... 28 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: springfox/documentation/common/ClassPresentInClassPathCondition
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:151)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:825)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:723)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:646)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:604)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:468)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 32 common frames omitted
+Caused by: java.lang.ClassNotFoundException: springfox.documentation.common.ClassPresentInClassPathCondition
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:606)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	... 49 common frames omitted
+
+2023-03-07 22:08:50.788  INFO 6816 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 6816 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:08:50.790  INFO 6816 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:08:52.259  WARN 6816 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 22:08:52.782  INFO 6816 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 22:08:52.782  INFO 6816 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 22:08:52.878  INFO 6816 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 22:08:52.933  INFO 6816 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 22:08:56.473  INFO 6816 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 22:08:57.184  WARN 6816 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'inMemorySwaggerResourcesProvider' defined in URL [jar:file:/D:/maven/repo/repository/io/springfox/springfox-swagger-common/3.0.0/springfox-swagger-common-3.0.0.jar!/springfox/documentation/swagger/web/InMemorySwaggerResourcesProvider.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [springfox.documentation.swagger.web.InMemorySwaggerResourcesProvider]: Constructor threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'createRestApi' defined in class path resource [org/sq/zbnss/config/Knife4jConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [springfox.documentation.spring.web.plugins.Docket]: Factory method 'createRestApi' threw exception; nested exception is java.lang.NoSuchMethodError: 'com.google.common.base.Predicate springfox.documentation.builders.RequestHandlerSelectors.any()'
+2023-03-07 22:08:57.186  INFO 6816 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 22:08:57.190  INFO 6816 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 22:08:57.194  INFO 6816 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-03-07 22:08:57.228 ERROR 6816 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.sq.zbnss.config.Knife4jConfig.createRestApi(Knife4jConfig.java:65)
+
+The following method did not exist:
+
+    'com.google.common.base.Predicate springfox.documentation.builders.RequestHandlerSelectors.any()'
+
+The calling method's class, org.sq.zbnss.config.Knife4jConfig, was loaded from the following location:
+
+    file:/D:/project/sq-nss/target/classes/org/sq/zbnss/config/Knife4jConfig.class
+
+The called method's class, springfox.documentation.builders.RequestHandlerSelectors, is available from the following locations:
+
+    jar:file:/D:/maven/repo/repository/io/springfox/springfox-core/3.0.0/springfox-core-3.0.0.jar!/springfox/documentation/builders/RequestHandlerSelectors.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    springfox.documentation.builders.RequestHandlerSelectors: file:/D:/maven/repo/repository/io/springfox/springfox-core/3.0.0/springfox-core-3.0.0.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes org.sq.zbnss.config.Knife4jConfig and springfox.documentation.builders.RequestHandlerSelectors
+
+2023-03-07 22:09:58.271  INFO 6388 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 6388 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:09:58.272  INFO 6388 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:09:59.411  WARN 6388 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 22:09:59.920  INFO 6388 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 22:09:59.920  INFO 6388 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 22:10:00.006  INFO 6388 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 22:10:00.071  INFO 6388 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 22:10:03.665  INFO 6388 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 22:10:05.330  INFO 6388 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 7.385 seconds (JVM running for 8.215)
+2023-03-07 22:10:05.500  INFO 6388 --- [RMI TCP Connection(2)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 22:10:14.752  INFO 6388 --- [http-nio-12023-exec-2] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 22:10:40.616  INFO 6388 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 22:10:40.626  INFO 6388 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 22:10:40.629  INFO 6388 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 22:10:45.661  INFO 11296 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 11296 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:10:45.663  INFO 11296 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:10:46.747  WARN 11296 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 22:10:47.241  INFO 11296 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 22:10:47.241  INFO 11296 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 22:10:47.332  INFO 11296 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 22:10:47.392  INFO 11296 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 22:10:50.129  INFO 11296 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 22:10:51.685  INFO 11296 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.323 seconds (JVM running for 7.392)
+2023-03-07 22:10:51.792  INFO 11296 --- [RMI TCP Connection(5)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 22:10:57.876  INFO 11296 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 22:12:29.251  INFO 11296 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 22:12:29.266  INFO 11296 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 22:12:29.268  INFO 11296 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 22:12:35.673  INFO 1904 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 1904 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:12:35.674  INFO 1904 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:12:36.768  WARN 1904 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 22:12:37.255  INFO 1904 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 22:12:37.255  INFO 1904 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 22:12:37.341  INFO 1904 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 22:12:37.393  INFO 1904 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 22:12:41.872  INFO 1904 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 22:12:43.501  INFO 1904 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 8.167 seconds (JVM running for 8.989)
+2023-03-07 22:12:43.636  INFO 1904 --- [http-nio-12023-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 22:12:43.664  INFO 1904 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 22:14:08.790  INFO 1904 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 22:14:08.798  INFO 1904 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 22:14:08.800  INFO 1904 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 22:14:14.572  INFO 11088 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 11088 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:14:14.574  INFO 11088 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:14:15.672  WARN 11088 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 22:14:16.160  INFO 11088 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 22:14:16.161  INFO 11088 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 22:14:16.247  INFO 11088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 22:14:16.299  INFO 11088 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 22:14:18.958  INFO 11088 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 22:14:20.595  INFO 11088 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.347 seconds (JVM running for 7.274)
+2023-03-07 22:14:20.739  INFO 11088 --- [RMI TCP Connection(3)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 22:14:25.673  INFO 11088 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 22:20:36.176  INFO 11088 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 22:20:36.181  INFO 11088 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 22:20:36.182  INFO 11088 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 22:20:46.047  INFO 7172 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 7172 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:20:46.048  INFO 7172 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:20:47.076  WARN 7172 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 22:20:47.532  INFO 7172 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 22:20:47.532  INFO 7172 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 22:20:47.604  INFO 7172 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 22:20:47.650  INFO 7172 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 22:20:50.874  INFO 7172 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 22:20:52.636  INFO 7172 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.878 seconds (JVM running for 7.907)
+2023-03-07 22:20:52.725  INFO 7172 --- [RMI TCP Connection(3)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 22:21:07.813  INFO 7172 --- [http-nio-12023-exec-12] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-07 22:27:41.336  INFO 7172 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 22:27:41.344  INFO 7172 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 22:27:41.346  INFO 7172 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-07 22:30:00.836  INFO 8032 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 8032 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:30:00.838  INFO 8032 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:30:01.935  WARN 8032 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 22:30:02.370  INFO 8032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 22:30:02.370  INFO 8032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 22:30:02.448  INFO 8032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 22:30:02.499  INFO 8032 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 22:30:05.948  INFO 8032 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 22:30:08.686  INFO 8032 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 8.169 seconds (JVM running for 8.964)
+2023-03-07 22:30:08.797  INFO 8032 --- [RMI TCP Connection(8)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 22:38:33.056  INFO 8032 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-07 22:38:33.061  INFO 8032 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-07 22:38:38.847  INFO 3896 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 3896 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-07 22:38:38.849  INFO 3896 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-07 22:38:39.924  WARN 3896 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-07 22:38:40.432  INFO 3896 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07 22:38:40.432  INFO 3896 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-07 22:38:40.502  INFO 3896 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07 22:38:40.565  INFO 3896 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-07 22:38:44.833  INFO 3896 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-07 22:38:46.669  INFO 3896 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 8.106 seconds (JVM running for 9.106)
+2023-03-07 22:38:47.060  INFO 3896 --- [RMI TCP Connection(2)-192.168.0.6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-07 22:38:56.815  INFO 3896 --- [http-nio-12023-exec-6] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...

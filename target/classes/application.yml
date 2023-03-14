@@ -1,0 +1,185 @@
+server:
+  port: 12023
+  tomcat:
+    # tomcat的URI编码
+    uri-encoding: UTF-8
+    # 连接数满后的排队数，默认为100
+    accept-count: 1000
+    threads:
+      # tomcat最大线程数，默认为200
+      max: 800
+      # Tomcat启动初始化的线程数，默认值10
+      min-spare: 100
+# 日志配置
+logging:
+  level:
+    com.mes: debug
+    org.springframework: warn
+
+# Spring配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    druid:
+      url: jdbc:mysql://42.192.150.235:3306/nss?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&allowMultiQueries=true
+      username: nss
+      password: nssadmin
+      # 初始连接数
+      initialSize: 5
+      # 最小连接池数量
+      minIdle: 10
+      # 最大连接池数量
+      maxActive: 20
+      # 配置获取连接等待超时的时间
+      maxWait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      # 配置一个连接在池中最大生存的时间，单位是毫秒
+      maxEvictableIdleTimeMillis: 900000
+      # 配置检测连接是否有效
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      webStatFilter:
+        enabled: true
+      statViewServlet:
+        enabled: true
+        # 设置白名单，不填则允许所有访问
+        allow:
+        url-pattern: /druid/*
+        # 控制台管理用户名和密码
+        login-username: nss
+        login-password: 123456
+      filter:
+        stat:
+          enabled: true
+          # 慢SQL记录
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: true
+        wall:
+          config:
+            multi-statement-allow: true
+  # 资源信息
+  messages:
+    # 国际化资源文件路径
+    basename: i18n/messages
+
+  # 服务模块
+  devtools:
+    restart:
+      # 热部署开关
+      enabled: true
+  # redis 配置
+  redis:
+    host: 42.192.150.235
+    port: 6379
+    database: 3
+    password:
+    timeout: 10000
+    lettuce:
+      pool:
+        # 连接池中的最小空闲连接
+        min-idle: 0
+        # 连接池中的最大空闲连接
+        max-idle: 8
+        # 连接池的最大数据库连接数
+        max-active: 8
+        # #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1ms
+  security:
+    user:
+      name: nss
+      password: nss@123
+
+#mybatis-plus
+mybatis-plus:
+  # ExecutorType.SIMPLE：该执行器类型不做特殊的事情，为每个语句的执行创建一个新的预处理语句（PreparedStatement）
+  # ExecutorType.REUSE：该执行器类型会复用预处理语句（PreparedStatement）
+  # ExecutorType.BATCH：该执行器类型会批量执行所有的更新语句
+  executor-type: simple
+  # MyBatis Mapper 所对应的 XML 文件位置，如果您在 Mapper 中有自定义方法(XML 中有自定义实现)，需要进行该配置，告诉 Mapper 所对应的 XML 文件位置
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  # MyBaits 别名包扫描路径，通过该属性可以给包中的类注册别名，注册后在 Mapper 对应的 XML 文件中可以直接使用类名，而不用使用全限定的类名(即 XML 中调用的时候不用包含包名)
+  typeAliasesPackage: com.mes.**.domain
+  # 原生 MyBatis 所支持的配置，具体请查看
+  configuration:
+    # 是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN（下划线命名） 到经典 Java 属性名 aColumn（驼峰命名） 的类似映射。
+    map-underscore-to-camel-case: true
+    # 全局地开启或关闭配置文件中的所有映射器已经配置的任何缓存，默认为 true（二级缓存）。
+    cache-enabled: false
+    jdbc-type-for-null: 'null'
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # 全局配置
+  global-config:
+    # 是否控制台 print mybatis-plus 的 LOGO
+    banner: true
+    #刷新mapper 调试神器
+    refresh: true
+    # MyBatis-Plus 全局策略中的 DB 策略配置
+    db-config:
+      # 主键类型  AUTO(0)数据库自增 依赖数据库;NONE(1),// 表示该类型未甚至主键类型 （如果没有主键策略）默认根据雪花算法生成;
+      # INPUT(2),//用户输入ID（该类型可以通过自己注册填充插件进行填充）
+      # 下面这三种类型,只有当插入对象id为空时 才会自动填充。
+      # ID_WORKER(3),//全局唯一（idWorker）数值类型
+      # UUID(4),//全局唯一（UUID）
+      # ID_WORKER_STR(5);//全局唯一（idWorker的字符串表示）
+      id-type: auto
+      #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+      field-strategy: not_empty
+      #数据库大写下划线转换
+      capital-mode: false
+      #序列接口实现类配置
+      #key-generator: com.baomidou.springboot.xxx.
+      #全局逻辑删除字段值 3.3.0开始支持，详情看下面。
+      logic-delete-field: flag
+      # 逻辑已删除值(默认为 1)
+      logic-delete-value: 1
+      # 逻辑未删除值(默认为 0)
+      logic-not-delete-value: 0
+      #数据库类型
+      db-type: mysql
+      #配置表名前缀
+      table-prefix: tb_
+
+    #自定义SQL注入器
+    #sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+    #自定义填充策略接口实现
+    #meta-object-handler: com.baomidou.springboot.xxx
+
+---
+# 文件上传配置
+server:
+  tomcat:
+    basedir: D:/mes/uploadPath/tomcat
+spring:
+  # 文件上传
+  servlet:
+    multipart:
+      # 单个文件大小
+      max-file-size: 2048MB
+      # 设置总上传的文件大小
+      max-request-size: 5120MB
+      location: D:/mes/uploadPath/tomcat/multipart
+      enabled: true
+minio:
+  endpoint: http://127.0.0.1:9000 #MinIO服务所在地址
+  accessKey: root #访问的key
+  secretKey: root1234 #访问的秘钥
+  fms: fms
+static:
+  folder: D://your/html/path
+
+management:
+  metrics:
+    export:
+      datadog:
+        enabled: false
+
+knife4j:
+  enable: true
+

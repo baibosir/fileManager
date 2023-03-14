@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_appraisal</OriginalElement>
+  <nodes>
+    <node x="0.0" y="1146.0">84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_train</node>
+    <node x="840.7916666666666" y="243.0">84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_user</node>
+    <node x="1162.7916666666665" y="853.0">84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_log</node>
+    <node x="268.79166666666663" y="1529.0">84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_issue</node>
+    <node x="610.7916666666666" y="1157.5">84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_machineroom</node>
+    <node x="880.7916666666666" y="1157.5">84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_check</node>
+    <node x="61.21223958333337" y="818.5">84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_dic</node>
+    <node x="341.79166666666663" y="1192.0">84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_system</node>
+    <node x="1459.7916666666665" y="0.0">84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_userrole</node>
+    <node x="82.71223958333337" y="392.5">84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_dictype</node>
+    <node x="766.9166666666667" y="1529.0">84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_appraisal</node>
+    <node x="895.7916666666666" y="0.0">84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_role</node>
+    <node x="341.29166666666663" y="738.0">84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_company</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_system" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_company" relationship="REFERENCES">
+      <point x="62.25" y="-119.5" />
+      <point x="528.5416666666666" y="1124.0" />
+      <point x="471.29166666666663" y="1124.0" />
+      <point x="0.0" y="177.0" />
+    </edge>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_log" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_user" relationship="REFERENCES">
+      <point x="0.0" y="-62.0" />
+      <point x="1288.7916666666665" y="697.0" />
+      <point x="1091.9166666666665" y="697.0" />
+      <point x="107.625" y="211.5" />
+    </edge>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_check" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_user" relationship="REFERENCES">
+      <point x="0.0" y="-154.0" />
+      <point x="1010.7916666666666" y="717.0" />
+      <point x="870.2916666666666" y="717.0" />
+      <point x="870.2916666666666" y="687.0" />
+      <point x="948.4166666666666" y="687.0" />
+      <point x="-35.875" y="211.5" />
+    </edge>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_train" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_company" relationship="REFERENCES">
+      <point x="87.66666666666669" y="-165.5" />
+      <point x="219.16666666666669" y="1124.0" />
+      <point x="471.29166666666663" y="1124.0" />
+      <point x="0.0" y="177.0" />
+    </edge>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_machineroom" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_company" relationship="REFERENCES">
+      <point x="0.0" y="-154.0" />
+      <point x="735.2916666666666" y="1124.0" />
+      <point x="471.29166666666663" y="1124.0" />
+      <point x="0.0" y="177.0" />
+    </edge>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_appraisal" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_system" relationship="REFERENCES">
+      <point x="-83.0" y="-119.5" />
+      <point x="808.4166666666667" y="1503.0" />
+      <point x="466.29166666666663" y="1503.0" />
+      <point x="0.0" y="119.5" />
+    </edge>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_issue" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_company" relationship="REFERENCES">
+      <point x="-65.0" y="-119.5" />
+      <point x="333.79166666666663" y="1503.0" />
+      <point x="331.29166666666663" y="1503.0" />
+      <point x="331.29166666666663" y="1124.0" />
+      <point x="471.29166666666663" y="1124.0" />
+      <point x="0.0" y="177.0" />
+    </edge>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_system" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_dic" relationship="REFERENCES">
+      <point x="-62.25" y="-119.5" />
+      <point x="404.04166666666663" y="1114.0" />
+      <point x="272.0455729166667" y="1114.0" />
+      <point x="84.33333333333331" y="96.5" />
+    </edge>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_issue" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_system" relationship="REFERENCES">
+      <point x="65.0" y="-119.5" />
+      <point x="463.79166666666663" y="1503.0" />
+      <point x="466.29166666666663" y="1503.0" />
+      <point x="0.0" y="119.5" />
+    </edge>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_company" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_user" relationship="REFERENCES">
+      <point x="0.0" y="-177.0" />
+      <point x="471.29166666666663" y="717.0" />
+      <point x="870.2916666666666" y="717.0" />
+      <point x="870.2916666666666" y="687.0" />
+      <point x="948.4166666666666" y="687.0" />
+      <point x="-35.875" y="211.5" />
+    </edge>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_user" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_role" relationship="REFERENCES">
+      <point x="0.0" y="-211.5" />
+      <point x="0.0" y="96.5" />
+    </edge>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_appraisal" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_user" relationship="REFERENCES">
+      <point x="83.0" y="-119.5" />
+      <point x="974.4166666666667" y="1503.0" />
+      <point x="1152.2916666666665" y="1503.0" />
+      <point x="1152.2916666666665" y="707.0" />
+      <point x="1021.7916666666666" y="707.0" />
+      <point x="1021.7916666666666" y="697.0" />
+      <point x="1020.1666666666666" y="697.0" />
+      <point x="35.875" y="211.5" />
+    </edge>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_dic" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_dictype" relationship="REFERENCES">
+      <point x="0.0" y="-96.5" />
+      <point x="0.0" y="62.0" />
+    </edge>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_check" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_company" relationship="REFERENCES">
+      <point x="-87.0" y="-154.0" />
+      <point x="924.2916666666666" y="1124.0" />
+      <point x="471.29166666666663" y="1124.0" />
+      <point x="0.0" y="177.0" />
+    </edge>
+    <edge source="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_train" target="84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_dic" relationship="REFERENCES">
+      <point x="0.0" y="-165.5" />
+      <point x="131.5" y="1124.0" />
+      <point x="187.71223958333337" y="1124.0" />
+      <point x="-1.4210854715202004E-14" y="96.5" />
+    </edge>
+  </edges>
+  <settings layout="分层" zoom="0.30033557046979864" showDependencies="false" x="802.0" y="884.0" />
+  <SelectedNodes>
+    <node>84285775-8771-463e-bc79-0a7c9833e426.TABLE:nss.tb_appraisal</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>列</Category>
+    <Category>注释</Category>
+    <Category>虚拟外键</Category>
+    <Category>键列</Category>
+  </Categories>
+</Diagram>
+

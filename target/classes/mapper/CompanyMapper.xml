@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sq.zbnss.dao.CompanyDao">
+
+    <resultMap type="org.sq.zbnss.entity.Company" id="TbCompanyMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="companyId" column="company_id" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="telephone" column="telephone" jdbcType="VARCHAR"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="INTEGER"/>
+        <result property="numSystem1" column="num_system1" jdbcType="INTEGER"/>
+        <result property="numSystem2" column="num_system2" jdbcType="INTEGER"/>
+        <result property="numSystem3" column="num_system3" jdbcType="INTEGER"/>
+        <result property="insertTime" column="insert_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <association property="insertUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="insert_user" />
+        <association property="updateUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="update_user" />
+        <association property="principal" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="principal" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TbCompanyMap">
+        select
+          id, company_id,name, principal, address, telephone, description, type, num_system1, num_system2, num_system3, insert_time, update_time, insert_user, update_user
+        from tb_company
+        where id = #{id}
+    </select>
+
+    <select id="selectCompany" resultMap="TbCompanyMap" parameterType="org.sq.zbnss.entity.Company">
+        select
+            id, company_id, principal, address, telephone, description, type, num_system1, num_system2, num_system3, insert_time, update_time, insert_user, update_user
+        from tb_company
+        where 1 = 1
+
+        <if test="company != null and company.id != null">
+            and id = #{company.id}
+        </if>
+        <if test="company != null and company.companyId != null and company.companyId != ''">
+            and company_id = #{company.companyId}
+        </if>
+        <if test="company != null and company.principal != null">
+            and principal = #{company.principal.id}
+        </if>
+        <if test="company != null and company.address != null and company.address != ''">
+            and address = #{company.address}
+        </if>
+        <if test="company != null and company.telephone != null and company.telephone != ''">
+            and telephone = #{company.telephone}
+        </if>
+        <if test="company != null and company.description != null and company.description != ''">
+            and description = #{company.description}
+        </if>
+        <if test="company != null and company.type != null">
+            and type = #{company.type}
+        </if>
+        <if test="company != null and company.numSystem1 != null">
+            and num_system1 = #{company.numSystem1}
+        </if>
+        <if test="company != null and company.numSystem2 != null">
+            and num_system2 = #{company.numSystem2}
+        </if>
+        <if test="company != null and company.numSystem3 != null">
+            and num_system3 = #{company.numSystem3}
+        </if>
+        <if test="company != null and company.name != null">
+            and name = #{company.name}
+        </if>
+
+    </select>
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TbCompanyMap" parameterType="org.sq.zbnss.entity.Company">
+        select
+          id, company_id, principal, address, telephone, description, type, num_system1, num_system2, num_system3, insert_time, update_time, insert_user, update_user
+        from tb_company
+        <where>
+
+            <if test="id != null">
+                and id = #{company.id}
+            </if>
+            <if test="companyId != null and companyId != ''">
+                and company_id = #{companyId}
+            </if>
+            <if test="principal != null">
+                and principal = #{principal.id}
+            </if>
+            <if test="address != null and address != ''">
+                and address = #{address}
+            </if>
+            <if test="telephone != null and telephone != ''">
+                and telephone = #{telephone}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="numSystem1 != null">
+                and num_system1 = #{numSystem1}
+            </if>
+            <if test="numSystem2 != null">
+                and num_system2 = #{numSystem2}
+            </if>
+            <if test="numSystem3 != null">
+                and num_system3 = #{numSystem3}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+        </where>
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from tb_company
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="companyId != null and companyId != ''">
+                and company_id = #{companyId}
+            </if>
+            <if test="principal != null">
+                and principal = #{principal}
+            </if>
+            <if test="address != null and address != ''">
+                and address = #{address}
+            </if>
+            <if test="telephone != null and telephone != ''">
+                and telephone = #{telephone}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="numSystem1 != null">
+                and num_system1 = #{numSystem1}
+            </if>
+            <if test="numSystem2 != null">
+                and num_system2 = #{numSystem2}
+            </if>
+            <if test="numSystem3 != null">
+                and num_system3 = #{numSystem3}
+            </if>
+            <if test="insertTime != null">
+                and insert_time = #{insertTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="insertUser != null">
+                and insert_user = #{insertUser.id}
+            </if>
+            <if test="updateUser != null">
+                and update_user = #{updateUser.id}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true"  parameterType="org.sq.zbnss.entity.Company">
+        insert into tb_company(company_id, principal, address, telephone, description, type, num_system1, num_system2, num_system3, insert_time, update_time, insert_user, update_user,name)
+        values (#{companyId}, #{principal.id}, #{address}, #{telephone}, #{description}, #{type}, #{numSystem1}, #{numSystem2}, #{numSystem3}, now(), now(), #{insertUser.id}, #{updateUser.id},#{name})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_company(company_id, principal, address, telephone, description, type, num_system1, num_system2, num_system3, insert_time, update_time
+        <if test="updateUser != null">,update_user</if>
+        <if test="insert_user != null">,insert_user</if>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.companyId}, #{entity.principal.id}, #{entity.address}, #{entity.telephone}, #{entity.description}, #{entity.type}, #{entity.numSystem1}, #{entity.numSystem2}, #{entity.numSystem3}, #{entity.insertTime}, #{entity.updateTime}
+            <if test="updateUser != null">, #{entity.updateUser.id})</if>
+            <if test="insert_user != null">, #{entity.insertUser.id}</if>)
+
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_company(company_id, principal, address, telephone, description, type, num_system1, num_system2, num_system3, insert_time, update_time,insert_user, update_user)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.companyId}, #{entity.principal.id}, #{entity.address}, #{entity.telephone}, #{entity.description}, #{entity.type}, #{entity.numSystem1}, #{entity.numSystem2}, #{entity.numSystem3}, #{entity.insertTime}, #{entity.updateTime}
+            <if test="updateUser != null">, #{entity.updateUser.id})</if>
+            <if test="insert_user != null">, #{entity.insertUser.id}</if>)
+        </foreach>
+        on duplicate key update
+        company_id = values(company_id),
+        principal = values(principal.id),
+        address = values(address),
+        telephone = values(telephone),
+        description = values(description),
+        type = values(type),
+        num_system1 = values(num_system1),
+        num_system2 = values(num_system2),
+        num_system3 = values(num_system3),
+        insert_time = values(insert_time),
+        update_time = values(update_time)
+        <if test="updateUser != null">update_user = values(update_user.id)</if>
+        <if test="insert_user != null">insert_user = values(insert_user.id),</if>)
+
+
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update tb_company
+        <set>
+            <if test="companyId != null and companyId != ''">
+                company_id = #{companyId},
+            </if>
+            <if test="principal != null">
+                principal = #{principal.id},
+            </if>
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+            <if test="telephone != null and telephone != ''">
+                telephone = #{telephone},
+            </if>
+            <if test="description != null and description != ''">
+                description = #{description},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="numSystem1 != null">
+                num_system1 = #{numSystem1},
+            </if>
+            <if test="numSystem2 != null">
+                num_system2 = #{numSystem2},
+            </if>
+            <if test="numSystem3 != null">
+                num_system3 = #{numSystem3},
+            </if>
+            <if test="insertTime != null">
+                insert_time = #{insertTime},
+            </if>
+
+            <if test="insertUser != null">
+                insert_user = #{insertUser.id},
+            </if>
+            <if test="updateUser != null">
+                update_user = #{updateUser.id},
+            </if>
+            update_time = now()
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from tb_company where id = #{id}
+    </delete>
+
+</mapper>
+

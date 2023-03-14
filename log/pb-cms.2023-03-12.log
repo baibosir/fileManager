@@ -1,0 +1,628 @@
+2023-03-12 09:50:08.545  INFO 12128 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 12128 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-12 09:50:08.545  INFO 12128 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-12 09:50:12.380  WARN 12128 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-12 09:50:13.193  INFO 12128 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-12 09:50:13.193  INFO 12128 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-12 09:50:13.318  INFO 12128 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-12 09:50:13.380  INFO 12128 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-12 09:50:15.552  INFO 12128 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-12 09:50:16.173  WARN 12128 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2023-03-12 09:50:16.189  WARN 12128 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2023-03-12 09:50:16.189  WARN 12128 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.update] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Update]
+2023-03-12 09:50:19.173  INFO 12128 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 11.163 seconds (JVM running for 12.422)
+2023-03-12 09:50:19.869  INFO 12128 --- [RMI TCP Connection(2)-10.2.4.98] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-12 09:50:41.703  INFO 12128 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-12 09:50:42.077  WARN 12128 --- [http-nio-12023-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2023-03-12 09:51:25.447  INFO 12128 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-12 09:51:25.463  INFO 12128 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-12 09:51:25.479  INFO 12128 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-12 09:51:31.004  INFO 8468 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 8468 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-12 09:51:31.004  INFO 8468 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-12 09:51:32.132  WARN 8468 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-12 09:51:32.632  INFO 8468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-12 09:51:32.632  INFO 8468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-12 09:51:32.710  INFO 8468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-12 09:51:32.772  INFO 8468 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-12 09:51:36.288  INFO 8468 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-12 09:51:36.631  WARN 8468 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2023-03-12 09:51:36.631  WARN 8468 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2023-03-12 09:51:36.647  WARN 8468 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.update] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Update]
+2023-03-12 09:51:38.248  INFO 8468 --- [http-nio-12023-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-12 09:51:38.263  INFO 8468 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-12 09:51:38.599  INFO 8468 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 7.871 seconds (JVM running for 8.564)
+2023-03-12 09:52:18.260  INFO 8468 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-12 09:52:18.260  INFO 8468 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-12 09:52:18.260  INFO 8468 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-12 09:52:24.088  INFO 4408 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 4408 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-12 09:52:24.088  INFO 4408 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-12 09:52:25.162  WARN 4408 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-12 09:52:25.631  INFO 4408 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-12 09:52:25.631  INFO 4408 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-12 09:52:25.693  INFO 4408 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-12 09:52:25.740  INFO 4408 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-12 09:52:27.722  INFO 4408 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-12 09:52:28.051  WARN 4408 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2023-03-12 09:52:28.062  WARN 4408 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2023-03-12 09:52:28.068  WARN 4408 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.update] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Update]
+2023-03-12 09:52:30.050  INFO 4408 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 6.218 seconds (JVM running for 6.819)
+2023-03-12 09:52:30.141  INFO 4408 --- [RMI TCP Connection(1)-10.2.4.98] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-12 09:57:03.739  INFO 4408 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-12 09:57:03.739  INFO 4408 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-12 09:57:09.775  INFO 7948 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 7948 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-12 09:57:09.775  INFO 7948 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-12 09:57:10.838  WARN 7948 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-12 09:57:11.291  INFO 7948 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-12 09:57:11.291  INFO 7948 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-12 09:57:11.369  INFO 7948 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-12 09:57:11.416  INFO 7948 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-12 09:57:13.384  INFO 7948 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-12 09:57:13.714  WARN 7948 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2023-03-12 09:57:13.729  WARN 7948 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2023-03-12 09:57:13.729  WARN 7948 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.update] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Update]
+2023-03-12 09:57:15.410  INFO 7948 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 5.917 seconds (JVM running for 6.556)
+2023-03-12 09:57:15.510  INFO 7948 --- [RMI TCP Connection(3)-10.2.4.98] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-12 09:57:21.758  INFO 7948 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-12 09:58:37.672  INFO 7948 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-12 09:58:37.672  INFO 7948 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-12 09:58:37.672  INFO 7948 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-12 09:58:44.259  INFO 12112 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 12112 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-12 09:58:44.275  INFO 12112 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-12 09:58:45.312  WARN 12112 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-12 09:58:45.765  INFO 12112 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-12 09:58:45.765  INFO 12112 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-12 09:58:45.843  INFO 12112 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-12 09:58:45.905  INFO 12112 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-12 09:58:47.827  INFO 12112 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-12 09:58:48.127  WARN 12112 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2023-03-12 09:58:48.143  WARN 12112 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2023-03-12 09:58:48.143  WARN 12112 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.update] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Update]
+2023-03-12 09:58:49.957  INFO 12112 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 5.98 seconds (JVM running for 6.594)
+2023-03-12 09:58:50.246  INFO 12112 --- [RMI TCP Connection(2)-10.2.4.98] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-12 09:58:55.200  INFO 12112 --- [http-nio-12023-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2023-03-12 10:58:55.220  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2023-03-12 10:58:55.951  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2023-03-12 11:58:55.216  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2023-03-12 11:58:55.279  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2023-03-12 14:02:19.372  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2023-03-12 14:02:19.437  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2023-03-12 14:02:19.437  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2023-03-12 14:02:19.468  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2023-03-12 14:58:55.203  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2023-03-12 14:58:55.266  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2023-03-12 15:58:55.213  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2023-03-12 15:58:55.299  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2023-03-12 16:58:55.226  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2023-03-12 16:58:55.297  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2023-03-12 17:58:55.212  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2023-03-12 17:58:55.276  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2023-03-12 20:02:58.164  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2023-03-12 20:02:58.226  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2023-03-12 20:02:58.227  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2023-03-12 20:02:58.257  INFO 12112 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2023-03-12 20:56:16.163  INFO 12112 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-12 20:56:16.164  INFO 12112 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-12 20:56:16.165  INFO 12112 --- [SpringApplicationShutdownHook] a.s.s.m.AbstractValidatingSessionManager : Disabled session validation scheduler.
+2023-03-12 20:56:25.681  INFO 328 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 328 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-12 20:56:25.682  INFO 328 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-12 20:56:27.974  WARN 328 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-12 20:56:28.739  INFO 328 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-12 20:56:28.739  INFO 328 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-12 20:56:28.832  INFO 328 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-12 20:56:28.921  INFO 328 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-12 20:56:31.201  INFO 328 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-12 20:56:31.584  WARN 328 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appraisalController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tbAppraisalService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+2023-03-12 20:56:31.584  INFO 328 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-12 20:56:31.589  INFO 328 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-12 20:56:31.592  INFO 328 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-03-12 20:56:31.691 ERROR 328 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appraisalController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tbAppraisalService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.sq.zbnss.SqNssApplication.main(SqNssApplication.java:15)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tbAppraisalService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1534)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1519)
+	... 50 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 63 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:595)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:431)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:628)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:218)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$49f19a2e.CGLIB$sqlSessionFactory$1(<generated>)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$49f19a2e$$FastClassBySpringCGLIB$$eb3684cf.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$49f19a2e.sqlSessionFactory(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 64 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:593)
+	... 77 common frames omitted
+Caused by: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.apache.ibatis.mapping.ResultMapping$Builder.validate(ResultMapping.java:151)
+	at org.apache.ibatis.mapping.ResultMapping$Builder.build(ResultMapping.java:140)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.buildResultMapping(MapperBuilderAssistant.java:446)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildResultMappingFromContext(XMLMapperBuilder.java:393)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:280)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:254)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:246)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:119)
+	... 79 common frames omitted
+
+2023-03-12 21:00:32.824  INFO 7988 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 7988 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-12 21:00:32.825  INFO 7988 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-12 21:00:34.026  WARN 7988 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-12 21:00:34.569  INFO 7988 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-12 21:00:34.569  INFO 7988 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-12 21:00:34.659  INFO 7988 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-12 21:00:34.725  INFO 7988 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-12 21:00:36.721  INFO 7988 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-12 21:00:37.086  WARN 7988 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appraisalController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tbAppraisalService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+2023-03-12 21:00:37.086  INFO 7988 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-12 21:00:37.090  INFO 7988 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-12 21:00:37.093  INFO 7988 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-03-12 21:00:37.125 ERROR 7988 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appraisalController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tbAppraisalService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.sq.zbnss.SqNssApplication.main(SqNssApplication.java:15)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tbAppraisalService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1534)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1519)
+	... 50 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 63 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:595)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:431)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:628)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:218)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$3e809c57.CGLIB$sqlSessionFactory$2(<generated>)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$3e809c57$$FastClassBySpringCGLIB$$4c5a8aba.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$3e809c57.sqlSessionFactory(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 64 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:593)
+	... 77 common frames omitted
+Caused by: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.apache.ibatis.mapping.ResultMapping$Builder.validate(ResultMapping.java:151)
+	at org.apache.ibatis.mapping.ResultMapping$Builder.build(ResultMapping.java:140)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.buildResultMapping(MapperBuilderAssistant.java:446)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildResultMappingFromContext(XMLMapperBuilder.java:393)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:280)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:254)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:246)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:119)
+	... 79 common frames omitted
+
+2023-03-12 21:02:40.368  INFO 14396 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 14396 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-12 21:02:40.369  INFO 14396 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-12 21:02:41.458  WARN 14396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-12 21:02:41.964  INFO 14396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-12 21:02:41.964  INFO 14396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-12 21:02:42.046  INFO 14396 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-12 21:02:42.108  INFO 14396 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-12 21:02:44.201  INFO 14396 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-12 21:02:44.538  WARN 14396 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appraisalController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tbAppraisalService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+2023-03-12 21:02:44.539  INFO 14396 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-12 21:02:44.543  INFO 14396 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-12 21:02:44.546  INFO 14396 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-03-12 21:02:44.578 ERROR 14396 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appraisalController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tbAppraisalService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.sq.zbnss.SqNssApplication.main(SqNssApplication.java:15)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tbAppraisalService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1534)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1519)
+	... 50 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 63 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:595)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:431)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:628)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:218)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$89621f57.CGLIB$sqlSessionFactory$1(<generated>)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$89621f57$$FastClassBySpringCGLIB$$38dd21f8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$89621f57.sqlSessionFactory(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 64 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:593)
+	... 77 common frames omitted
+Caused by: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.apache.ibatis.mapping.ResultMapping$Builder.validate(ResultMapping.java:151)
+	at org.apache.ibatis.mapping.ResultMapping$Builder.build(ResultMapping.java:140)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.buildResultMapping(MapperBuilderAssistant.java:446)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildResultMappingFromContext(XMLMapperBuilder.java:393)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:280)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:254)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:246)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:119)
+	... 79 common frames omitted
+
+2023-03-12 21:03:36.199  INFO 13872 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 13872 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-12 21:03:36.200  INFO 13872 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-12 21:03:37.293  WARN 13872 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-12 21:03:37.801  INFO 13872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-12 21:03:37.801  INFO 13872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-12 21:03:37.883  INFO 13872 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-12 21:03:37.942  INFO 13872 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-12 21:03:39.975  INFO 13872 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-12 21:03:40.304  WARN 13872 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appraisalController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tbAppraisalService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+2023-03-12 21:03:40.304  INFO 13872 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-12 21:03:40.308  INFO 13872 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-03-12 21:03:40.311  INFO 13872 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-03-12 21:03:40.343 ERROR 13872 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appraisalController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tbAppraisalService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.sq.zbnss.SqNssApplication.main(SqNssApplication.java:15)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tbAppraisalService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'appraisalDao' defined in file [D:\project\sq-nss\target\classes\org\sq\zbnss\dao\AppraisalDao.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1534)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1519)
+	... 50 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 63 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:595)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:431)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:628)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:218)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$bd3649d1.CGLIB$sqlSessionFactory$1(<generated>)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$bd3649d1$$FastClassBySpringCGLIB$$2195007b.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$bd3649d1.sqlSessionFactory(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 64 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\project\sq-nss\target\classes\mapper\CheckMapper.xml]'. Cause: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:593)
+	... 77 common frames omitted
+Caused by: java.lang.IllegalStateException: No typehandler found for property companyId
+	at org.apache.ibatis.mapping.ResultMapping$Builder.validate(ResultMapping.java:151)
+	at org.apache.ibatis.mapping.ResultMapping$Builder.build(ResultMapping.java:140)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.buildResultMapping(MapperBuilderAssistant.java:446)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildResultMappingFromContext(XMLMapperBuilder.java:393)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:280)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:254)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:246)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:119)
+	... 79 common frames omitted
+
+2023-03-12 21:06:12.247  INFO 15824 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 15824 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-12 21:06:12.248  INFO 15824 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-12 21:06:13.431  WARN 15824 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-12 21:06:13.945  INFO 15824 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-12 21:06:13.945  INFO 15824 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-12 21:06:14.035  INFO 15824 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-12 21:06:14.102  INFO 15824 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-12 21:06:16.144  INFO 15824 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-12 21:06:16.632  WARN 15824 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2023-03-12 21:06:16.640  WARN 15824 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2023-03-12 21:06:16.648  WARN 15824 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.update] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Update]
+2023-03-12 21:06:19.074  INFO 15824 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 7.122 seconds (JVM running for 7.766)
+2023-03-12 21:06:19.499  INFO 15824 --- [RMI TCP Connection(5)-10.2.4.98] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-12 23:02:16.763  INFO 3080 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Starting SqNssApplication using Java 15.0.1 on WIN-L79T03ON1IU with PID 3080 (D:\project\sq-nss\target\classes started by Administrator in D:\project\sq-nss)
+2023-03-12 23:02:16.765  INFO 3080 --- [restartedMain] org.sq.zbnss.SqNssApplication            : No active profile set, falling back to 1 default profile: "default"
+2023-03-12 23:02:19.203  WARN 3080 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.puboot.module.admin.mapper]' package. Please check your configuration.
+2023-03-12 23:02:20.165  INFO 3080 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-12 23:02:20.165  INFO 3080 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-12 23:02:20.313  INFO 3080 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-12 23:02:20.403  INFO 3080 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-03-12 23:02:22.816  INFO 3080 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-03-12 23:02:24.013  WARN 3080 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2023-03-12 23:02:24.013  WARN 3080 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2023-03-12 23:02:24.028  WARN 3080 --- [restartedMain] c.b.m.core.injector.AbstractMethod       : [org.sq.zbnss.dao.CompanyDao.update] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Update]
+2023-03-12 23:02:30.547  INFO 3080 --- [restartedMain] org.sq.zbnss.SqNssApplication            : Started SqNssApplication in 14.358 seconds (JVM running for 15.412)
+2023-03-12 23:02:31.263  INFO 3080 --- [RMI TCP Connection(1)-192.168.88.94] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-12 23:02:42.205  INFO 3080 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2023-03-12 23:02:42.213  INFO 3080 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sq.zbnss.dao.AppraisalDao">
+
+    <resultMap type="org.sq.zbnss.entity.Appraisal" id="TbAppraisalMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="appraisal" column="appraisal" jdbcType="VARCHAR"/>
+        <result property="systemId" column="system_id" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="insertTime" column="insert_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="num" column="num" jdbcType="INTEGER"/>
+        <association property="insertUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="insert_user" />
+        <association property="updateUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="update_user" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TbAppraisalMap">
+        select
+          id, appraisal, system_id, status, insert_time, update_time, num, insert_user, update_user
+        from tb_appraisal
+        where id = #{id}
+    </select>
+
+    <select id="selectAppraisal" resultMap="TbAppraisalMap" parameterType="org.sq.zbnss.dao.AppraisalDao">
+        select
+        id, appraisal, system_id, status, insert_time, update_time, num, insert_user, update_user
+        from tb_appraisal
+        <where>
+            <if test="appraisal != null and appraisal.id != null">
+                and id = #{id}
+            </if>
+            <if test="appraisal != null and appraisal.appraisal != null and appraisal.appraisal != ''">
+                and appraisal = #{appraisal}
+            </if>
+            <if test="appraisal != null and appraisal.systemId != null">
+                and system_id = #{systemId}
+            </if>
+            <if test="appraisal != null and appraisal.status != null">
+                and status = #{status}
+            </if>
+            <if test="appraisal != null and appraisal.insertTime != null">
+                and insert_time = #{insertTime}
+            </if>
+            <if test="appraisal != null and appraisal.updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="appraisal != null and appraisal.num != null">
+                and num = #{num}
+            </if>
+            <if test="appraisal != null and appraisal.insertUser != null">
+                and insert_user = #{insertUser.id}
+            </if>
+            <if test="appraisal != null and appraisal.updateUser != null">
+                and update_user = #{updateUser.id}
+            </if>
+        </where>
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TbAppraisalMap">
+        select
+          id, appraisal, system_id, status, insert_time, update_time, num, insert_user, update_user
+        from tb_appraisal
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="appraisal != null and appraisal != ''">
+                and appraisal = #{appraisal}
+            </if>
+            <if test="systemId != null">
+                and system_id = #{systemId}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="insertTime != null">
+                and insert_time = #{insertTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="num != null">
+                and num = #{num}
+            </if>
+            <if test="insertUser != null">
+                and insert_user = #{insertUser}
+            </if>
+            <if test="updateUser != null">
+                and update_user = #{updateUser}
+            </if>
+        </where>
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from tb_appraisal
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="appraisal != null and appraisal != ''">
+                and appraisal = #{appraisal}
+            </if>
+            <if test="systemId != null">
+                and system_id = #{systemId}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="insertTime != null">
+                and insert_time = #{insertTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="num != null">
+                and num = #{num}
+            </if>
+            <if test="insertUser != null">
+                and insert_user = #{insertUser}
+            </if>
+            <if test="updateUser != null">
+                and update_user = #{updateUser}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_appraisal(appraisal, system_id, status, insert_time, update_time, num, insert_user, update_user)
+        values (#{appraisal}, #{systemId}, #{status}, now(), now(), #{num}, #{insertUser.id}, #{updateUser.id})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_appraisal(appraisal, system_id, status, insert_time, update_time, num, insert_user, update_user)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.appraisal}, #{entity.systemId}, #{entity.status}, now(), now(), #{entity.num}, #{entity.insertUser.id}, #{entity.updateUser.id})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_appraisal(appraisal, system_id, status, insert_time, update_time, num, insert_user, update_user)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.appraisal}, #{entity.systemId}, #{entity.status}, #{entity.insertTime}, #{entity.updateTime}, #{entity.num}, #{entity.insertUser.id}, #{entity.updateUser.id})
+        </foreach>
+        on duplicate key update
+        appraisal = values(appraisal),
+        system_id = values(system_id),
+        status = values(status),
+        update_time = values(now()),
+        num = values(num),
+        update_user = values(update_user.id)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update tb_appraisal
+        <set>
+            <if test="appraisal != null and appraisal != ''">
+                appraisal = #{appraisal},
+            </if>
+            <if test="systemId != null">
+                system_id = #{systemId},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="insertTime != null">
+                insert_time = #{insertTime},
+            </if>
+            <if test="num != null">
+                num = #{num},
+            </if>
+            <if test="updateUser != null">
+                update_user = #{updateUser.id},
+            </if>
+            update_time = now()
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from tb_appraisal where id = #{id}
+    </delete>
+
+</mapper>
+

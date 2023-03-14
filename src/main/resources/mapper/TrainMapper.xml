@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sq.zbnss.dao.TrainDao">
+
+    <resultMap type="org.sq.zbnss.entity.Train" id="TbTrainMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="trainId" column="train_id" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="INTEGER"/>
+        <result property="trainCompany" column="train_company" jdbcType="VARCHAR"/>
+        <result property="lacture" column="lacture" jdbcType="VARCHAR"/>
+        <result property="planStime" column="plan_stime" jdbcType="TIMESTAMP"/>
+        <result property="planEtime" column="plan_etime" jdbcType="TIMESTAMP"/>
+        <result property="startTiem" column="start_tiem" jdbcType="TIMESTAMP"/>
+        <result property="endTime" column="end_time" jdbcType="TIMESTAMP"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <association property="companyId" javaType="org.sq.zbnss.entity.Company" select="org.sq.zbnss.dao.CompanyDao.queryById" column="company_id" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TbTrainMap">
+        select
+          id, train_id, company_id, type, train_company, lacture, plan_stime, plan_etime, start_tiem, end_time, status, create_time, update_time
+        from tb_train
+        where id = #{id}
+    </select>
+
+    <select id="selectTrain" resultMap="TbTrainMap" parameterType="org.sq.zbnss.entity.Train">
+        select
+        id, train_id, company_id, type, train_company, lacture, plan_stime, plan_etime, start_tiem, end_time, status, create_time, update_time
+        from tb_train
+        <where>
+            <if test="train != null and train.id != null">
+                and id = #{train.id}
+            </if>
+            <if test="train != null and train.trainId != null and train.trainId != ''">
+                and train_id = #{train.trainId}
+            </if>
+            <if test="train != null and train.companyId != null">
+                and company_id = #{train.companyId.id}
+            </if>
+            <if test="train != null and train.type != null">
+                and type = #{train.type}
+            </if>
+            <if test="train != null and train.trainCompany != null and train.trainCompany != ''">
+                and train_company = #{trainCompany}
+            </if>
+            <if test="train != null and train.lacture != null and train.lacture != ''">
+                and lacture = #{train.lacture}
+            </if>
+            <if test="train != null and train.planStime != null">
+                and plan_stime = #{train.planStime}
+            </if>
+            <if test="train != null and train.planEtime != null">
+                and plan_etime = #{train.planEtime}
+            </if>
+            <if test="train != null and train.startTiem != null">
+                and start_tiem = #{train.startTiem}
+            </if>
+            <if test="train != null and train.endTime != null">
+                and end_time = #{train.endTime}
+            </if>
+            <if test="train != null and train.status != null">
+                and status = #{train.status}
+            </if>
+            <if test="train != null and train.createTime != null">
+                and create_time = #{train.createTime}
+            </if>
+            <if test="train != null and train.updateTime != null">
+                and update_time = #{train.updateTime}
+            </if>
+        </where>
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TbTrainMap">
+        select
+          id, train_id, company_id, type, train_company, lacture, plan_stime, plan_etime, start_tiem, end_time, status, create_time, update_time
+        from tb_train
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainId != null and trainId != ''">
+                and train_id = #{trainId}
+            </if>
+            <if test="companyId != null">
+                and company_id = #{companyId}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="trainCompany != null and trainCompany != ''">
+                and train_company = #{trainCompany}
+            </if>
+            <if test="lacture != null and lacture != ''">
+                and lacture = #{lacture}
+            </if>
+            <if test="planStime != null">
+                and plan_stime = #{planStime}
+            </if>
+            <if test="planEtime != null">
+                and plan_etime = #{planEtime}
+            </if>
+            <if test="startTiem != null">
+                and start_tiem = #{startTiem}
+            </if>
+            <if test="endTime != null">
+                and end_time = #{endTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+        </where>
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from tb_train
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainId != null and trainId != ''">
+                and train_id = #{trainId}
+            </if>
+            <if test="companyId != null">
+                and company_id = #{companyId}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="trainCompany != null and trainCompany != ''">
+                and train_company = #{trainCompany}
+            </if>
+            <if test="lacture != null and lacture != ''">
+                and lacture = #{lacture}
+            </if>
+            <if test="planStime != null">
+                and plan_stime = #{planStime}
+            </if>
+            <if test="planEtime != null">
+                and plan_etime = #{planEtime}
+            </if>
+            <if test="startTiem != null">
+                and start_tiem = #{startTiem}
+            </if>
+            <if test="endTime != null">
+                and end_time = #{endTime}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_train(train_id, company_id, type, train_company, lacture, plan_stime, plan_etime, start_tiem, end_time, status, create_time, update_time)
+        values (#{trainId}, #{companyId.id}, #{type}, #{trainCompany}, #{lacture}, #{planStime}, #{planEtime}, #{startTiem}, #{endTime}, #{status}, now(), #{updateTime})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_train(train_id, company_id, type, train_company, lacture, plan_stime, plan_etime, start_tiem, end_time, status, create_time, update_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.trainId}, #{entity.companyId.id}, #{entity.type}, #{entity.trainCompany}, #{entity.lacture}, #{entity.planStime}, #{entity.planEtime}, #{entity.startTiem}, #{entity.endTime}, #{entity.status}, now(), #{entity.updateTime})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_train(train_id, company_id, type, train_company, lacture, plan_stime, plan_etime, start_tiem, end_time, status, create_time, update_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.trainId}, #{entity.companyId}, #{entity.type}, #{entity.trainCompany}, #{entity.lacture}, #{entity.planStime}, #{entity.planEtime}, #{entity.startTiem}, #{entity.endTime}, #{entity.status}, now(), #{entity.updateTime})
+        </foreach>
+        on duplicate key update
+        train_id = values(train_id),
+        company_id = values(company_id),
+        type = values(type),
+        train_company = values(train_company),
+        lacture = values(lacture),
+        plan_stime = values(plan_stime),
+        plan_etime = values(plan_etime),
+        start_tiem = values(start_tiem),
+        end_time = values(end_time),
+        status = values(status),
+        update_time = values(now())
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update tb_train
+        <set>
+            <if test="trainId != null and trainId != ''">
+                train_id = #{trainId},
+            </if>
+            <if test="companyId != null">
+                company_id = #{companyId},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="trainCompany != null and trainCompany != ''">
+                train_company = #{trainCompany},
+            </if>
+            <if test="lacture != null and lacture != ''">
+                lacture = #{lacture},
+            </if>
+            <if test="planStime != null">
+                plan_stime = #{planStime},
+            </if>
+            <if test="planEtime != null">
+                plan_etime = #{planEtime},
+            </if>
+            <if test="startTiem != null">
+                start_tiem = #{startTiem},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="updateTime != null">
+                update_time = now(),
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from tb_train where id = #{id}
+    </delete>
+
+</mapper>
+

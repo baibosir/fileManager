@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sq.zbnss.dao.DictypeDao">
+
+    <resultMap type="org.sq.zbnss.entity.Dictype" id="TbDictypeMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="typeId" column="type_id" jdbcType="VARCHAR"/>
+        <result property="key" column="type_key" jdbcType="VARCHAR"/>
+        <result property="value" column="type_value" jdbcType="VARCHAR"/>
+        <collection property="dics" select="org.sq.zbnss.dao.DicDao.queryById" javaType="org.sq.zbnss.entity.Dic" column="id"></collection>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TbDictypeMap">
+        select
+          id, type_id, type_key, type_value
+        from tb_dictype
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TbDictypeMap" parameterType="org.sq.zbnss.entity.Dictype">
+        select
+          id, type_id, type_key, type_value
+        from tb_dictype
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="typeId != null and typeId != ''">
+                and type_id = #{typeId}
+            </if>
+            <if test="key != null and key != ''">
+                and type_key = #{key}
+            </if>
+            <if test="value != null and value != ''">
+                and type_value = #{value}
+            </if>
+        </where>
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from tb_dictype
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="typeId != null and typeId != ''">
+                and type_id = #{typeId}
+            </if>
+            <if test="key != null and key != ''">
+                and type_key = #{key}
+            </if>
+            <if test="value != null and value != ''">
+                and type_value = #{value}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_dictype(type_id, type_key, type_value)
+        values (#{typeId}, #{key}, #{value})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_dictype(type_id, type_key, type_value)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.typeId}, #{entity.key}, #{entity.value})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_dictype(type_id, type_key, type_value)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.typeId}, #{entity.key}, #{entity.value})
+        </foreach>
+        on duplicate key update
+        type_id = values(type_id),
+        type_key = values(key),
+        type_value = values(value)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update tb_dictype
+        <set>
+            <if test="typeId != null and typeId != ''">
+                type_id = #{typeId},
+            </if>
+            <if test="key != null and key != ''">
+                type_key = #{key},
+            </if>
+            <if test="value != null and value != ''">
+                type_value = #{value},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from tb_dictype where id = #{id}
+    </delete>
+
+</mapper>
+

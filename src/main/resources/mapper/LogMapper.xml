@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sq.zbnss.dao.LogDao">
+
+    <resultMap type="org.sq.zbnss.entity.Log" id="TbLogMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="operateDate" column="operate_date" jdbcType="TIMESTAMP"/>
+        <result property="operate" column="operate" jdbcType="VARCHAR"/>
+        <association property="userId" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="user_id" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TbLogMap">
+        select
+          id, user_id, operate_date, operate
+        from tb_log
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="selectLogs" resultMap="TbLogMap" parameterType="org.sq.zbnss.entity.Log">
+        select
+        id, user_id, operate_date, operate
+        from tb_log
+        <where>
+            <if test="syslog!= null and syslog.id != null">
+                and id = #{syslog.id}
+            </if>
+            <if test="syslog!= null and syslog.userId != null">
+                and user_id = #{syslog.userId}
+            </if>
+            <if test="syslog!= null and syslog.operateDate != null">
+                and operate_date = #{syslog.operateDate}
+            </if>
+            <if test="syslog!= null and syslog.operate != null and syslog.operate != ''">
+                and operate = #{syslog.operate}
+            </if>
+        </where>
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from tb_log
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="operateDate != null">
+                and operate_date = #{operateDate}
+            </if>
+            <if test="operate != null and operate != ''">
+                and operate = #{operate}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_log(user_id, operate_date, operate)
+        values (#{userId.id}, #{operateDate}, #{operate})
+    </insert>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from tb_log where id = #{id}
+    </delete>
+
+    <!--批量删除-->
+    <delete id="deleteBatch" >
+        delete from tb_log
+        <foreach collection="entities" item="entity" separator=",">
+            where id = #{entity.id}
+        </foreach>
+    </delete>
+
+</mapper>
+

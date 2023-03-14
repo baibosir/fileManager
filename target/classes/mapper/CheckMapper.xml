@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sq.zbnss.dao.CheckDao">
+
+    <resultMap type="org.sq.zbnss.entity.Check" id="TbCheckMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="checkId" column="check_id" jdbcType="VARCHAR"/>
+        <result property="planDate" column="plan_date" jdbcType="TIMESTAMP"/>
+        <result property="checkDate" column="check_date" jdbcType="TIMESTAMP"/>
+        <result property="detail" column="detail" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="instertTime" column="instert_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <association property="insertUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="insert_user" />
+        <association property="updateUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="update_user" />
+        <association property="checkUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="check_user" />
+        <association property="companyId" javaType="org.sq.zbnss.entity.Company" select="org.sq.zbnss.dao.CompanyDao.queryById" column="company_id" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TbCheckMap">
+        select
+          id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user
+        from tb_check
+        where id = #{id}
+    </select>
+
+    <select id="selectCheck" resultMap="TbCheckMap" parameterType="org.sq.zbnss.entity.Check">
+        select
+        id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user
+        from tb_check
+        <where>
+            <if test="check != null and check.id != null">
+                and id = #{check.id}
+            </if>
+            <if test="check != null and check.checkId != null and checkId != ''">
+                and check_id = #{check.checkId}
+            </if>
+            <if test="check != null and check.checkUser != null">
+                and check_user = #{check.checkUser.id}
+            </if>
+            <if test="check != null and check.planDate != null">
+                and plan_date = #{check.planDate}
+            </if>
+            <if test="check != null and check.checkDate != null">
+                and check_date = #{check.checkDate}
+            </if>
+            <if test="check != null and check.detail != null and detail != ''">
+                and detail = #{check.detail}
+            </if>
+            <if test="check != null and check.status != null">
+                and status = #{check.status}
+            </if>
+            <if test="check != null and check.companyId != null">
+                and company_id = #{check.companyId.id}
+            </if>
+            <if test="check != null and check.instertTime != null">
+                and instert_time = #{check.instertTime}
+            </if>
+            <if test="check != null and check.updateTime != null">
+                and update_time = #{check.updateTime}
+            </if>
+            <if test="check != null and check.updateUser != null">
+                and update_user = #{check.updateUser}
+            </if>
+            <if test="check != null and check.insertUser != null">
+                and insert_user = #{check.insertUser}
+            </if>
+        </where>
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TbCheckMap">
+        select
+          id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user
+        from tb_check
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="checkId != null and checkId != ''">
+                and check_id = #{checkId}
+            </if>
+            <if test="checkUser != null">
+                and check_user = #{checkUser}
+            </if>
+            <if test="planDate != null">
+                and plan_date = #{planDate}
+            </if>
+            <if test="checkDate != null">
+                and check_date = #{checkDate}
+            </if>
+            <if test="detail != null and detail != ''">
+                and detail = #{detail}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="companyId != null">
+                and company_id = #{companyId.id}
+            </if>
+            <if test="instertTime != null">
+                and instert_time = #{instertTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="updateUser != null">
+                and update_user = #{updateUser}
+            </if>
+            <if test="insertUser != null">
+                and insert_user = #{insertUser}
+            </if>
+        </where>
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from tb_check
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="checkId != null and checkId != ''">
+                and check_id = #{checkId}
+            </if>
+            <if test="checkUser != null">
+                and check_user = #{checkUser}
+            </if>
+            <if test="planDate != null">
+                and plan_date = #{planDate}
+            </if>
+            <if test="checkDate != null">
+                and check_date = #{checkDate}
+            </if>
+            <if test="detail != null and detail != ''">
+                and detail = #{detail}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="companyId != null">
+                and company_id = #{companyId.id}
+            </if>
+            <if test="instertTime != null">
+                and instert_time = #{instertTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="updateUser != null">
+                and update_user = #{updateUser}
+            </if>
+            <if test="insertUser != null">
+                and insert_user = #{insertUser}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_check(check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user)
+        values (#{checkId}, #{checkUser}, #{planDate}, #{checkDate}, #{detail}, #{status}, #{companyId.id},now(), now(), #{updateUser.id}, #{insertUser.id})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_check(check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.checkId}, #{entity.checkUser}, #{entity.planDate}, #{entity.checkDate}, #{entity.detail}, #{entity.status}, #{entity.companyId.id}, now(), now(), #{entity.updateUser.id}, #{entity.insertUser.id})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_check(check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.checkId}, #{entity.checkUser}, #{entity.planDate}, #{entity.checkDate}, #{entity.detail}, #{entity.status}, #{entity.companyId.id}, now(), now(), #{entity.updateUser.id}, #{entity.insertUser.id})
+        </foreach>
+        on duplicate key update
+        check_id = values(check_id),
+        check_user = values(check_user),
+        plan_date = values(plan_date),
+        check_date = values(check_date),
+        detail = values(detail),
+        status = values(status),
+        company_id = values(company_id),
+        update_time = values(update_time),
+        update_user = values(update_user.id),
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update tb_check
+        <set>
+            <if test="checkId != null and checkId != ''">
+                check_id = #{checkId},
+            </if>
+            <if test="checkUser != null">
+                check_user = #{checkUser.id},
+            </if>
+            <if test="planDate != null">
+                plan_date = #{planDate},
+            </if>
+            <if test="checkDate != null">
+                check_date = #{checkDate},
+            </if>
+            <if test="detail != null and detail != ''">
+                detail = #{detail},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="companyId != null">
+                company_id = #{companyId.id},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="updateUser != null">
+                update_user = #{updateUser},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from tb_check where id = #{id}
+    </delete>
+
+</mapper>
+
