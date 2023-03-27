@@ -6,30 +6,36 @@
         <result property="id" column="id" jdbcType="INTEGER"/>
         <result property="systemId" column="system_id" jdbcType="VARCHAR"/>
         <result property="name" column="name" jdbcType="VARCHAR"/>
-        <result property="level" column="level" jdbcType="VARCHAR"/>
+        <result property="level" column="sys_level" jdbcType="VARCHAR"/>
         <result property="description" column="description" jdbcType="VARCHAR"/>
         <result property="onlineDate" column="online_date" jdbcType="TIMESTAMP"/>
-        <result property="testStatus" column="test_status" jdbcType="INTEGER"/>
         <result property="registTime" column="regist_time" jdbcType="TIMESTAMP"/>
         <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
         <association property="company" javaType="org.sq.zbnss.entity.Company"
                      select="org.sq.zbnss.dao.CompanyDao.queryById" column="company_id" />
+        <association property="testStatus" javaType="org.sq.zbnss.entity.Dic"
+                     select="org.sq.zbnss.dao.DicDao.queryById" column="test_status" />
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="TbSystemMap">
         select
-          id, system_id, name, company_id, level, online_date, test_status, regist_time, update_time,description
+          id, system_id, name, company_id, sys_level, online_date, test_status, regist_time, update_time,description
         from tb_system
         where id = #{id}
     </select>
 
+    <select id="getMonthData" resultMap="TbSystemMap">
+        SELECT id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user
+        FROM tb_system WHERE regist_time >= #{month} or update_time >=#{month} and level = 2 ;
+    </select>
+
     <select id="selectRecord" resultMap="TbSystemMap" parameterType="org.sq.zbnss.entity.RecordSystem" >
         select
-            id, system_id, name, company_id, level, online_date, test_status, regist_time, update_time,description
+            id, system_id, name, company_id, sys_level, online_date, test_status, regist_time, update_time,description
         from tb_system
         <where>
-        <if test="recordSystem != null and recordSystem.id != null">
+        <if test="recordSystem != null and recordSystem.id > 0">
             and id = #{recordSystem.id}
         </if>
         <if test="recordSystem != null and recordSystem.systemId != null and recordSystem.systemId != ''">
@@ -41,14 +47,14 @@
         <if test="recordSystem != null and recordSystem.company != null">
             and company_id = #{recordSystem.company.id}
         </if>
-        <if test="recordSystem != null and recordSystem.level != null and level != ''">
-            and level = #{recordSystem.level}
+        <if test="recordSystem != null and recordSystem.level != null and recordSystem.level != ''">
+            and sys_level = #{recordSystem.level}
         </if>
         <if test="recordSystem != null and recordSystem.onlineDate != null">
             and online_date = #{recordSystem.onlineDate}
         </if>
         <if test="recordSystem != null and recordSystem.testStatus != null">
-            and test_status = #{recordSystem.testStatus}
+            and test_status = #{recordSystem.testStatus.id}
         </if>
         <if test="recordSystem != null and recordSystem.registTime != null">
             and regist_time = #{recordSystem.registTime}
@@ -66,10 +72,10 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="TbSystemMap"  parameterType="org.sq.zbnss.entity.RecordSystem" >
         select
-          id, system_id, name, company_id, level, online_date, test_status, regist_time, update_time
+          id, system_id, name, company_id, sys_level, online_date, test_status, regist_time, update_time
         from tb_system
         <where>
-            <if test="id != null">
+            <if test="id > 0">
                 and id = #{id}
             </if>
             <if test="systemId != null and systemId != ''">
@@ -82,13 +88,13 @@
                 and company_id = #{company.id}
             </if>
             <if test="level != null and level != ''">
-                and level = #{level}
+                and sys_level = #{level}
             </if>
             <if test="onlineDate != null">
                 and online_date = #{onlineDate}
             </if>
             <if test="testStatus != null">
-                and test_status = #{testStatus}
+                and test_status = #{testStatus.id}
             </if>
             <if test="registTime != null">
                 and regist_time = #{registTime}
@@ -108,7 +114,7 @@
         select count(1)
         from tb_system
         <where>
-            <if test="id != null">
+            <if test="id > 0">
                 and id = #{id}
             </if>
             <if test="systemId != null and systemId != ''">
@@ -121,13 +127,13 @@
                 and company_id = #{company.id}
             </if>
             <if test="level != null and level != ''">
-                and level = #{level}
+                and sys_level = #{level}
             </if>
             <if test="onlineDate != null">
                 and online_date = #{onlineDate}
             </if>
             <if test="testStatus != null">
-                and test_status = #{testStatus}
+                and test_status = #{testStatus.id}
             </if>
             <if test="registTime != null">
                 and regist_time = #{registTime}
@@ -140,31 +146,31 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true"  parameterType="org.sq.zbnss.entity.RecordSystem" >
-        insert into tb_system(system_id, name, company_id, level, online_date, test_status,description, regist_time, update_time)
-        values (#{systemId}, #{name}, #{company.id}, #{level}, #{onlineDate}, #{testStatus}, #{description}, now(), now())
+        insert into tb_system(system_id, name, company_id, sys_level, online_date, test_status,description, regist_time, update_time)
+        values (#{systemId}, #{name}, #{company.id}, #{level}, #{onlineDate}, #{testStatus.id}, #{description}, now(), now())
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into tb_system(system_id, name, company_id, level, online_date, test_status, regist_time, update_time)
+        insert into tb_system(system_id, name, company_id, sys_level, online_date, test_status, regist_time, update_time)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.systemId}, #{entity.name}, #{entity.company.id}, #{entity.level}, #{entity.onlineDate}, #{entity.testStatus}, #{entity.registTime}, #{entity.updateTime})
+        (#{entity.systemId}, #{entity.name}, #{entity.company.id}, #{entity.level}, #{entity.onlineDate}, #{entity.testStatus.id}, #{entity.registTime}, #{entity.updateTime})
         </foreach>
     </insert>
 
     <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into tb_system(system_id, name, company_id, level, online_date, test_status, regist_time, update_time)
+        insert into tb_system(system_id, name, company_id, sys_level, online_date, test_status, regist_time, update_time)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.systemId}, #{entity.name}, #{entity.company.id}, #{entity.level}, #{entity.onlineDate}, #{entity.testStatus}, #{entity.registTime}, #{entity.updateTime})
+            (#{entity.systemId}, #{entity.name}, #{entity.company.id}, #{entity.level}, #{entity.onlineDate}, #{entity.testStatus.id}, #{entity.registTime}, #{entity.updateTime})
         </foreach>
         on duplicate key update
         system_id = values(system_id),
         name = values(name),
         company_id = values(company_id),
-        level = values(level),
+        sys_level = values(level),
         online_date = values(online_date),
-        test_status = values(test_status),
+        test_status = values(test_status.id),
         regist_time = values(regist_time),
         update_time = values(update_time)
     </insert>
@@ -183,13 +189,13 @@
                 company_id = #{company.id},
             </if>
             <if test="level != null and level != ''">
-                level = #{level},
+                sys_level = #{level},
             </if>
             <if test="onlineDate != null">
                 online_date = #{onlineDate},
             </if>
-            <if test="testStatus != null">
-                test_status = #{testStatus},
+            <if test="testStatus != null and testStatus.id > 0 ">
+                test_status = #{testStatus.id},
             </if>
             <if test="registTime != null">
                 regist_time = #{registTime},

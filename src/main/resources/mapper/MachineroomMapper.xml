@@ -30,7 +30,7 @@
         id, machine_id, address, company_id, principal, reg_tel, reg_date, status, detail, use, regist_time, update_time
         from tb_machineroom
         <where>
-            <if test="machine != null and machine.id != null">
+            <if test="machine != null and machine.id > 0">
                 and id = #{machine.id}
             </if>
             <if test="machine != null and machine.machineId != null and machine.machineId != ''">
@@ -75,7 +75,7 @@
           id, machine_id, address, company_id, principal, reg_tel, reg_date, status, detail, use, regist_time, update_time
         from tb_machineroom
         <where>
-            <if test="id != null">
+            <if test="id > 0">
                 and id = #{id}
             </if>
             <if test="machineId != null and machineId != ''">
@@ -119,7 +119,7 @@
         select count(1)
         from tb_machineroom
         <where>
-            <if test="id != null">
+            <if test="id > 0">
                 and id = #{id}
             </if>
             <if test="machineId != null and machineId != ''">

@@ -1,6 +1,7 @@
 package org.sq.zbnss.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.sq.zbnss.base.PageResultVo;
@@ -36,6 +37,7 @@ public class DicController {
      * @return 查询结果
      */
     @ApiOperation(value = "获取字典列表",tags = "字典管理")
+    @ApiOperationSupport(includeParameters = {"key","type.id","value","detail","description"})
     @GetMapping("/list")
     public PageResultVo queryByPage(Dic dic, int pageNum, int pageSize) {
         IPage<Dic> pageData = this.tbDicService.queryByPage(dic, pageNum,pageSize);
@@ -61,6 +63,7 @@ public class DicController {
      * @return 新增结果
      */
     @ApiOperation(value = "添加字典信息",tags = "字典管理")
+    @ApiOperationSupport(includeParameters = {"key","type.id","value","detail","description"})
     @PostMapping("/add")
     public ResponseVo add(Dic dic) {
         if(dic.getKey() == null || "".equals(dic.getKey()) || dic.getValue() == null || "".equals(dic.getValue())){
@@ -84,6 +87,7 @@ public class DicController {
      * @return 编辑结果
      */
     @ApiOperation(value = "修改字典信息",tags = "字典管理")
+    @ApiOperationSupport(includeParameters = {"id","key","type.id","value","detail","description"})
     @PutMapping("/update")
     public ResponseVo edit(Dic dic) {
         if(dic.getId() == 0){

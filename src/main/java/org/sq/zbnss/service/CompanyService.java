@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import org.sq.zbnss.entity.Company;
 import org.sq.zbnss.entity.User;
 
+import java.util.ArrayList;
+
 /**
  * 单位信息(TbCompany)表服务接口
  *
@@ -30,7 +32,7 @@ public interface CompanyService extends IService<Company> {
      */
     IPage<Company> queryByPage(Company company, Integer pageNumber, Integer pageSize);
 
-    Company queryAllByLimit(Company company);
+    ArrayList<Company> queryAllByLimit(Company company);
 
     /**
      * 新增数据

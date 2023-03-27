@@ -85,4 +85,5 @@ public interface UserService extends IService<User> {
 
     void kickout(Serializable sessionId, String username);
 
+    User getUserByUserId(String userId);
 }

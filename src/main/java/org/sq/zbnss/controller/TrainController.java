@@ -1,18 +1,23 @@
 package org.sq.zbnss.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.sq.zbnss.base.PageResultVo;
 import org.sq.zbnss.base.ResponseVo;
 import org.sq.zbnss.entity.Company;
+import org.sq.zbnss.entity.Log;
 import org.sq.zbnss.entity.Train;
 import org.sq.zbnss.service.CompanyService;
+import org.sq.zbnss.service.LogService;
 import org.sq.zbnss.service.TrainService;
 import org.springframework.web.bind.annotation.*;
 import org.sq.zbnss.uitl.ResultUtil;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 
 /**
@@ -34,6 +39,12 @@ public class TrainController {
     @Resource
     private CompanyService companyService;
 
+    @Resource
+    private Common common;
+
+    @Resource
+    private LogService logService;
+
     /**
      * 分页查询
      *
@@ -41,6 +52,7 @@ public class TrainController {
      * @return 查询结果
      */
     @ApiOperation(value = "分页获取培训列表", tags = "培训管理")
+    @ApiOperationSupport(includeParameters = {"companyId.id","type","trainCompany","lacture","status"})
     @GetMapping("/list")
     @ResponseBody
     public PageResultVo queryByPage(Train train, @RequestParam(value = "pageNum") Integer pageNum, @RequestParam(value = "pageSize") Integer gageSize) {
@@ -69,7 +81,7 @@ public class TrainController {
      */
     @ApiOperation(value = "新增培训信息", tags = "培训管理")
     @PostMapping("/add")
-    public ResponseVo add(Train train) {
+    public ResponseVo add(@RequestBody Train train, HttpServletRequest request) {
         if(train.getCompanyId() == null || train.getCompanyId().getId() == 0 ||
                 train.getTrainCompany() == null || "".equals(train.getTrainCompany())||
                 train.getPlanStime() == null || train.getPlanEtime() == null|| train.getLacture() == null){
@@ -87,6 +99,10 @@ public class TrainController {
             if(addResult == null){
                 return  ResultUtil.error("培训信息添加失败");
             }
+            Log log = new Log();
+            log.setUserId(common.getLoginUser(request));
+            log.setOperate(MessageFormat.format("新增培训信息：{0}",addResult.toString()));
+            logService.insert(log);
             return  ResultUtil.success("培训记录添加成功",addResult);
         }
     }
@@ -100,7 +116,7 @@ public class TrainController {
     @ApiOperation(value = "修改培训信息", tags = "培训管理")
     @PutMapping("/update")
     @ResponseBody
-    public ResponseVo edit(Train train) {
+    public ResponseVo edit(@RequestBody Train train, HttpServletRequest request) {
         if(train == null || train.getId() == 0 || train.getTrainId() == null || "".equals(train.getTrainId())){
             return  ResultUtil.error("请求参数错误");
         }
@@ -112,6 +128,10 @@ public class TrainController {
         if(newTrail == null){
             return  ResultUtil.error("培训信息修改失败");
         }
+        Log log = new Log();
+        log.setUserId(common.getLoginUser(request));
+        log.setOperate(MessageFormat.format("修改培训信息：{0}",newTrail.toString()));
+        logService.insert(log);
         return ResultUtil.success("培训信息修改成功", newTrail);
     }
 
@@ -121,7 +141,8 @@ public class TrainController {
      * @param id 主键
      * @return 删除是否成功
      */
-    @DeleteMapping
+    @ApiOperation(value = "删除培训信息", tags = "培训管理")
+    @DeleteMapping("/delete")
     public ResponseVo deleteById(Integer id) {
         Train oldTrain = this.tbTrainService.queryById(id);
         if(oldTrain == null){

@@ -10,7 +10,12 @@ import org.springframework.stereotype.Service;
 import org.sq.zbnss.uitl.Pagination;
 
 import javax.annotation.Resource;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+
+import static org.sq.zbnss.uitl.DateUtil.getAssignedDateFirstDayOfMonth;
 
 /**
  * 检查结果记录(TbCheck)表服务实现类
@@ -50,6 +55,14 @@ public class CheckServiceImpl implements CheckService {
     public ArrayList<Check> queryByPage(Check tbCheck) {
 
         return this.checkDao.queryAllByLimit(tbCheck);
+    }
+
+    @Override
+    public ArrayList<Check> queryByPage() throws ParseException {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String firstDateTime = getAssignedDateFirstDayOfMonth(new Date())+" 00:00:00";
+        Date firstDate = format.parse(firstDateTime);
+        return this.checkDao.getMonthData(firstDate);
     }
 
     /**

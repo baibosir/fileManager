@@ -2,6 +2,7 @@ package org.sq.zbnss.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -45,7 +46,7 @@ public class Company implements Serializable {
     /**
      * 单位电话
      */
-    @ApiModelProperty(value = "电弧")
+    @ApiModelProperty(value = "电话")
     private String telephone;
     /**
      * 单位描述
@@ -55,7 +56,7 @@ public class Company implements Serializable {
     /**
      * 单位类型
      */
-    @ApiModelProperty(value = "单位类型")
+    @ApiModelProperty(value = "单位类型",dataType = "int")
     private Integer type;
     /**
      * 一级系统数
@@ -76,13 +77,15 @@ public class Company implements Serializable {
      * 录入时间
      */
     @ApiModelProperty(value = "注册时间", hidden= true)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date insertTime;
     /**
      * 更新时间
      */
-    @ApiModelProperty( hidden= true)
+    @ApiModelProperty(value = "更新时间", hidden= true)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
     /**
      * 录入人
@@ -214,6 +217,24 @@ public class Company implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "companyId='" + companyId + '\'' +
+                ", name='" + name + '\'' +
+                ", principal=" + principal +
+                ", address='" + address + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", description='" + description + '\'' +
+                ", type=" + type +
+                ", numSystem1=" + numSystem1 +
+                ", numSystem2=" + numSystem2 +
+                ", numSystem3=" + numSystem3 +
+                ", insertTime=" + insertTime +
+                ", updateTime=" + updateTime +
+                '}';
     }
 }
 

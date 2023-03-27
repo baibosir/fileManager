@@ -6,12 +6,12 @@
         <result property="id" column="id" jdbcType="INTEGER"/>
         <result property="appraisal" column="appraisal" jdbcType="VARCHAR"/>
         <result property="systemId" column="system_id" jdbcType="INTEGER"/>
-        <result property="status" column="status" jdbcType="INTEGER"/>
         <result property="insertTime" column="insert_time" jdbcType="TIMESTAMP"/>
         <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
         <result property="num" column="num" jdbcType="INTEGER"/>
         <association property="insertUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="insert_user" />
         <association property="updateUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="update_user" />
+        <association property="status" javaType="org.sq.zbnss.entity.Dic" select="org.sq.zbnss.dao.DicDao.queryById" column="status" />
     </resultMap>
 
     <!--查询单个-->
@@ -22,12 +22,12 @@
         where id = #{id}
     </select>
 
-    <select id="selectAppraisal" resultMap="TbAppraisalMap" parameterType="org.sq.zbnss.dao.AppraisalDao">
+    <select id="selectAppraisal" resultMap="TbAppraisalMap" parameterType="org.sq.zbnss.entity.Appraisal">
         select
         id, appraisal, system_id, status, insert_time, update_time, num, insert_user, update_user
         from tb_appraisal
         <where>
-            <if test="appraisal != null and appraisal.id != null">
+            <if test="appraisal != null and appraisal.id > 0">
                 and id = #{id}
             </if>
             <if test="appraisal != null and appraisal.appraisal != null and appraisal.appraisal != ''">
@@ -37,7 +37,7 @@
                 and system_id = #{systemId}
             </if>
             <if test="appraisal != null and appraisal.status != null">
-                and status = #{status}
+                and status = #{status.id}
             </if>
             <if test="appraisal != null and appraisal.insertTime != null">
                 and insert_time = #{insertTime}
@@ -63,7 +63,7 @@
           id, appraisal, system_id, status, insert_time, update_time, num, insert_user, update_user
         from tb_appraisal
         <where>
-            <if test="id != null">
+            <if test="id != null> 0">
                 and id = #{id}
             </if>
             <if test="appraisal != null and appraisal != ''">
@@ -73,7 +73,7 @@
                 and system_id = #{systemId}
             </if>
             <if test="status != null">
-                and status = #{status}
+                and status = #{status.id}
             </if>
             <if test="insertTime != null">
                 and insert_time = #{insertTime}
@@ -98,7 +98,7 @@
         select count(1)
         from tb_appraisal
         <where>
-            <if test="id != null">
+            <if test="id > 0">
                 and id = #{id}
             </if>
             <if test="appraisal != null and appraisal != ''">
@@ -108,7 +108,7 @@
                 and system_id = #{systemId}
             </if>
             <if test="status != null">
-                and status = #{status}
+                and status = #{status.id}
             </if>
             <if test="insertTime != null">
                 and insert_time = #{insertTime}
@@ -131,14 +131,14 @@
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
         insert into tb_appraisal(appraisal, system_id, status, insert_time, update_time, num, insert_user, update_user)
-        values (#{appraisal}, #{systemId}, #{status}, now(), now(), #{num}, #{insertUser.id}, #{updateUser.id})
+        values (#{appraisal}, #{systemId}, 9, now(), now(), #{num}, #{insertUser.id}, #{updateUser.id})
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
         insert into tb_appraisal(appraisal, system_id, status, insert_time, update_time, num, insert_user, update_user)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.appraisal}, #{entity.systemId}, #{entity.status}, now(), now(), #{entity.num}, #{entity.insertUser.id}, #{entity.updateUser.id})
+        (#{entity.appraisal}, #{entity.systemId}, 9, now(), now(), #{entity.num}, #{entity.insertUser.id}, #{entity.updateUser.id})
         </foreach>
     </insert>
 
@@ -146,12 +146,12 @@
         insert into tb_appraisal(appraisal, system_id, status, insert_time, update_time, num, insert_user, update_user)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.appraisal}, #{entity.systemId}, #{entity.status}, #{entity.insertTime}, #{entity.updateTime}, #{entity.num}, #{entity.insertUser.id}, #{entity.updateUser.id})
+            (#{entity.appraisal}, #{entity.systemId}, 9, #{entity.insertTime}, #{entity.updateTime}, #{entity.num}, #{entity.insertUser.id}, #{entity.updateUser.id})
         </foreach>
         on duplicate key update
         appraisal = values(appraisal),
         system_id = values(system_id),
-        status = values(status),
+        status = values(status.id),
         update_time = values(now()),
         num = values(num),
         update_user = values(update_user.id)
@@ -167,8 +167,8 @@
             <if test="systemId != null">
                 system_id = #{systemId},
             </if>
-            <if test="status != null">
-                status = #{status},
+            <if test="status != null and status > 0">
+                status = #{status.id},
             </if>
             <if test="insertTime != null">
                 insert_time = #{insertTime},

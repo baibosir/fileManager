@@ -10,7 +10,7 @@
         <result property="lacture" column="lacture" jdbcType="VARCHAR"/>
         <result property="planStime" column="plan_stime" jdbcType="TIMESTAMP"/>
         <result property="planEtime" column="plan_etime" jdbcType="TIMESTAMP"/>
-        <result property="startTiem" column="start_tiem" jdbcType="TIMESTAMP"/>
+        <result property="startTime" column="start_tiem" jdbcType="TIMESTAMP"/>
         <result property="endTime" column="end_time" jdbcType="TIMESTAMP"/>
         <result property="status" column="status" jdbcType="INTEGER"/>
         <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
@@ -55,8 +55,8 @@
             <if test="train != null and train.planEtime != null">
                 and plan_etime = #{train.planEtime}
             </if>
-            <if test="train != null and train.startTiem != null">
-                and start_tiem = #{train.startTiem}
+            <if test="train != null and train.startTime != null">
+                and start_tiem = #{train.startTime}
             </if>
             <if test="train != null and train.endTime != null">
                 and end_time = #{train.endTime}
@@ -103,8 +103,8 @@
             <if test="planEtime != null">
                 and plan_etime = #{planEtime}
             </if>
-            <if test="startTiem != null">
-                and start_tiem = #{startTiem}
+            <if test="startTime != null">
+                and start_tiem = #{startTime}
             </if>
             <if test="endTime != null">
                 and end_time = #{endTime}
@@ -150,8 +150,8 @@
             <if test="planEtime != null">
                 and plan_etime = #{planEtime}
             </if>
-            <if test="startTiem != null">
-                and start_tiem = #{startTiem}
+            <if test="startTime != null">
+                and start_tiem = #{startTime}
             </if>
             <if test="endTime != null">
                 and end_time = #{endTime}
@@ -171,14 +171,14 @@
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
         insert into tb_train(train_id, company_id, type, train_company, lacture, plan_stime, plan_etime, start_tiem, end_time, status, create_time, update_time)
-        values (#{trainId}, #{companyId.id}, #{type}, #{trainCompany}, #{lacture}, #{planStime}, #{planEtime}, #{startTiem}, #{endTime}, #{status}, now(), #{updateTime})
+        values (#{trainId}, #{companyId.id}, #{type}, #{trainCompany}, #{lacture}, #{planStime}, #{planEtime}, #{startTime}, #{endTime}, #{status}, now(), #{updateTime})
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
         insert into tb_train(train_id, company_id, type, train_company, lacture, plan_stime, plan_etime, start_tiem, end_time, status, create_time, update_time)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.trainId}, #{entity.companyId.id}, #{entity.type}, #{entity.trainCompany}, #{entity.lacture}, #{entity.planStime}, #{entity.planEtime}, #{entity.startTiem}, #{entity.endTime}, #{entity.status}, now(), #{entity.updateTime})
+        (#{entity.trainId}, #{entity.companyId.id}, #{entity.type}, #{entity.trainCompany}, #{entity.lacture}, #{entity.planStime}, #{entity.planEtime}, #{entity.startTime}, #{entity.endTime}, #{entity.status}, now(), #{entity.updateTime})
         </foreach>
     </insert>
 
@@ -186,7 +186,7 @@
         insert into tb_train(train_id, company_id, type, train_company, lacture, plan_stime, plan_etime, start_tiem, end_time, status, create_time, update_time)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.trainId}, #{entity.companyId}, #{entity.type}, #{entity.trainCompany}, #{entity.lacture}, #{entity.planStime}, #{entity.planEtime}, #{entity.startTiem}, #{entity.endTime}, #{entity.status}, now(), #{entity.updateTime})
+            (#{entity.trainId}, #{entity.companyId}, #{entity.type}, #{entity.trainCompany}, #{entity.lacture}, #{entity.planStime}, #{entity.planEtime}, #{entity.startTime}, #{entity.endTime}, #{entity.status}, now(), #{entity.updateTime})
         </foreach>
         on duplicate key update
         train_id = values(train_id),
@@ -227,8 +227,8 @@
             <if test="planEtime != null">
                 plan_etime = #{planEtime},
             </if>
-            <if test="startTiem != null">
-                start_tiem = #{startTiem},
+            <if test="startTime != null">
+                start_tiem = #{startTime},
             </if>
             <if test="endTime != null">
                 end_time = #{endTime},

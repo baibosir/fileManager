@@ -1,5 +1,8 @@
 package org.sq.zbnss.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.sq.zbnss.entity.Dic;
 import org.sq.zbnss.dao.DicDao;
@@ -8,6 +11,10 @@ import org.springframework.stereotype.Service;
 import org.sq.zbnss.uitl.Pagination;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Map;
+import java.util.function.Function;
 
 /**
  * 字典(TbDic)表服务实现类
@@ -29,6 +36,14 @@ public class DicServiceImpl implements DicService {
     @Override
     public Dic queryById(Integer id) {
         return this.tbDicDao.queryById(id);
+    }
+
+    @Override
+    public ArrayList<Dic> queryByType(int type){
+        QueryWrapper<Dic> wrapper = new QueryWrapper<>();
+        wrapper.eq("type",type);
+        ArrayList<Dic> result = (ArrayList<Dic>) this.tbDicDao.selectList(wrapper);
+        return result;
     }
 
     /**
@@ -82,5 +97,50 @@ public class DicServiceImpl implements DicService {
     @Override
     public boolean deleteById(Integer id) {
         return this.tbDicDao.deleteById(id) > 0;
+    }
+
+    @Override
+    public boolean saveBatch(Collection<Dic> entityList, int batchSize) {
+        return false;
+    }
+
+    @Override
+    public boolean saveOrUpdateBatch(Collection<Dic> entityList, int batchSize) {
+        return false;
+    }
+
+    @Override
+    public boolean updateBatchById(Collection<Dic> entityList, int batchSize) {
+        return false;
+    }
+
+    @Override
+    public boolean saveOrUpdate(Dic entity) {
+        return false;
+    }
+
+    @Override
+    public Dic getOne(Wrapper<Dic> queryWrapper, boolean throwEx) {
+        return null;
+    }
+
+    @Override
+    public Map<String, Object> getMap(Wrapper<Dic> queryWrapper) {
+        return null;
+    }
+
+    @Override
+    public <V> V getObj(Wrapper<Dic> queryWrapper, Function<? super Object, V> mapper) {
+        return null;
+    }
+
+    @Override
+    public BaseMapper<Dic> getBaseMapper() {
+        return null;
+    }
+
+    @Override
+    public Class<Dic> getEntityClass() {
+        return null;
     }
 }

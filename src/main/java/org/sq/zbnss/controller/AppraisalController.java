@@ -7,12 +7,19 @@ import io.swagger.annotations.ApiOperation;
 import org.sq.zbnss.base.PageResultVo;
 import org.sq.zbnss.base.ResponseVo;
 import org.sq.zbnss.entity.Appraisal;
+import org.sq.zbnss.entity.Log;
+import org.sq.zbnss.entity.RecordSystem;
 import org.sq.zbnss.service.AppraisalService;
 import org.springframework.web.bind.annotation.*;
+import org.sq.zbnss.service.LogService;
+import org.sq.zbnss.service.SystemService;
 import org.sq.zbnss.uitl.ResultUtil;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.text.MessageFormat;
 import java.util.ArrayList;
+
 
 /**
  * 测评信息(TbAppraisal)表控制层
@@ -30,6 +37,13 @@ public class AppraisalController {
     @Resource
     private AppraisalService tbAppraisalService;
 
+    @Resource
+    private LogService logService;
+
+    @Resource
+    private SystemService systemService;
+    @Resource
+    private Common common;
     /**
      * 分页查询
      *
@@ -69,9 +83,13 @@ public class AppraisalController {
     @PostMapping("/add")
     @ApiOperation(value = "新增测评数据", tags = "测评管理")
     @ResponseBody
-    public ResponseVo add(Appraisal appraisal) {
+    public ResponseVo add(@RequestBody Appraisal appraisal, HttpServletRequest request) {
         if(appraisal.getSystemId() == 0 ){
             return ResultUtil.error("新增测评数据时必须关联备案系统");
+        }
+        RecordSystem sys = systemService.queryById(appraisal.getSystemId());
+        if(sys == null){
+            return ResultUtil.error("备案系统不存在");
         }
         ArrayList<Appraisal>  data = this.tbAppraisalService.queryByPage(appraisal);
         if(data.size() > 0){
@@ -81,6 +99,10 @@ public class AppraisalController {
         if(insertData == null){
             return ResultUtil.error("测评数据添加失败");
         }else{
+            Log log = new Log();
+            log.setUserId(common.getLoginUser(request));
+            log.setOperate(MessageFormat.format("新增测评信息：{0}",appraisal.toString()));
+            logService.insert(log);
             return ResultUtil.error("测评数据添加成功",insertData);
         }
     }
@@ -94,7 +116,7 @@ public class AppraisalController {
     @PutMapping("/update")
     @ApiOperation(value = "修改测评数据", tags = "测评管理")
     @ResponseBody
-    public ResponseVo edit(Appraisal appraisal) {
+    public ResponseVo edit(@RequestBody Appraisal appraisal, HttpServletRequest request) {
         if(appraisal.getId() == 0 || null == appraisal.getAppraisal() || "".equals(appraisal.getAppraisal())){
             return ResultUtil.error("请确认请求参数id和appraisal是否给出");
         }
@@ -102,10 +124,17 @@ public class AppraisalController {
         if(data.size() == 0){
             return ResultUtil.error("测评数据不存在，请添先添加数据");
         }
+        if(data.get(0).getStatus().getId() == 10 || data.get(0).getStatus().getId() == 11){
+            return ResultUtil.error("测评已完成，不能进行修改");
+        }
         Appraisal updateDate = this.tbAppraisalService.update(appraisal);
         if(updateDate == null){
             return ResultUtil.error("测评数据修改失败");
         }else{
+            Log log = new Log();
+            log.setUserId(common.getLoginUser(request));
+            log.setOperate(MessageFormat.format("新增测评信息：{0}",appraisal.toString()));
+            logService.insert(log);
             return ResultUtil.error("测评数据修改成功",updateDate);
         }
     }

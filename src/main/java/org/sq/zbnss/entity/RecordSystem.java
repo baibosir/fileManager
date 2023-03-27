@@ -1,5 +1,6 @@
 package org.sq.zbnss.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -39,22 +40,25 @@ public class RecordSystem implements Serializable {
     /**
      * 上线时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date onlineDate;
     /**
      * 测评状态
      */
-    private Integer testStatus;
+    private Dic testStatus;
     /**
      * 录入时间
      */
     @ApiModelProperty(value = "注册时间", hidden= true)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date registTime;
     /**
      * 更新时间
      */
     @ApiModelProperty(value = "注册时间", hidden= true)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
 
@@ -108,11 +112,11 @@ public class RecordSystem implements Serializable {
         this.onlineDate = onlineDate;
     }
 
-    public Integer getTestStatus() {
+    public Dic getTestStatus() {
         return testStatus;
     }
 
-    public void setTestStatus(Integer testStatus) {
+    public void setTestStatus(Dic testStatus) {
         this.testStatus = testStatus;
     }
 

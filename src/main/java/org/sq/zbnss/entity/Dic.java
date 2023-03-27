@@ -1,5 +1,7 @@
 package org.sq.zbnss.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -16,26 +18,36 @@ public class Dic implements Serializable {
     /**
      * 主键
      */
+    @ApiModelProperty(value = "id")
     private Integer id;
     /**
      * 字典key
      */
+    @ApiModelProperty(value = "key")
     private String key;
     /**
      * 字典名称
      */
+    @ApiModelProperty(value = "字典名称")
     private String value;
     /**
      * 字典描述
      */
+    @ApiModelProperty(value = "字典描述")
     private String description;
     /**
      * 字典类型
      */
+    @ApiModelProperty(value = "字典类型")
     private Dictype type;
 
+    @ApiModelProperty(value = "创建时间",hidden = true)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
+
+    @ApiModelProperty(value = "修改时间",hidden = true)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
 

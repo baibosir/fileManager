@@ -34,7 +34,7 @@
         from tb_company
         where 1 = 1
 
-        <if test="company != null and company.id != null">
+        <if test="company != null and company.id > 0">
             and id = #{company.id}
         </if>
         <if test="company != null and company.companyId != null and company.companyId != ''">
@@ -76,7 +76,7 @@
         from tb_company
         <where>
 
-            <if test="id != null">
+            <if test="id > 0">
                 and id = #{company.id}
             </if>
             <if test="companyId != null and companyId != ''">
@@ -117,7 +117,7 @@
         select count(1)
         from tb_company
         <where>
-            <if test="id != null">
+            <if test="id > 0">
                 and id = #{id}
             </if>
             <if test="companyId != null and companyId != ''">

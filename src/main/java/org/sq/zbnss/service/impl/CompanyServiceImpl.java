@@ -11,6 +11,7 @@ import org.sq.zbnss.uitl.Pagination;
 import org.sq.zbnss.uitl.UUIDUtil;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 
 /**
  * 单位信息(TbCompany)表服务实现类
@@ -49,7 +50,7 @@ public class CompanyServiceImpl extends ServiceImpl<CompanyDao, Company> impleme
         return tbCompanyDao.selectCompany(page, company);
     }
 
-    public  Company queryAllByLimit(Company company){
+    public ArrayList<Company> queryAllByLimit(Company company){
         return tbCompanyDao.queryAllByLimit(company);
     }
 

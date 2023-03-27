@@ -34,6 +34,8 @@ public interface SystemService {
      */
     ArrayList<RecordSystem> queryByPage(RecordSystem recordSystem);
 
+    ArrayList<RecordSystem> getMonthDate();
+
     /**
      * 新增数据
      *

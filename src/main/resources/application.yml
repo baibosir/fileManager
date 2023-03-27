@@ -113,7 +113,7 @@ mybatis-plus:
     # 全局地开启或关闭配置文件中的所有映射器已经配置的任何缓存，默认为 true（二级缓存）。
     cache-enabled: false
     jdbc-type-for-null: 'null'
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   # 全局配置
   global-config:
     # 是否控制台 print mybatis-plus 的 LOGO
@@ -155,7 +155,7 @@ mybatis-plus:
 # 文件上传配置
 server:
   tomcat:
-    basedir: D:/mes/uploadPath/tomcat
+    basedir: D:/test
 spring:
   # 文件上传
   servlet:
@@ -164,8 +164,8 @@ spring:
       max-file-size: 2048MB
       # 设置总上传的文件大小
       max-request-size: 5120MB
-      location: D:/mes/uploadPath/tomcat/multipart
       enabled: true
+      location: D:/test
 minio:
   endpoint: http://127.0.0.1:9000 #MinIO服务所在地址
   accessKey: root #访问的key
@@ -183,3 +183,7 @@ management:
 knife4j:
   enable: true
 
+shiro:
+  sessionManager:
+    sessionIdCookieEnabled: false
+    sessionIdUrlRewritingEnabled: false

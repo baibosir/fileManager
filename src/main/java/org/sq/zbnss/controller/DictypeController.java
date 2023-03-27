@@ -60,7 +60,7 @@ public class DictypeController {
      */
     @ApiOperation(value = "添加字典类型信息",tags = "字典类型管理")
     @PostMapping("/add")
-    public ResponseVo add(Dictype dictype) {
+    public ResponseVo add(@RequestBody Dictype dictype) {
         if(dictype.getKey() == null || "".equals(dictype.getKey().trim())){
             return ResultUtil.error("参数错误");
         }
@@ -83,7 +83,7 @@ public class DictypeController {
      */
     @ApiOperation(value = "修改字典类型信息",tags = "字典类型管理")
     @PutMapping
-    public ResponseVo edit(Dictype dictype) {
+    public ResponseVo edit(@RequestBody Dictype dictype) {
         if(dictype.getId() == 0 || dictype.getTypeId() == null ){
             return ResultUtil.error("参数错误");
         }

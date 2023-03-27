@@ -17,7 +17,7 @@ public enum ResponseStatus {
     /**
      * 操作成功
      */
-    SUCCESS(200, "操作成功！"),
+    SUCCESS(0, "操作成功！"),
     /**
      * 无权限
      */

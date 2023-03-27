@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sq.zbnss.dao.FileDao">
+
+    <resultMap type="org.sq.zbnss.entity.FilePo" id="FileMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="uuid" column="uuid" jdbcType="VARCHAR"/>
+        <result property="fileName" column="file_name" jdbcType="VARCHAR"/>
+        <result property="url" column="url" jdbcType="VARCHAR"/>
+        <result property="fileType" column="file_type" jdbcType="VARCHAR"/>
+        <result property="companyId" column="company_id" jdbcType="VARCHAR"/>
+        <result property="machinerId" column="machiner_id" jdbcType="VARCHAR"/>
+        <result property="checkId" column="check_id" jdbcType="VARCHAR"/>
+        <result property="systemId" column="system_id" jdbcType="VARCHAR"/>
+        <result property="issueId" column="issue_id" jdbcType="VARCHAR"/>
+        <result property="trainId" column="train_id" jdbcType="VARCHAR"/>
+        <result property="size" column="file_size" jdbcType="INTEGER"/>
+        <result property="inputTime" column="inpute_time" jdbcType="TIMESTAMP"/>
+        <result property="deleteTime" column="delete_time" jdbcType="TIMESTAMP"/>
+        <association property="inputUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="input_user" />
+        <association property="deleteUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="delete_user" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="FileMap">
+        select
+          id, uuid, file_name, url, file_type, company_id, check_id, system_id, issue_id,train_id,file_size,inpute_time,delete_time,input_user,delete_user
+        from tb_attachment
+        where id = #{id}
+    </select>
+
+    <select id="selectAttachment" resultMap="FileMap" parameterType="org.sq.zbnss.entity.FilePo">
+        select
+        id, uuid, file_name, url, file_type, company_id, check_id, system_id, issue_id,train_id,file_size,inpute_time,delete_time,input_user,delete_user
+        from tb_attachment
+        <where>
+            <if test="id > 0">
+                and id = #{id}
+            </if>
+            <if test="uuid != null and uuid != ''">
+                and uuid = #{uuid}
+            </if>
+            <if test="fileType != null and fileType != ''">
+                and file_type = #{fileType}
+            </if>
+            <if test="companyId != null and companyId != ''">
+                and company_id = #{companyId}
+            </if>
+            <if test="machinerId != null and machinerId != ''">
+                and machiner_id = #{machinerId}
+            </if>
+            <if test="trainId != null and trainId != ''">
+                and train_id = #{trainId}
+            </if>
+            <if test="issueId != null and issueId != ''">
+                and issue_id = #{issueId}
+            </if>
+            <if test="checkId != null and checkId != ''">
+                and check_id = #{checkId}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_attachment(uuid, file_name, url, file_type, company_id,file_size,inpute_time,input_user
+        <if test="systemId != null and systemId != ''">, system_id</if>
+        <if test="checkId != null and checkId != ''">, check_id</if>
+        <if test="issueId != null and issueId != ''">, issue_id</if>
+        <if test="trainId != null and trainId != ''">, train_id</if>
+        <if test="machinerId != null and machinerId != ''">, machiner_id</if>
+        )
+        values (#{uuid}, #{fileName},#{url}, #{fileType},  #{companyId}, #{size}, now(),#{inputUser.id}
+        <if test="systemId != null and systemId != ''">, #{systemId}</if>
+        <if test="checkId != null and checkId != ''">, #{checkId}</if>
+        <if test="issueId != null and issueId != ''">, #{issueId}</if>
+        <if test="trainId != null and trainId != ''">, #{trainId}</if>
+        <if test="machinerId != null and machinerId != ''">, #{machinerId}</if>
+        )
+    </insert>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from tb_attachment where id = #{id}
+    </delete>
+</mapper>
+

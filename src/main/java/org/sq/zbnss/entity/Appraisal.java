@@ -1,5 +1,6 @@
 package org.sq.zbnss.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -27,39 +28,41 @@ public class Appraisal implements Serializable {
     /**
      * 系统id
      */
-    @ApiModelProperty(value = "针对系统id")
+    @ApiModelProperty(value = "针对系统id",dataType = "int")
     private Integer systemId;
     /**
      * 测评状态
      */
-    @ApiModelProperty(value = "状态")
-    private Integer status;
+    @ApiModelProperty(value = "状态",dataType = "int")
+    private Dic status;
     /**
      * 录入时间
      */
-    @ApiModelProperty(value = "录入时间")
+    @ApiModelProperty(value = "录入时间",hidden = true)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date insertTime;
     /**
      * 更新时间
      */
-    @ApiModelProperty(value = "更新时间")
+    @ApiModelProperty(value = "更新时间",hidden = true)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
     /**
      * 测评次数
      */
-    @ApiModelProperty(value = "测评编号")
+    @ApiModelProperty(value = "测评编号",dataType = "int")
     private Integer num;
     /**
      * 创建人
      */
-    @ApiModelProperty(value = "创建人")
+    @ApiModelProperty(value = "创建人",hidden = true)
     private User insertUser;
     /**
      * 更新人
      */
-    @ApiModelProperty(value = "更新人")
+    @ApiModelProperty(value = "更新人",hidden = true)
     private User updateUser;
 
 
@@ -87,11 +90,11 @@ public class Appraisal implements Serializable {
         this.systemId = systemId;
     }
 
-    public Integer getStatus() {
+    public Dic getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(Dic status) {
         this.status = status;
     }
 
@@ -133,6 +136,21 @@ public class Appraisal implements Serializable {
 
     public void setUpdateUser(User updateUser) {
         this.updateUser = updateUser;
+    }
+
+    @Override
+    public String toString() {
+        return "Appraisal{" +
+                "id=" + id +
+                ", appraisal='" + appraisal + '\'' +
+                ", systemId=" + systemId +
+                ", status=" + status +
+                ", insertTime=" + insertTime +
+                ", updateTime=" + updateTime +
+                ", num=" + num +
+                ", insertUser=" + insertUser +
+                ", updateUser=" + updateUser +
+                '}';
     }
 }
 

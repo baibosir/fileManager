@@ -15,7 +15,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.csrf().disable();
         httpSecurity.authorizeRequests()
                 // 直接放行
-                .antMatchers("/doc**", "/webjars/**", "/favicon**","/swagger**","/v2/**","/api/**").permitAll()
+                .antMatchers("/doc**", "/webjars/**", "/favicon**","/swagger**","/v2/**","/**").permitAll()
                 // 权限认证
                 .anyRequest().authenticated();
     }

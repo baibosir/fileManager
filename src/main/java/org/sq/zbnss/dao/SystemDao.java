@@ -4,6 +4,9 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.sq.zbnss.entity.RecordSystem;
+
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,6 +34,12 @@ public interface SystemDao {
      * @return 对象列表
      */
     List<RecordSystem> queryAllByLimit(RecordSystem recordSystem);
+
+    /**
+     * 获取最近一个月的备案信息
+     * @return 对象列表
+     */
+    ArrayList<RecordSystem> getMonthData(Date date);
 
     /**
      * 统计总行数

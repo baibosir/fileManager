@@ -12,12 +12,13 @@
         <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
         <association property="systemId" javaType="org.sq.zbnss.entity.RecordSystem" select="org.sq.zbnss.dao.SystemDao.queryById" column="system_id" />
         <association property="companyId" javaType="org.sq.zbnss.entity.Company" select="org.sq.zbnss.dao.CompanyDao.queryById" column="company_id" />
+        <association property="status" javaType="org.sq.zbnss.entity.Dic" select="org.sq.zbnss.dao.DicDao.queryById" column="status" />
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="TbIssueMap">
         select
-          id, company_id, issue_id, issue_count, type, description, create_time, update_time, system_id
+          id, company_id, issue_id, issue_count, type, description, create_time, update_time, system_id,status
         from tb_issue
         where id = #{id}
     </select>
@@ -25,10 +26,10 @@
     <!--查询指定行数据-->
     <select id="selectIssues" resultMap="TbIssueMap" parameterType="org.sq.zbnss.entity.Issue">
         select
-        id, company_id, issue_id, issue_count, type, description, create_time, update_time, system_id
+        id, company_id, issue_id, issue_count, type, description, create_time, update_time, system_id,status
         from tb_issue
         <where>
-            <if test="issue != null and issue.id != null">
+            <if test="issue != null and issue.id > 0">
                 and id = #{issue.id}
             </if>
             <if test="issue != null and issue.companyId != null">
@@ -61,10 +62,10 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="TbIssueMap">
         select
-          id, company_id, issue_id, issue_count, type, description, create_time, update_time, system_id
+          id, company_id, issue_id, issue_count, type, description, create_time, update_time, system_id,status
         from tb_issue
         <where>
-            <if test="id != null">
+            <if test="id > 0">
                 and id = #{id}
             </if>
             <if test="companyId != null">
@@ -99,7 +100,7 @@
         select count(1)
         from tb_issue
         <where>
-            <if test="id != null">
+            <if test="id > 0">
                 and id = #{id}
             </if>
             <if test="companyId != null">
@@ -131,30 +132,30 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into tb_issue(company_id, issue_id, issue_count, type, description, create_time, update_time
+        insert into tb_issue(company_id, issue_id, issue_count, type, description, create_time, update_time,status
         <if test="systemId != null and systemId.id > 0">
             , system_id
         </if>
        )
-        values (#{companyId.id}, #{issueId}, #{issueCount}, #{type}, #{description}, now(), now()
+        values (#{companyId.id}, #{issueId}, #{issueCount}, #{type}, #{description}, now(), now(),#{status.id}
         <if test="systemId != null and systemId.id > 0">
             , #{systemId.id}
         </if>)
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into tb_issue(company_id, issue_id, issue_count, type, description, create_time, update_time, system_id)
+        insert into tb_issue(company_id, issue_id, issue_count, type, description, create_time, update_time, system_id,,status)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.companyId}, #{entity.issueId}, #{entity.issueCount}, #{entity.type}, #{entity.description}, #{entity.createTime}, #{entity.updateTime}, #{entity.systemId})
+        (#{entity.companyId}, #{entity.issueId}, #{entity.issueCount}, #{entity.type}, #{entity.description}, now(), now(), #{entity.systemId},#{status})
         </foreach>
     </insert>
 
     <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into tb_issue(company_id, issue_id, issue_count, type, description, create_time, update_time, system_id)
+        insert into tb_issue(company_id, issue_id, issue_count, type, description, create_time, update_time, system_id,status)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.companyId}, #{entity.issueId}, #{entity.issueCount}, #{entity.type}, #{entity.description}, #{entity.createTime}, #{entity.updateTime}, #{entity.systemId})
+            (#{entity.companyId}, #{entity.issueId}, #{entity.issueCount}, #{entity.type}, #{entity.description}, #{entity.createTime}, #{entity.updateTime}, #{entity.systemId,,#{status}})
         </foreach>
         on duplicate key update
         company_id = values(company_id),
@@ -194,6 +195,9 @@
             </if>
             <if test="systemId != null">
                 system_id = #{systemId},
+            </if>
+            <if test="status != null and status.id > 0">
+                status = #{status.id},
             </if>
         </set>
         where id = #{id}

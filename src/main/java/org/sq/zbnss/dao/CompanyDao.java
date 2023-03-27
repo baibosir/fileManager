@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import org.sq.zbnss.entity.User;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,7 +36,7 @@ public interface CompanyDao extends BaseMapper<Company> {
      *
      * @return 对象列表
      */
-    Company queryAllByLimit(Company company);
+    ArrayList<Company> queryAllByLimit(Company company);
 
     /**
      * 统计总行数

@@ -1,5 +1,6 @@
 package org.sq.zbnss.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.apache.ibatis.annotations.Mapper;
 import org.sq.zbnss.entity.Dic;
@@ -15,7 +16,7 @@ import java.util.List;
  * @since 2023-03-06 20:14:20
  */
 @Mapper
-public interface DicDao {
+public interface DicDao extends BaseMapper<Dic> {
 
     /**
      * 通过ID查询单条数据
@@ -34,6 +35,8 @@ public interface DicDao {
     IPage<Dic> queryAllByLimit(@Param("dic") Dic dic, @Param("page") IPage<Dic> page);
 
     ArrayList<Dic> queryAllByLimit(@Param("dic") Dic dic);
+
+    ArrayList<Dic> queryByType(int type);
 
     /**
      * 统计总行数

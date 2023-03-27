@@ -811,4 +811,9 @@ public class DateUtil {
         return a.get(Calendar.DATE);
     }
 
+    public static void main(String [] args){
+
+            System.out.println(getAssignedDateFirstDayOfMonth(new Date()));
+
+    }
 }

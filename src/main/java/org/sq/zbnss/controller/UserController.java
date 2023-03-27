@@ -7,8 +7,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.apache.shiro.SecurityUtils;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.sq.zbnss.base.ChangePasswordVo;
 import org.sq.zbnss.base.PageResultVo;
@@ -17,10 +15,12 @@ import org.sq.zbnss.entity.Role;
 import org.sq.zbnss.entity.User;
 import org.sq.zbnss.service.RoleService;
 import org.sq.zbnss.service.UserService;
-import org.sq.zbnss.shiro.MyShiroRealm;
 import org.sq.zbnss.uitl.*;
 
 import java.util.*;
+
+import static org.sq.zbnss.uitl.EncryptionUtil.encryption;
+import static org.sq.zbnss.uitl.StringUtil.isBlank;
 
 /**
  * 后台用户配置
@@ -33,10 +33,9 @@ import java.util.*;
 @Api(value = "用户管理", tags = "用户管理")
 public class UserController {
 
-    private final MyShiroRealm myShiroRealm;
     private final UserService userService;
     private final RoleService roleService;
-    private final MyShiroRealm shiroRealm;
+
 
 
     /**
@@ -45,7 +44,7 @@ public class UserController {
     @ApiOperation(value = "获取用户列表", tags = "用户管理")
     @PostMapping("/list")
     @ResponseBody
-    public PageResultVo loadUsers(@RequestBody() User user, @RequestParam("pageNumber") Integer pageNumber, @RequestParam("pageSize") Integer pageSize) {
+    public PageResultVo loadUsers(@RequestBody(required = false) User user, @RequestParam("pageNumber") Integer pageNumber, @RequestParam("pageSize") Integer pageSize) {
         IPage<User> userPage = userService.selectUsers(user, pageNumber, pageSize);
         return ResultUtil.table(userPage.getRecords(), userPage.getTotal());
     }
@@ -57,15 +56,19 @@ public class UserController {
     @ApiOperation(value = "新增用户", tags = "用户管理")
     @PostMapping("/add")
     @ResponseBody
-    @ApiOperationSupport(ignoreParameters = {"User.id","userId","salt","status","createTime"
-            ,"updateTime","lastLoginTime","loginIpAddress","loginIpAddress"})
+//    @ApiOperationSupport(ignoreParameters = {"User.id","userId","salt","status","createTime"
+//            ,"updateTime","lastLoginTime","loginIpAddress","loginIpAddress"})
     public ResponseVo add(@RequestBody() User userForm, @RequestParam("confirmPassword") String confirmPassword) {
         String username = userForm.getUsername();
+        String password = userForm.getPassword();
+        if(isBlank(username) || isBlank(password)){
+            return ResultUtil.error("用户名和密码不能为空");
+        }
         User user = userService.selectByUsername(username);
         if (null != user) {
             return ResultUtil.error("用户名已存在");
         }
-        String password = userForm.getPassword();
+
         //判断两次输入密码是否相等
         if (confirmPassword != null && password != null) {
             if (!confirmPassword.equals(password)) {
@@ -78,7 +81,9 @@ public class UserController {
         userForm.setCreateTime(date);
         userForm.setUpdateTime(date);
         userForm.setLastLoginTime(date);
-        PasswordHelper.encryptPassword(userForm);
+        userForm.setPassword(encryption(password,username));
+//        PasswordHelper.encryptPassword(userForm);
+        userForm.setSalt(username);
         int num = userService.register(userForm);
         if (num > 0) {
             return ResultUtil.success("添加用户成功");
@@ -152,7 +157,7 @@ public class UserController {
     /**
      * 保存分配角色
      */
-    @ApiOperation(value = "分配角色", tags = "用户管理")
+//    @ApiOperation(value = "分配角色", tags = "用户管理")
     @PostMapping("/assign/role")
     @ResponseBody
     public ResponseVo assignRole(String userId, String roleIdStr) {
@@ -162,8 +167,6 @@ public class UserController {
         try {
             // 给用户分配角色
             userService.addAssignRole(userId, roleIdsList);
-            // 重置用户权限
-            myShiroRealm.clearAuthorizationByUserId(Collections.singletonList(userId));
             responseVo = ResultUtil.success("分配角色成功");
         } catch (Exception e) {
             responseVo = ResultUtil.error("分配角色失败");
@@ -191,7 +194,6 @@ public class UserController {
             //*清除登录缓存*//
             List<String> userIds = new ArrayList<>();
             userIds.add(loginUser.getUserId());
-            shiroRealm.removeCachedAuthenticationInfo(userIds);
             /*SecurityUtils.getSubject().logout();*/
         } else {
             return ResultUtil.error("您输入的旧密码有误");

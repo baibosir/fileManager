@@ -145,7 +145,8 @@ public class MinioUtils {
                     ListObjectsArgs.builder().bucket(bucketName).prefix(objectName).recursive(false).build());
             for (Result<Item> result : results) {
                 Item item = result.get();
-                if (item.isDir() && objectName.equals(item.objectName())) {
+                String folderName = objectName + "/";
+                if (item.isDir() && folderName.equals(item.objectName())) {
                     exist = true;
                 }
             }
@@ -512,5 +513,18 @@ public class MinioUtils {
     public static String getUtf8ByURLDecoder(String str) throws UnsupportedEncodingException {
         String url = str.replaceAll("%(?![0-9a-fA-F]{2})", "%25");
         return URLDecoder.decode(url, "UTF-8");
+    }
+
+    public static void main(String [] args){
+        MinioUtils minioUtils = new MinioUtils("http://127.0.0.1:9000","root","root1234");
+        try {
+            List<Bucket> lb = minioUtils.getAllBuckets();
+//            minioUtils.putDirObject("testfile","testfile/test1/");
+            //http://127.0.0.1:9000/11111/check/11111/60de999f3edc45ab88eb807fa9cf155a.jpg
+            System.out.println(lb.size());
+            System.out.println(getPreviewUrl("11111","check/11111/60de999f3edc45ab88eb807fa9cf155a.jpg","image/jpg",1,TimeUnit.DAYS));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

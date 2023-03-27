@@ -10,15 +10,20 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.Profiles;
 import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.oas.annotations.EnableOpenApi;
+import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
-import springfox.documentation.service.Tag;
+import springfox.documentation.service.Parameter;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 作用: 自动生成API文档和在线接口调试工具
@@ -46,12 +51,20 @@ public class Knife4jConfig {
      */
     @Autowired
     TypeResolver typeResolver;
+
+
     @Bean
     public Docket createRestApi(Environment environment)
     {
         //设置显示的swagger环境信息,判断是否处在自己设定的环境当中,为了安全生产环境不开放Swagger
         Profiles profiles=Profiles.of("dev","test");
         boolean flag=environment.acceptsProfiles(profiles);
+
+        /*添加接口请求头参数配置 没有的话 可以忽略*/
+        ParameterBuilder tokenPar = new ParameterBuilder();
+        List<Parameter> pars = new ArrayList<Parameter>();
+        tokenPar.name("Authorization").description("令牌").defaultValue("设置token默认值").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
+        pars.add(tokenPar.build());
         //创建一个Docket的对象，相当于是swagger的一个实例
         return new Docket(DocumentationType.SWAGGER_2)
                 .useDefaultResponseMessages(false)
@@ -59,17 +72,12 @@ public class Knife4jConfig {
                 .apiInfo(apiInfo())
                 .enable(true)
                 .select()
-                // 这里指定Controller扫描包路径:设置要扫描的接口类，一般是Controller类
                 .apis(RequestHandlerSelectors.basePackage("org.sq.zbnss.controller"))  //这里采用包扫描的方式来确定要显示的接口
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class)) //这里采用包含注解的方式来确定要显示的接口
-//                .apis(RequestHandlerSelectors.any())
-                // 配置过滤哪些，设置对应的路径才获取
                 .paths(PathSelectors.any())
-                .build();
-                //防止Controller中参数中没有实体类或者返回值不是实体类导致Swagger Models页面扫描不到的情况
-//                .additionalModels(typeResolver.resolve(EmailNotice.class))
-//                .additionalModels(typeResolver.resolve(SmsNotice.class))
-//                .additionalModels(typeResolver.resolve(WeChatNotice.class));
+                .build()
+                .globalOperationParameters(pars);
+
     }
 
     ///配置相关的api信息
@@ -86,12 +94,7 @@ public class Knife4jConfig {
                 .build();
     }
 
-    private Tag[] getTags() {
 
-        return new Tag[] {
-                new Tag("alibaba", "阿里巴巴API接口"),
-                new Tag("tencent", "腾讯API接口")
-        };
-    }
+
 
 }

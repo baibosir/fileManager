@@ -9,10 +9,20 @@ import org.apache.shiro.SecurityUtils;
 import org.sq.zbnss.base.PageResultVo;
 import org.sq.zbnss.base.ResponseVo;
 import org.sq.zbnss.entity.Company;
+import org.sq.zbnss.entity.Log;
 import org.sq.zbnss.entity.User;
 import org.sq.zbnss.service.CompanyService;
 import org.springframework.web.bind.annotation.*;
+import org.sq.zbnss.service.LogService;
+import org.sq.zbnss.service.UserService;
+import org.sq.zbnss.uitl.JWTUtil;
 import org.sq.zbnss.uitl.ResultUtil;
+
+import javax.servlet.http.HttpServletRequest;
+import java.text.MessageFormat;
+import java.util.ArrayList;
+
+import static cn.hutool.system.SystemUtil.getUserInfo;
 
 /**
  * 单位信息(TbCompany)表控制层
@@ -29,6 +39,10 @@ public class CompanyController {
      * 服务对象
      */
     private CompanyService tbCompanyService;
+
+    private  UserService userService;
+
+    private LogService logService;
 
     /**
      * 分页查询
@@ -66,26 +80,38 @@ public class CompanyController {
      * @return 新增结果
      */
     @ApiOperation(value = "新增单位信息", tags = "单位管理")
-    @ApiOperationSupport(includeParameters = {"principal.id","name","address","telephone","telephone","description","type"
-            ,"numSystem1","numSystem2","numSystem3"})
     @PostMapping("/add")
     @ResponseBody
-    public ResponseVo add(Company company) {
-        Company company1 = tbCompanyService.queryAllByLimit(company);
-        if(null != company1){
+    public ResponseVo add(@RequestBody() Company company, HttpServletRequest request) {
+        if(company.getName() == null || "".equals(company.getName()) || company.getAddress() ==null || "".equals(company.getAddress())){
+            return ResultUtil.error("请求参数错误");
+        }
+        ArrayList<Company> company1 = tbCompanyService.queryAllByLimit(company);
+        if(company1.size() > 0){
             return ResultUtil.error("单位已存在");
         }
-        User loginUser = (User) SecurityUtils.getSubject().getPrincipal();
+        User loginUser = getLoginUser(request);
         company.setInsertUser(loginUser);
         company.setUpdateUser(loginUser);
         int num = this.tbCompanyService.insert(company);
         if (num > 0) {
+            Log log = new Log();
+            log.setUserId(loginUser);
+            log.setOperate(MessageFormat.format("新增单位{0}",company.getName()));
+            logService.insert(log);
             return ResultUtil.success("单位添加成功");
         } else {
             return ResultUtil.error("添单位添加失败");
         }
     }
-
+    public User getLoginUser(HttpServletRequest request){
+        String tokenHeader = request.getHeader("Authorization");
+        String[] tokens = tokenHeader.split(" ");
+        String token = tokens[1];
+        String userId = JWTUtil.getUserId(token);
+        User loginUser = userService.getUserByUserId(userId);
+        return loginUser;
+    }
     /**
      * 编辑数据
      *
@@ -93,22 +119,25 @@ public class CompanyController {
      * @return 编辑结果
      */
     @ApiOperation(value = "修改单位信息", tags = "单位管理")
-    @ApiOperationSupport(includeParameters = {"principal.id","name","address","telephone","telephone","description","type"
-            ,"numSystem1","numSystem2","numSystem3"})
     @PutMapping("/modify")
     @ResponseBody
-    public ResponseVo edit(Company company) {
-        Company company1 = tbCompanyService.queryAllByLimit(company);
-        if(null == company1){
+    public ResponseVo edit(@RequestBody()Company company, HttpServletRequest request) {
+        ArrayList<Company>  company1 = tbCompanyService.queryAllByLimit(company);
+        if(company1.size() == 0){
             return ResultUtil.error("单位不存在");
         }
-        User loginUser = (User) SecurityUtils.getSubject().getPrincipal();
+        User loginUser = getLoginUser(request);
         company.setUpdateUser(loginUser);
         Company updateResult = this.tbCompanyService.update(company);
         if(updateResult == null){
             return ResultUtil.error("添单位修改失败");
         }
-        return ResultUtil.success("单位修改成功",this.tbCompanyService.update(company));
+        Company company2 =this. tbCompanyService.update(company);
+        Log log = new Log();
+        log.setUserId(loginUser);
+        log.setOperate(MessageFormat.format("修改单位{0}:{1}",company.getName(),company2.toString()));
+        logService.insert(log);
+        return ResultUtil.success("单位修改成功",company2);
     }
 
     /**
@@ -120,9 +149,17 @@ public class CompanyController {
     @ApiOperation(value = "删除单位信息", tags = "单位管理")
     @DeleteMapping("/delete")
     @ResponseBody
-    public ResponseVo deleteById(Integer id) {
+    public ResponseVo deleteById(Integer id, HttpServletRequest request) {
+        Company company = this.tbCompanyService.queryById(id);
+        if(company == null){
+            return ResultUtil.error("删除单位失败(单位不存在)");
+        }
        boolean result = this.tbCompanyService.deleteById(id);
         if (result) {
+            User loginUser = getLoginUser(request);
+            Log log = new Log();
+            log.setUserId(loginUser);
+            log.setOperate(MessageFormat.format("删除单位{0}:{1}",company.getName()));
             return ResultUtil.success("删除单位成功");
         } else {
             return ResultUtil.error("删除单位失败");

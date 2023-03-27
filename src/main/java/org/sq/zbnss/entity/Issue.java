@@ -1,5 +1,6 @@
 package org.sq.zbnss.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -24,7 +25,7 @@ public class Issue implements Serializable {
     /**
      * 单位id
      */
-    @ApiModelProperty(value = "单位")
+    @ApiModelProperty(value = "单位" ,dataType = "Company")
     private Company companyId;
     /**
      * 问题id
@@ -34,35 +35,40 @@ public class Issue implements Serializable {
     /**
      * 问题数量
      */
-    @ApiModelProperty(value = "问题数量")
+    @ApiModelProperty(value = "问题数量",dataType = "int")
     private int issueCount;
     /**
      * 问题类型
      */
-    @ApiModelProperty(value = "问题类型")
+    @ApiModelProperty(value = "问题类型",dataType = "int")
     private Integer type;
     /**
      * 问题描述
      */
-    @ApiModelProperty(value = "问题描述")
+    @ApiModelProperty(value = "问题描述",dataType = "String")
     private String description;
     /**
      * 创建时间
      */
-    @ApiModelProperty(value = "创建时间")
+    @ApiModelProperty(value = "创建时间", hidden = true)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
     /**
      * 更新时间
      */
-    @ApiModelProperty(value = "更新时间")
+    @ApiModelProperty(value = "更新时间", hidden = true)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
     /**
      * 系统id
      */
-    @ApiModelProperty(value = "针对系统")
+    @ApiModelProperty(value = "针对系统" )
     private RecordSystem systemId;
+
+    @ApiModelProperty(value = "问题状态" )
+    private Dic status;
 
 
     public Integer getId() {
@@ -135,6 +141,14 @@ public class Issue implements Serializable {
 
     public void setSystemId(RecordSystem systemId) {
         this.systemId = systemId;
+    }
+
+    public Dic getStatus() {
+        return status;
+    }
+
+    public void setStatus(Dic status) {
+        this.status = status;
     }
 }
 

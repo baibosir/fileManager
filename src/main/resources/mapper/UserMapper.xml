@@ -2,7 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
     <mapper namespace="org.sq.zbnss.dao.UserMapper">
     <resultMap id="BaseResultMap" type="org.sq.zbnss.entity.User" >
-        <id column="user_id" property="userId" jdbcType="VARCHAR" />
+        <id column="id" property="id" jdbcType="VARCHAR" />
+        <result column="user_id" property="userId" jdbcType="VARCHAR" />
         <result column="username" property="username" jdbcType="VARCHAR" />
         <result column="password" property="password" jdbcType="VARCHAR" />
         <result column="salt" property="salt" jdbcType="VARCHAR" />
@@ -41,7 +42,10 @@
         left join tb_user_role b on a.id = b.user_id
         left join tb_role c on b.role_id = c.id
         WHERE a.status=1
-        <if test="user !=null and user !=null and user.username != ''">
+        <if test="user !=null and  user.id > 0">
+            AND a.id = #{user.id}
+        </if>
+        <if test="user !=null and user.username !=null and user.username != ''">
             AND a.username like concat('%', #{user.username}, '%')
         </if>
         <if test="user !=null and user.email !=null and user.email != ''">

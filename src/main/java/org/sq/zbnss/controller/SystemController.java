@@ -5,16 +5,20 @@ import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
-import org.apache.shiro.SecurityUtils;
 import org.sq.zbnss.base.PageResultVo;
 import org.sq.zbnss.base.ResponseVo;
+import org.sq.zbnss.entity.Company;
+import org.sq.zbnss.entity.Log;
 import org.sq.zbnss.entity.RecordSystem;
-import org.sq.zbnss.entity.User;
+import org.sq.zbnss.service.CompanyService;
+import org.sq.zbnss.service.LogService;
 import org.sq.zbnss.service.SystemService;
 import org.springframework.web.bind.annotation.*;
 import org.sq.zbnss.uitl.ResultUtil;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 
 /**
@@ -26,7 +30,7 @@ import java.util.ArrayList;
 
 @Api(value = "备案管理", tags = "备案管理")
 @RestController
-@RequestMapping("/api/tbSystem")
+@RequestMapping("/api/System")
 @AllArgsConstructor
 public class SystemController {
     /**
@@ -34,6 +38,15 @@ public class SystemController {
      */
     @Resource
     private SystemService tbSystemService;
+
+    @Resource
+    private LogService logService;
+
+    @Resource
+    private CompanyService companyService;
+
+    @Resource
+    private Common common;
 
     /**
      * 分页查询
@@ -71,17 +84,31 @@ public class SystemController {
      * @return 新增结果
      */
     @ApiOperation(value = "新增备案信息", tags = "备案管理")
-    @ApiOperationSupport(includeParameters = {"company.id","name","level","onlineDate","testStatus"})
     @PostMapping("/add")
     @ResponseBody
-    public ResponseVo add(RecordSystem recordSystem) {
+    public ResponseVo add(@RequestBody RecordSystem recordSystem, HttpServletRequest request) {
+        System.out.println(recordSystem);
+        if(recordSystem.getCompany() == null || recordSystem.getCompany().getId() <= 0){
+            return  ResultUtil.error("请给出正确的单位信息");
+        }
+        if(recordSystem.getName() == null || "".equals(recordSystem.getName()) ||
+                recordSystem.getLevel() == null || "".equals(recordSystem.getLevel())||recordSystem.getOnlineDate() == null ){
+            return  ResultUtil.error("请求参数错误");
+        }
         ArrayList<RecordSystem> recordSystems = this.tbSystemService.queryByPage(recordSystem);
         if(recordSystems.size() > 0){
             return  ResultUtil.error("备案系统已存在，请勿重复备案");
         }
-        User loginUser = (User) SecurityUtils.getSubject().getPrincipal();
+        Company com = companyService.queryById(recordSystem.getCompany().getId());
+        if(com == null){
+            return  ResultUtil.error("单位信息不存在");
+        }
         int num = this.tbSystemService.insert(recordSystem);
         if (num > 0) {
+            Log log = new Log();
+            log.setUserId(common.getLoginUser(request));
+            log.setOperate(MessageFormat.format("新增备案信息：{0}",recordSystem.toString()));
+            logService.insert(log);
             return ResultUtil.success("备案信息添加成功");
         } else {
             return ResultUtil.error("备案信息添加失败");
@@ -95,13 +122,20 @@ public class SystemController {
      * @return 编辑结果
      */
     @ApiOperation(value = "修改备案信息", tags = "备案管理")
-    @ApiOperationSupport(includeParameters = {"company.id","name","level","onlineDate","testStatus"})
     @PutMapping("/update")
-    public ResponseVo edit(RecordSystem recordSystem) {
+    public ResponseVo edit(@RequestBody RecordSystem recordSystem, HttpServletRequest request) {
+        RecordSystem old_sys = this.tbSystemService.queryById(recordSystem.getId());
+        if(old_sys == null){
+            return ResultUtil.error("备案信息不存在");
+        }
         RecordSystem recordSystem1 = this.tbSystemService.update(recordSystem);
         if(recordSystem1 == null){
             return ResultUtil.error("备案信息修改失败");
         }
+        Log log = new Log();
+        log.setUserId(common.getLoginUser(request));
+        log.setOperate(MessageFormat.format("新增备案信息：{0}",recordSystem1.toString()));
+        logService.insert(log);
         return ResultUtil.success("备案信息修改成功",recordSystem1);
     }
 

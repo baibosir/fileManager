@@ -46,7 +46,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 //        registry.addResourceHandler(staticizeProperties.getAccessPathPattern())
 //                .addResourceLocations("file:" + staticFolder);
 
-        registry.addResourceHandler("doc.html").addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("/doc.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 

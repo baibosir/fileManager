@@ -1,9 +1,14 @@
 package org.sq.zbnss.service;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.service.IService;
 import org.sq.zbnss.entity.Dic;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.sq.zbnss.entity.User;
+
+import java.util.ArrayList;
 
 /**
  * 字典(TbDic)表服务接口
@@ -11,7 +16,7 @@ import org.springframework.data.domain.PageRequest;
  * @author makejava
  * @since 2023-03-06 20:14:20
  */
-public interface DicService {
+public interface DicService extends IService<Dic> {
 
     /**
      * 通过ID查询单条数据
@@ -20,6 +25,8 @@ public interface DicService {
      * @return 实例对象
      */
     Dic queryById(Integer id);
+
+    ArrayList<Dic> queryByType(int type);
 
     /**
      * 分页查询

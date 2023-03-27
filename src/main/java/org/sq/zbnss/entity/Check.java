@@ -1,5 +1,6 @@
 package org.sq.zbnss.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -35,12 +36,14 @@ public class Check implements Serializable {
      * 计划检查时间
      */
     @ApiModelProperty(value = "计划开始时间")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date planDate;
     /**
      * 实际检查时间
      */
     @ApiModelProperty(value = "实际开始时间")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date checkDate;
     /**
@@ -52,7 +55,7 @@ public class Check implements Serializable {
      * 检查状态
      */
     @ApiModelProperty(value = "检查状态")
-    private Integer status;
+    private Dic status;
     /**
      * 单位id
      */
@@ -62,23 +65,25 @@ public class Check implements Serializable {
      * 创建时间
      */
     @ApiModelProperty(value = "创建时间")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date instertTime;
     /**
      * 更新时间
      */
     @ApiModelProperty(value = "更新时间")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
     /**
      * 更新人
      */
-    @ApiModelProperty(value = "更新人")
+    @ApiModelProperty(value = "更新人",hidden = true)
     private User updateUser;
     /**
      * 创建人
      */
-    @ApiModelProperty(value = "创建人")
+    @ApiModelProperty(value = "创建人",hidden = true)
     private User insertUser;
 
 
@@ -122,11 +127,11 @@ public class Check implements Serializable {
         this.detail = detail;
     }
 
-    public Integer getStatus() {
+    public Dic getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(Dic status) {
         this.status = status;
     }
 

@@ -5,6 +5,7 @@ import org.sq.zbnss.entity.Check;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 /**
@@ -33,6 +34,8 @@ public interface CheckService {
 
 
     IPage<Check> queryByPage(Check check, Integer pageNumber, Integer pageSize);
+
+    ArrayList<Check> queryByPage() throws ParseException;
 
     /**
      * 新增数据

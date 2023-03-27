@@ -35,5 +35,6 @@ public class PasswordHelper {
         user.setPassword("root@1234");
         encryptPassword(user);
         System.out.println(user);
+        System.out.println(getPassword(user));
     }
 }

@@ -1,19 +1,23 @@
 package org.sq.zbnss.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import org.sq.zbnss.entity.Company;
+import org.sq.zbnss.entity.Appraisal;
+import org.sq.zbnss.entity.Dic;
 import org.sq.zbnss.entity.RecordSystem;
 import org.sq.zbnss.dao.SystemDao;
+import org.sq.zbnss.service.AppraisalService;
 import org.sq.zbnss.service.SystemService;
 import org.springframework.stereotype.Service;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.sq.zbnss.uitl.Pagination;
 import org.sq.zbnss.uitl.UUIDUtil;
 
 import javax.annotation.Resource;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+
+import static org.sq.zbnss.uitl.DateUtil.getAssignedDateFirstDayOfMonth;
 
 /**
  * 系统信息(TbSystem)表服务实现类
@@ -25,6 +29,9 @@ import java.util.ArrayList;
 public class SystemServiceImpl implements SystemService {
     @Resource
     private SystemDao systemDao;
+
+    @Resource
+    private AppraisalService appraisalService;
 
     /**
      * 通过ID查询单条数据
@@ -56,6 +63,19 @@ public class SystemServiceImpl implements SystemService {
         return (ArrayList<RecordSystem>) this.systemDao.queryAllByLimit(recordSystem);
     }
 
+    @Override
+    public ArrayList<RecordSystem> getMonthDate(){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String firstDateTime = getAssignedDateFirstDayOfMonth(new Date())+" 00:00:00";
+        try {
+            Date firstDate = format.parse(firstDateTime);
+            return this.systemDao.getMonthData(firstDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return new ArrayList<RecordSystem>();
+    }
+
     /**
      * 新增数据
      *
@@ -65,7 +85,18 @@ public class SystemServiceImpl implements SystemService {
     @Override
     public int insert(RecordSystem recordSystem) {
         recordSystem.setSystemId(UUIDUtil.getUniqueIdByUUId());
-        return this.systemDao.insert(recordSystem);
+        Dic dic = new Dic();
+        dic.setId(9);
+        recordSystem.setTestStatus(dic);
+        int result = this.systemDao.insert(recordSystem);
+        if(result == 1){
+            //新增测评信息
+            RecordSystem recordSystem1 = this.systemDao.queryAllByLimit(recordSystem).get(0);
+            Appraisal appraisal = new Appraisal();
+            appraisal.setSystemId(recordSystem1.getId());
+            appraisalService.insert(appraisal);
+        }
+        return result;
     }
 
     /**

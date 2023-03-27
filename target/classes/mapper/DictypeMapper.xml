@@ -24,7 +24,7 @@
           id, type_id, type_key, type_value
         from tb_dictype
         <where>
-            <if test="id != null">
+            <if test="id > 0">
                 and id = #{id}
             </if>
             <if test="typeId != null and typeId != ''">
@@ -44,7 +44,7 @@
         select count(1)
         from tb_dictype
         <where>
-            <if test="id != null">
+            <if test="id > 0">
                 and id = #{id}
             </if>
             <if test="typeId != null and typeId != ''">

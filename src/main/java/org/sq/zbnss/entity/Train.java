@@ -1,5 +1,6 @@
 package org.sq.zbnss.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -48,24 +49,28 @@ public class Train implements Serializable {
      * 计划开始时间
      */
     @ApiModelProperty(value = "计划培训开始时间")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date planStime;
     /**
      * 计划完成时间
      */
     @ApiModelProperty(value = "计划培训完成时间")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date planEtime;
     /**
      * 实际开始时间
      */
     @ApiModelProperty(value = "实际开始培训时间")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date startTiem;
+    private Date startTime;
     /**
      * 实际完成时间
      */
     @ApiModelProperty(value = "实际完成培训时间")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date endTime;
     /**
@@ -77,12 +82,14 @@ public class Train implements Serializable {
      * 创建时间
      */
     @ApiModelProperty(value = "记录创建时间" ,hidden = true)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
     /**
      * 更新时间
      */
     @ApiModelProperty(value = "记录更新时间",hidden = true)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" , timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
 
@@ -143,12 +150,12 @@ public class Train implements Serializable {
         this.planEtime = planEtime;
     }
 
-    public Date getStartTiem() {
-        return startTiem;
+    public Date getStartTime() {
+        return startTime;
     }
 
-    public void setStartTiem(Date startTiem) {
-        this.startTiem = startTiem;
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
     }
 
     public Date getEndTime() {

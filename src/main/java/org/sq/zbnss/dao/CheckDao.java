@@ -6,6 +6,7 @@ import org.sq.zbnss.entity.Check;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -36,6 +37,8 @@ public interface CheckDao {
      * @return 对象列表
      */
     ArrayList<Check> queryAllByLimit(Check tbCheck);
+
+    ArrayList<Check> getMonthData(Date month);
 
     /**
      * 统计总行数

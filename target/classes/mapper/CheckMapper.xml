@@ -8,13 +8,13 @@
         <result property="planDate" column="plan_date" jdbcType="TIMESTAMP"/>
         <result property="checkDate" column="check_date" jdbcType="TIMESTAMP"/>
         <result property="detail" column="detail" jdbcType="VARCHAR"/>
-        <result property="status" column="status" jdbcType="INTEGER"/>
         <result property="instertTime" column="instert_time" jdbcType="TIMESTAMP"/>
         <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
         <association property="insertUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="insert_user" />
         <association property="updateUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="update_user" />
         <association property="checkUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="check_user" />
         <association property="companyId" javaType="org.sq.zbnss.entity.Company" select="org.sq.zbnss.dao.CompanyDao.queryById" column="company_id" />
+        <association property="status" javaType="org.sq.zbnss.entity.Dic" select="org.sq.zbnss.dao.DicDao.queryById" column="status" />
     </resultMap>
 
     <!--查询单个-->
@@ -25,12 +25,17 @@
         where id = #{id}
     </select>
 
+    <select id="getMonthData" resultMap="TbCheckMap">
+        SELECT id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user
+        FROM tb_check WHERE instert_time >= #{month} or update_time >=#{month};
+    </select>
+
     <select id="selectCheck" resultMap="TbCheckMap" parameterType="org.sq.zbnss.entity.Check">
         select
         id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user
         from tb_check
         <where>
-            <if test="check != null and check.id != null">
+            <if test="check != null and check.id > 0 ">
                 and id = #{check.id}
             </if>
             <if test="check != null and check.checkId != null and checkId != ''">
@@ -48,7 +53,7 @@
             <if test="check != null and check.detail != null and detail != ''">
                 and detail = #{check.detail}
             </if>
-            <if test="check != null and check.status != null">
+            <if test="check != null and check.status != null and check.status.id > 0">
                 and status = #{check.status}
             </if>
             <if test="check != null and check.companyId != null">
@@ -75,7 +80,7 @@
           id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user
         from tb_check
         <where>
-            <if test="id != null">
+            <if test="id > 0">
                 and id = #{id}
             </if>
             <if test="checkId != null and checkId != ''">
@@ -93,8 +98,8 @@
             <if test="detail != null and detail != ''">
                 and detail = #{detail}
             </if>
-            <if test="status != null">
-                and status = #{status}
+            <if test="status != null and status.id > 0">
+                and status = #{status.id}
             </if>
             <if test="companyId != null">
                 and company_id = #{companyId.id}
@@ -119,7 +124,7 @@
         select count(1)
         from tb_check
         <where>
-            <if test="id != null">
+            <if test="id > 0">
                 and id = #{id}
             </if>
             <if test="checkId != null and checkId != ''">
@@ -137,8 +142,8 @@
             <if test="detail != null and detail != ''">
                 and detail = #{detail}
             </if>
-            <if test="status != null">
-                and status = #{status}
+            <if test="status != null and check.status.id > 0">
+                and status = #{status.id}
             </if>
             <if test="companyId != null">
                 and company_id = #{companyId.id}
@@ -161,14 +166,14 @@
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
         insert into tb_check(check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user)
-        values (#{checkId}, #{checkUser}, #{planDate}, #{checkDate}, #{detail}, #{status}, #{companyId.id},now(), now(), #{updateUser.id}, #{insertUser.id})
+        values (#{checkId}, #{checkUser}, #{planDate}, #{checkDate}, #{detail}, 14, #{companyId.id},now(), now(), #{updateUser.id}, #{insertUser.id})
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
         insert into tb_check(check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.checkId}, #{entity.checkUser}, #{entity.planDate}, #{entity.checkDate}, #{entity.detail}, #{entity.status}, #{entity.companyId.id}, now(), now(), #{entity.updateUser.id}, #{entity.insertUser.id})
+        (#{entity.checkId}, #{entity.checkUser}, #{entity.planDate}, #{entity.checkDate}, #{entity.detail}, 14, #{entity.companyId.id}, now(), now(), #{entity.updateUser.id}, #{entity.insertUser.id})
         </foreach>
     </insert>
 
@@ -176,7 +181,7 @@
         insert into tb_check(check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.checkId}, #{entity.checkUser}, #{entity.planDate}, #{entity.checkDate}, #{entity.detail}, #{entity.status}, #{entity.companyId.id}, now(), now(), #{entity.updateUser.id}, #{entity.insertUser.id})
+            (#{entity.checkId}, #{entity.checkUser}, #{entity.planDate}, #{entity.checkDate}, #{entity.detail}, 14, #{entity.companyId.id}, now(), now(), #{entity.updateUser.id}, #{entity.insertUser.id})
         </foreach>
         on duplicate key update
         check_id = values(check_id),
@@ -184,7 +189,7 @@
         plan_date = values(plan_date),
         check_date = values(check_date),
         detail = values(detail),
-        status = values(status),
+        status = values(status.id),
         company_id = values(company_id),
         update_time = values(update_time),
         update_user = values(update_user.id),
@@ -209,8 +214,8 @@
             <if test="detail != null and detail != ''">
                 detail = #{detail},
             </if>
-            <if test="status != null">
-                status = #{status},
+            <if test="status != null  and check.status.id > 0">
+                status = #{status.id},
             </if>
             <if test="companyId != null">
                 company_id = #{companyId.id},

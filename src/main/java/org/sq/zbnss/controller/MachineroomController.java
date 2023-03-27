@@ -6,12 +6,18 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.sq.zbnss.base.PageResultVo;
 import org.sq.zbnss.base.ResponseVo;
+import org.sq.zbnss.entity.Company;
+import org.sq.zbnss.entity.Log;
 import org.sq.zbnss.entity.Machineroom;
+import org.sq.zbnss.service.CompanyService;
+import org.sq.zbnss.service.LogService;
 import org.sq.zbnss.service.MachineroomService;
 import org.springframework.web.bind.annotation.*;
 import org.sq.zbnss.uitl.ResultUtil;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 
 /**
@@ -29,6 +35,15 @@ public class MachineroomController {
      */
     @Resource
     private MachineroomService tbMachineroomService;
+
+    @Resource
+    private CompanyService companyService;
+
+    @Resource
+    private Common common;
+
+    @Resource
+    private LogService logService;
 
     /**
      * 分页查询
@@ -68,15 +83,20 @@ public class MachineroomController {
      */
     @PostMapping("/add")
     @ApiOperation(value = "录入机房列表", tags = "机房管理")
-    @ApiOperationSupport(includeParameters = {"companyId.id","address","principal.id","regTel","regDate","detail","use","registTime"})
     @ResponseBody
-    public ResponseVo add(@RequestBody()Machineroom machineroom) {
+    public ResponseVo add(@RequestBody()Machineroom machineroom , HttpServletRequest request) {
         if(machineroom.getCompanyId() == null || machineroom.getPrincipal() == null){
             return ResultUtil.error("请关联单位信息");
         }
         if(machineroom.getAddress() == null || "".equals(machineroom.getAddress())){
             return ResultUtil.error("机房信息必须包含机房地址信息");
         }
+
+        Company company = companyService.queryById(machineroom.getCompanyId().getId());
+        if(company == null){
+            return  ResultUtil.error("单位不存在");
+        }
+
         ArrayList<Machineroom> existList = this.tbMachineroomService.queryByPage(machineroom);
         if(existList.size() > 0){
             return ResultUtil.error("机房信息已存在，请检查信息");
@@ -85,6 +105,10 @@ public class MachineroomController {
         if(machineroom1 == null){
             return ResultUtil.error("机房信息添加失败");
         }
+        Log log = new Log();
+        log.setUserId(common.getLoginUser(request));
+        log.setOperate(MessageFormat.format("新增机房单信息：{0}",machineroom1.toString()));
+        logService.insert(log);
         return ResultUtil.success("机房信息添加成功",machineroom1);
     }
 
@@ -96,13 +120,25 @@ public class MachineroomController {
      */
     @PutMapping
     @ApiOperation(value = "修改机房列表", tags = "机房管理")
-    @ApiOperationSupport(includeParameters = {"id,machineId,companyId.id","address","principal.id","regTel","regDate","detail","use","registTime"})
     @ResponseBody
-    public ResponseVo edit(@RequestBody()Machineroom machineroom) {
+    public ResponseVo edit(@RequestBody()Machineroom machineroom , HttpServletRequest request) {
         if(machineroom.getId() == 0 ){
+            return ResultUtil.error("请求参数错误");
+        }
+
+        Machineroom machineroom1 = tbMachineroomService.queryById(machineroom.getId());
+        if(machineroom1 == null){
+            return ResultUtil.error("机房信息不存在");
+        }
+        Machineroom machineroom2 = this.tbMachineroomService.update(machineroom);
+        if(machineroom2 == null){
             return ResultUtil.error("机房信息修改失败");
         }
-        return ResultUtil.success("机房信息修改成功",this.tbMachineroomService.update(machineroom));
+        Log log = new Log();
+        log.setUserId(common.getLoginUser(request));
+        log.setOperate(MessageFormat.format("新增机房单信息：{0}",machineroom2.toString()));
+        logService.insert(log);
+        return ResultUtil.success("机房信息修改成功",machineroom2);
     }
 
     /**
