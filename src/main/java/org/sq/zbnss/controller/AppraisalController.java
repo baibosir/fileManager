@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiOperation;
 import org.sq.zbnss.base.PageResultVo;
 import org.sq.zbnss.base.ResponseVo;
 import org.sq.zbnss.entity.Appraisal;
+import org.sq.zbnss.entity.Dic;
 import org.sq.zbnss.entity.Log;
 import org.sq.zbnss.entity.RecordSystem;
 import org.sq.zbnss.service.AppraisalService;
@@ -52,9 +53,8 @@ public class AppraisalController {
      */
     @GetMapping("/list")
     @ApiOperation(value = "分页获取测评列表", tags = "测评管理")
-    @ApiOperationSupport(includeParameters = {"systemId.id","status","insertTime","num"})
     @ResponseBody
-    public PageResultVo queryByPage( Appraisal appraisal,
+    public PageResultVo queryByPage(Appraisal appraisal,
                                     @RequestParam( value = "pageNumber" ,required = true) Integer pageNumber,
                                     @RequestParam(value = "pageSize" ,required = true)Integer pageSize) {
         IPage<Appraisal> userPage = tbAppraisalService.queryByPage(appraisal,pageNumber,pageSize);
@@ -83,7 +83,7 @@ public class AppraisalController {
     @PostMapping("/add")
     @ApiOperation(value = "新增测评数据", tags = "测评管理")
     @ResponseBody
-    public ResponseVo add(@RequestBody Appraisal appraisal, HttpServletRequest request) {
+    public ResponseVo add(@RequestBody() Appraisal appraisal, HttpServletRequest request) {
         if(appraisal.getSystemId() == 0 ){
             return ResultUtil.error("新增测评数据时必须关联备案系统");
         }
@@ -120,6 +120,8 @@ public class AppraisalController {
         if(appraisal.getId() == 0 || null == appraisal.getAppraisal() || "".equals(appraisal.getAppraisal())){
             return ResultUtil.error("请确认请求参数id和appraisal是否给出");
         }
+        Dic dic = appraisal.getStatus();
+        appraisal.setStatus(new Dic());
         ArrayList<Appraisal>  data = this.tbAppraisalService.queryByPage(appraisal);
         if(data.size() == 0){
             return ResultUtil.error("测评数据不存在，请添先添加数据");
@@ -127,6 +129,7 @@ public class AppraisalController {
         if(data.get(0).getStatus().getId() == 10 || data.get(0).getStatus().getId() == 11){
             return ResultUtil.error("测评已完成，不能进行修改");
         }
+        appraisal.setStatus(dic);
         Appraisal updateDate = this.tbAppraisalService.update(appraisal);
         if(updateDate == null){
             return ResultUtil.error("测评数据修改失败");

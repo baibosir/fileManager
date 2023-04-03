@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sq.zbnss.dao.StatisticsDao">
+
+    <resultMap type="org.sq.zbnss.entity.statistics.SystemStatistics" id="SyaStaMap">
+        <result property="sysId" column="com_id" jdbcType="INTEGER"/>
+        <result property="sysName" column="com_name" jdbcType="VARCHAR"/>
+        <result property="allCount" column="all_count" jdbcType="INTEGER"/>
+        <result property="sys1Count" column="s1_count" jdbcType="INTEGER"/>
+        <result property="sys2Count" column="s2_count" jdbcType="INTEGER"/>
+        <result property="sys3Count" column="s3_count" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <resultMap type="org.sq.zbnss.entity.statistics.AppraisalStatistics" id="AppraisalMap">
+        <result property="sysId" column="com_id" jdbcType="INTEGER"/>
+        <result property="sysName" column="com_name" jdbcType="VARCHAR"/>
+        <result property="status" column="status_id" jdbcType="INTEGER"/>
+        <result property="count" column="num" jdbcType="INTEGER"/>
+        <result property="sLevel" column="le" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <resultMap type="org.sq.zbnss.entity.statistics.RecordStatistics" id="RecordMap">
+        <result property="sysId" column="com_id" jdbcType="INTEGER"/>
+        <result property="sysName" column="com_name" jdbcType="VARCHAR"/>
+        <result property="status" column="status_id" jdbcType="INTEGER"/>
+        <result property="count" column="num" jdbcType="INTEGER"/>
+        <result property="level" column="le" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <resultMap type="org.sq.zbnss.entity.statistics.CheckStatistics" id="CheckMap">
+        <result property="status" column="status_id" jdbcType="INTEGER"/>
+        <result property="count" column="num" jdbcType="INTEGER"/>
+    </resultMap>
+    <resultMap type="org.sq.zbnss.entity.statistics.SystemStatistics" id="SyaStaMap1">
+        <result property="allCount" column="all_count" jdbcType="INTEGER"/>
+        <result property="sys1Count" column="s1_count" jdbcType="INTEGER"/>
+        <result property="sys2Count" column="s2_count" jdbcType="INTEGER"/>
+        <result property="sys3Count" column="s3_count" jdbcType="INTEGER"/>
+    </resultMap>
+    <select id="querySysCount" resultMap="SyaStaMap1">
+        SELECT  sum(num_system1)+sum(num_system2)+sum(num_system3 ) AS all_count,sum(num_system1) AS s1_count, sum(num_system2) AS s2_count,sum(num_system3 ) AS s3_count from tb_company;
+    </select>
+
+    <resultMap type="org.sq.zbnss.entity.statistics.AppraisalStatistics" id="AppraisalMap1">
+        <result property="status" column="status_id" jdbcType="INTEGER"/>
+        <result property="count" column="num" jdbcType="INTEGER"/>
+        <result property="sLevel" column="le" jdbcType="INTEGER"/>
+    </resultMap>
+    <select id="queryAppraisalCount" resultMap="AppraisalMap1">
+        SELECT s.sys_level AS le,a.`status` AS status_id , COUNT(1) as num
+        FROM   tb_appraisal a
+                   RIGHT JOIN tb_system s ON a.system_id = s.id
+        GROUP BY s.sys_level,a.`status`
+    </select>
+
+    <resultMap type="org.sq.zbnss.entity.statistics.RecordStatistics" id="RecordMap1">
+        <result property="status" column="status_id" jdbcType="INTEGER"/>
+        <result property="count" column="num" jdbcType="INTEGER"/>
+        <result property="level" column="le" jdbcType="INTEGER"/>
+    </resultMap>
+    <select id="queryRecordCount" resultMap="RecordMap1">
+        SELECT sys_level as le, COUNT(1) AS num
+        FROM   tb_system
+        GROUP BY sys_level
+    </select>
+
+    <select id="queryCheckCount" resultMap="CheckMap">
+        SELECT a.`status` as status_id, COUNT(1) AS num
+        FROM   tb_check  AS a
+        <choose>
+            <when test="startTime != null and endTime != null">
+                WHERE a.instert_time BETWEEN  #{startTime}  AND #{endTime}
+            </when>
+            <when test="startTime != null and endTime == null">
+                WHERE a.instert_time BETWEEN  #{startTime}  AND now()
+            </when>
+        </choose>
+        GROUP BY a.`status`
+    </select>
+
+    <select id="queryComSys" resultMap="RecordMap">
+        SELECT c.id AS com_id, c.name AS com_name, s.sys_level AS le ,COUNT(1) as num  FROM tb_company c
+        LEFT JOIN tb_system s ON  s.company_id = c.id
+        <choose>
+            <when test="startTime != null and endTime != null">
+                WHERE a.instert_time BETWEEN  #{startTime}  AND #{endTime}
+            </when>
+            <when test="startTime != null and endTime == null">
+                WHERE a.instert_time BETWEEN  #{startTime}  AND now()
+            </when>
+        </choose>
+        GROUP BY s.sys_level,c.id
+    </select>
+
+
+    <select id="queryComRe" resultMap="RecordMap">
+        SELECT  s.sys_level AS le,c.id AS com_id ,c.name AS com_name, COUNT(1) AS num
+        from tb_system s, tb_company c WHERE s.company_id = c.id
+        <choose>
+            <when test="startTime != null and endTime != null">
+                WHERE a.instert_time BETWEEN  #{startTime}  AND #{endTime}
+            </when>
+            <when test="startTime != null and endTime == null">
+                WHERE a.instert_time BETWEEN  #{startTime}  AND now()
+            </when>
+        </choose>
+        GROUP BY s.sys_level,c.id
+    </select>
+
+    <select id="queryComApp" resultMap="AppraisalMap">
+
+        SELECT  c.id AS com_id, c.name AS com_name, s.sys_level AS le,COUNT(1) AS num
+        from tb_appraisal a
+                 left JOIN tb_system s ON s.id = a.system_id
+                 LEFT JOIN tb_company c ON c.id = s.company_id
+        <choose>
+            <when test="startTime != null and endTime != null">
+                WHERE a.instert_time BETWEEN  #{startTime}  AND #{endTime}
+            </when>
+            <when test="startTime != null and endTime == null">
+                WHERE a.instert_time BETWEEN  #{startTime}  AND now()
+            </when>
+        </choose>
+        GROUP BY c.id,s.sys_level
+
+    </select>
+
+
+</mapper>
+

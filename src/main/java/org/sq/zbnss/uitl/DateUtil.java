@@ -46,6 +46,23 @@ public class DateUtil {
         return new SimpleDateFormat(format).format(date);
     }
 
+    /**
+     * 判断时间是否当前时间只后
+     * @param date
+     * @return
+     */
+    public static boolean isAfter(Date date){
+        Date now = new Date();
+        return date.after(now);
+    }
+
+    public static boolean isAfter(Date date1,Date date2){
+        return date2.after(date1);
+    }
+
+    public static boolean isBefore(Date date1,Date date2){
+        return date2.before(date1);
+    }
     public static String format(String dateStr, String oldFormat, String newFormat) throws ParseException {
         String result = null;
         DateFormat oldDateFormat = new SimpleDateFormat(oldFormat);
@@ -810,6 +827,34 @@ public class DateUtil {
         a.roll(Calendar.DATE, -1);
         return a.get(Calendar.DATE);
     }
+
+    public static Date getCurrentFirstOfYear(){
+        Calendar currCal=Calendar.getInstance();
+        int currentYear = currCal.get(Calendar.YEAR);
+        return getFirstOfYear(currentYear);
+    }
+
+    /**
+     * 获取某年第一天日期
+     * @param year 年份
+     * @return Date
+     */
+    public static Date getFirstOfYear(int year){
+        Calendar calendar = Calendar.getInstance();
+        calendar.clear();
+        calendar.set(Calendar.YEAR, year);
+        return calendar.getTime();
+    }
+
+
+    public static Date getLastOfYear(int year){
+        Calendar calendar = Calendar.getInstance();
+        calendar.clear();
+        calendar.set(Calendar.YEAR, year);
+        calendar.roll(Calendar.DAY_OF_YEAR, -1);
+        return calendar.getTime();
+    }
+
 
     public static void main(String [] args){
 

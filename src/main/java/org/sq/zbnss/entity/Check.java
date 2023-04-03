@@ -25,7 +25,7 @@ public class Check implements Serializable {
     /**
      * 检查id
      */
-    @ApiModelProperty(value = "编号(系统自动生成，勇于存放文件)")
+    @ApiModelProperty(value = "编号(系统自动生成，用于存放文件)")
     private String checkId;
     /**
      * 检查人id
@@ -85,6 +85,17 @@ public class Check implements Serializable {
      */
     @ApiModelProperty(value = "创建人",hidden = true)
     private User insertUser;
+
+    @ApiModelProperty(value = "检查类型")
+    private Dic type;
+
+    @ApiModelProperty(value = "是否整改")
+    private boolean isCorrective;
+
+    @ApiModelProperty(value = "整改期限（天）")
+    private int correctiveTime;
+
+
 
 
     public Integer getId() {
@@ -181,6 +192,44 @@ public class Check implements Serializable {
 
     public void setCompanyId(Company companyId) {
         this.companyId = companyId;
+    }
+
+    public Dic getType() {
+        return type;
+    }
+
+    public void setType(Dic type) {
+        this.type = type;
+    }
+
+    public boolean isCorrective() {
+        return isCorrective;
+    }
+
+    public void setCorrective(boolean corrective) {
+        isCorrective = corrective;
+    }
+
+    public int getCorrectiveTime() {
+        return correctiveTime;
+    }
+
+    public void setCorrectiveTime(int correctiveTime) {
+        this.correctiveTime = correctiveTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Check{" +
+                "id=" + id +
+                ", checkId='" + checkId + '\'' +
+                ", checkUser=" + checkUser +
+                ", planDate=" + planDate +
+                ", checkDate=" + checkDate +
+                ", detail='" + detail + '\'' +
+                ", status=" + status +
+                ", companyId=" + companyId +
+                '}';
     }
 }
 

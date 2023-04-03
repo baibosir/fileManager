@@ -20,11 +20,8 @@ import java.io.File;
  */
 @Configuration
 @AllArgsConstructor
-@EnableConfigurationProperties({FileUploadProperties.class, StaticizeProperties.class})
 public class WebMvcConfig implements WebMvcConfigurer {
 
-    private final FileUploadProperties fileUploadProperties;
-    private final StaticizeProperties staticizeProperties;
 
 
     /**

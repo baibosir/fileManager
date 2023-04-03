@@ -6,10 +6,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.sq.zbnss.base.PageResultVo;
 import org.sq.zbnss.base.ResponseVo;
-import org.sq.zbnss.entity.Check;
-import org.sq.zbnss.entity.Dic;
-import org.sq.zbnss.entity.Log;
-import org.sq.zbnss.entity.User;
+import org.sq.zbnss.entity.*;
 import org.sq.zbnss.service.*;
 import org.springframework.web.bind.annotation.*;
 import org.sq.zbnss.uitl.JWTUtil;
@@ -19,6 +16,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * 检查结果记录(TbCheck)表控制层
@@ -42,7 +40,11 @@ public class CheckController {
     @Resource
     private UserService userService;
 
+    @Resource
     private DicService dicService;
+
+    @Resource
+    private CompanyService companyService;
 
     /**
      * 分页查询
@@ -81,20 +83,34 @@ public class CheckController {
     @ApiOperation(value = "新增检查信息", tags = "检查管理")
     @PostMapping("/add")
     public ResponseVo add(@RequestBody Check tbCheck, HttpServletRequest request) {
-        if(tbCheck == null || tbCheck.getCompanyId() == null || tbCheck.getPlanDate() == null){
+        if(tbCheck == null || tbCheck.getCompanyId() == null || tbCheck.getPlanDate() == null ||tbCheck.getCompanyId().getId() <= 0 ){
             return ResultUtil.error("检查单位CompanyId()和计划检查时间（PlanDate）不能为空");
         }
-
+        if(tbCheck.getType() == null || tbCheck.getType().getId() <= 0){
+            return ResultUtil.error("检查类型不能为空");
+        }
+        int typeId = tbCheck.getType().getId();
+        Dic dic = dicService.queryById(typeId);
+        if(dic == null){
+            return ResultUtil.error("检查类型错误");
+        }
+        Company company = companyService.queryById(tbCheck.getCompanyId().getId());
+        if(company == null){
+            return ResultUtil.error("检查单位信息错误");
+        }
+        User loginUser = getLoginUser(request);
         ArrayList<Check> old = this.tbCheckService.queryByPage(tbCheck);
         if(old.size() > 0){
             return ResultUtil.error("检查信息已存在");
         }
+        tbCheck.setInsertUser(loginUser);
+        tbCheck.setUpdateUser(loginUser);
         Check check = this.tbCheckService.insert(tbCheck);
 
         if(check == null){
             return ResultUtil.error("检查信息添加失败");
         }
-        User loginUser = getLoginUser(request);
+
         Log log = new Log();
         log.setUserId(loginUser);
         log.setOperate(MessageFormat.format("新增检查信息{0}",check.toString()));
@@ -117,11 +133,19 @@ public class CheckController {
         if(tbCheck.getId() <= 0){
             return ResultUtil.error("不存在id<=0的检查信息");
         }
+        if(tbCheck.getType() != null){
+            int typeId = tbCheck.getType().getId();
+            Dic dic1 = dicService.queryById(typeId);
+            if(dic1 == null){
+                return ResultUtil.error("检查类型错误");
+            }
+        }
+        User loginUser = getLoginUser(request);
         Check check_old = this.tbCheckService.queryById(tbCheck.getId());
         if(check_old == null){
             return ResultUtil.error("检查信息不存在");
         }
-        int statusId = tbCheck.getStatus().getId();
+        int statusId = check_old.getStatus().getId();
         if(statusId > 0){
             ArrayList<Dic> statuses = dicService.queryByType(5);
             boolean flag = false;
@@ -138,11 +162,11 @@ public class CheckController {
         if(check_old.getStatus().getId() == 15 || check_old.getStatus().getId() == 16){
             return ResultUtil.error("检查已完成，不能修改");
         }
+        tbCheck.setUpdateUser(loginUser);
         Check check= this.tbCheckService.update(tbCheck);
         if(check == null){
             return ResultUtil.error("检查信息修改失败");
         }else{
-            User loginUser = getLoginUser(request);
             Log log = new Log();
             log.setUserId(loginUser);
             log.setOperate(MessageFormat.format("修改检查信息{0}",check.toString()));

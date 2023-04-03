@@ -10,7 +10,7 @@
         <result property="regDate" column="reg_date" jdbcType="TIMESTAMP"/>
         <result property="status" column="status" jdbcType="VARCHAR"/>
         <result property="detail" column="detail" jdbcType="VARCHAR"/>
-        <result property="use" column="use" jdbcType="VARCHAR"/>
+        <result property="used" column="used" jdbcType="VARCHAR"/>
         <result property="registTime" column="regist_time" jdbcType="TIMESTAMP"/>
         <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
         <association property="principal" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="principal" />
@@ -20,14 +20,14 @@
     <!--查询单个-->
     <select id="queryById" resultMap="TbMachineroomMap">
         select
-          id, machine_id, address, company_id, principal, reg_tel, reg_date, status, detail, use, regist_time, update_time
+          id, machine_id, address, company_id, principal, reg_tel, reg_date, status, detail, used, regist_time, update_time
         from tb_machineroom
         where id = #{id}
     </select>
 
     <select id="queryMRoom" resultMap="TbMachineroomMap" parameterType="org.sq.zbnss.entity.Machineroom">
         select
-        id, machine_id, address, company_id, principal, reg_tel, reg_date, status, detail, use, regist_time, update_time
+        id, machine_id, address, company_id, principal, reg_tel, reg_date, status, detail, used, regist_time, update_time
         from tb_machineroom
         <where>
             <if test="machine != null and machine.id > 0">
@@ -42,7 +42,7 @@
             <if test="machine != null and machine.companyId != null">
                 and company_id = #{machine.companyId.id}
             </if>
-            <if test="machine != null and machine.principal != null">
+            <if test="machine != null and machine.principal != null and machine.principal.id > 0">
                 and principal = #{machine.principal.id}
             </if>
             <if test="machine != null and machine.regTel != null and machine.regTel != ''">
@@ -57,8 +57,8 @@
             <if test="machine != null and machine.detail != null and machine.detail != ''">
                 and detail = #{machine.detail}
             </if>
-            <if test="machine != null and machine.use != null and machine.use != ''">
-                and use = #{machine.use}
+            <if test="machine != null and machine.used != null and machine.used != ''">
+                and used = #{machine.used}
             </if>
             <if test="machine != null and machine.registTime != null">
                 and regist_time = #{machine.registTime}
@@ -67,12 +67,13 @@
                 and update_time = #{machine.updateTime}
             </if>
         </where>
+        order by regist_time desc
     </select>
 
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="TbMachineroomMap">
         select
-          id, machine_id, address, company_id, principal, reg_tel, reg_date, status, detail, use, regist_time, update_time
+          id, machine_id, address, company_id, principal, reg_tel, reg_date, status, detail, used, regist_time, update_time
         from tb_machineroom
         <where>
             <if test="id > 0">
@@ -85,10 +86,10 @@
                 and address = #{address}
             </if>
             <if test="companyId != null">
-                and company_id = #{companyId}
+                and company_id = #{companyId.id}
             </if>
-            <if test="principal != null">
-                and principal = #{principal}
+            <if test="principal != null and principal.id > 0">
+                and principal = #{principal.id}
             </if>
             <if test="regTel != null and regTel != ''">
                 and reg_tel = #{regTel}
@@ -102,8 +103,8 @@
             <if test="detail != null and detail != ''">
                 and detail = #{detail}
             </if>
-            <if test="use != null and use != ''">
-                and use = #{use}
+            <if test="used != null and used != ''">
+                and used = #{used}
             </if>
             <if test="registTime != null">
                 and regist_time = #{registTime}
@@ -112,6 +113,7 @@
                 and update_time = #{updateTime}
             </if>
         </where>
+        order by regist_time desc
     </select>
 
     <!--统计总行数-->
@@ -128,11 +130,11 @@
             <if test="address != null and address != ''">
                 and address = #{address}
             </if>
-            <if test="companyId != null">
-                and company_id = #{companyId}
+            <if test="companyId != null and companyId.id > 0">
+                and company_id = #{companyId.id}
             </if>
-            <if test="principal != null">
-                and principal = #{principal}
+            <if test="principal != null and principal.id > 0" >
+                and principal = #{principal.id}
             </if>
             <if test="regTel != null and regTel != ''">
                 and reg_tel = #{regTel}
@@ -146,8 +148,8 @@
             <if test="detail != null and detail != ''">
                 and detail = #{detail}
             </if>
-            <if test="use != null and use != ''">
-                and use = #{use}
+            <if test="used != null and used != ''">
+                and used = #{used}
             </if>
             <if test="registTime != null">
                 and regist_time = #{registTime}
@@ -156,38 +158,39 @@
                 and update_time = #{updateTime}
             </if>
         </where>
+
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into tb_machineroom(machine_id, address, company_id, principal, reg_tel, reg_date, status, detail, use, regist_time, update_time)
-        values (#{machineId}, #{address}, #{companyId}, #{principal}, #{regTel}, #{regDate}, #{status}, #{detail}, #{use}, #{registTime}, #{updateTime})
+        insert into tb_machineroom(machine_id, address, company_id, principal, reg_tel, reg_date, status, detail, used, regist_time, update_time)
+        values (#{machineId}, #{address}, #{companyId.id}, #{principal.id}, #{regTel}, #{regDate}, #{status}, #{detail}, #{used}, #{registTime}, #{updateTime})
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into tb_machineroom(machine_id, address, company_id, principal, reg_tel, reg_date, status, detail, use, regist_time, update_time)
+        insert into tb_machineroom(machine_id, address, company_id, principal, reg_tel, reg_date, status, detail, used, regist_time, update_time)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.machineId}, #{entity.address}, #{entity.companyId}, #{entity.principal}, #{entity.regTel}, #{entity.regDate}, #{entity.status}, #{entity.detail}, #{entity.use}, #{entity.registTime}, #{entity.updateTime})
+        (#{entity.machineId}, #{entity.address}, #{entity.companyId.id}, #{entity.principal.id}, #{entity.regTel}, #{entity.regDate}, #{entity.status}, #{entity.detail}, #{entity.used}, #{entity.registTime}, #{entity.updateTime})
         </foreach>
     </insert>
 
     <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into tb_machineroom(machine_id, address, company_id, principal, reg_tel, reg_date, status, detail, use, regist_time, update_time)
+        insert into tb_machineroom(machine_id, address, company_id, principal, reg_tel, reg_date, status, detail, used, regist_time, update_time)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.machineId}, #{entity.address}, #{entity.companyId}, #{entity.principal}, #{entity.regTel}, #{entity.regDate}, #{entity.status}, #{entity.detail}, #{entity.use}, #{entity.registTime}, #{entity.updateTime})
+            (#{entity.machineId}, #{entity.address}, #{entity.companyId.id}, #{entity.principal.id}, #{entity.regTel}, #{entity.regDate}, #{entity.status}, #{entity.detail}, #{entity.used}, #{entity.registTime}, #{entity.updateTime})
         </foreach>
         on duplicate key update
         machine_id = values(machine_id),
         address = values(address),
         company_id = values(company_id),
-        principal = values(principal),
+        principal = values(principal.id),
         reg_tel = values(reg_tel),
         reg_date = values(reg_date),
         status = values(status),
         detail = values(detail),
-        use = values(use),
+        used = values(used),
         regist_time = values(regist_time),
         update_time = values(update_time)
     </insert>
@@ -202,11 +205,11 @@
             <if test="address != null and address != ''">
                 address = #{address},
             </if>
-            <if test="companyId != null">
-                company_id = #{companyId},
+            <if test="companyId != null and companyId.id > 0">
+                company_id = #{companyId.id},
             </if>
-            <if test="principal != null">
-                principal = #{principal},
+            <if test="principal != null and principal.id > 0">
+                principal = #{principal.id},
             </if>
             <if test="regTel != null and regTel != ''">
                 reg_tel = #{regTel},
@@ -220,8 +223,8 @@
             <if test="detail != null and detail != ''">
                 detail = #{detail},
             </if>
-            <if test="use != null and use != ''">
-                use = #{use},
+            <if test="used != null and used != ''">
+                used = #{used},
             </if>
             <if test="registTime != null">
                 regist_time = #{registTime},

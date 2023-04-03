@@ -1,10 +1,12 @@
 package org.sq.zbnss.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.io.Serializable;
 
@@ -63,6 +65,9 @@ public class RecordSystem implements Serializable {
     private Date updateTime;
 
     private String description;
+
+    @TableField(exist = false)
+    private ArrayList<Appraisal> appraisalList;
 
     public Integer getId() {
         return id;
@@ -142,6 +147,14 @@ public class RecordSystem implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public ArrayList<Appraisal> getAppraisalList() {
+        return appraisalList;
+    }
+
+    public void setAppraisalList(ArrayList<Appraisal> appraisalList) {
+        this.appraisalList = appraisalList;
     }
 }
 

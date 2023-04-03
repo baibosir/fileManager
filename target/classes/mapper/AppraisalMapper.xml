@@ -22,6 +22,14 @@
         where id = #{id}
     </select>
 
+    <select id="queryBySysId" resultMap="TbAppraisalMap">
+        select
+            id, appraisal, system_id, status, insert_time, update_time, num, insert_user, update_user
+        from tb_appraisal
+        where system_id = #{system_id}
+        order by insert_time desc
+    </select>
+
     <select id="selectAppraisal" resultMap="TbAppraisalMap" parameterType="org.sq.zbnss.entity.Appraisal">
         select
         id, appraisal, system_id, status, insert_time, update_time, num, insert_user, update_user
@@ -33,11 +41,11 @@
             <if test="appraisal != null and appraisal.appraisal != null and appraisal.appraisal != ''">
                 and appraisal = #{appraisal}
             </if>
-            <if test="appraisal != null and appraisal.systemId != null">
+            <if test="appraisal != null and appraisal.systemId > 0  ">
                 and system_id = #{systemId}
             </if>
-            <if test="appraisal != null and appraisal.status != null">
-                and status = #{status.id}
+            <if test="appraisal != null and appraisal.status != null and and appraisal.status.id">
+                and status = #{ppraisal.status.id}
             </if>
             <if test="appraisal != null and appraisal.insertTime != null">
                 and insert_time = #{insertTime}
@@ -55,6 +63,7 @@
                 and update_user = #{updateUser.id}
             </if>
         </where>
+        order by insert_time desc
     </select>
 
     <!--查询指定行数据-->
@@ -69,10 +78,10 @@
             <if test="appraisal != null and appraisal != ''">
                 and appraisal = #{appraisal}
             </if>
-            <if test="systemId != null">
+            <if test=" systemId > 0">
                 and system_id = #{systemId}
             </if>
-            <if test="status != null">
+            <if test="status != null and status.id > 0">
                 and status = #{status.id}
             </if>
             <if test="insertTime != null">
@@ -81,16 +90,17 @@
             <if test="updateTime != null">
                 and update_time = #{updateTime}
             </if>
-            <if test="num != null">
+            <if test="num != null and num > 0">
                 and num = #{num}
             </if>
-            <if test="insertUser != null">
-                and insert_user = #{insertUser}
+            <if test="insertUser != null and insertUser.id > 0">
+                and insert_user = #{insertUser.id}
             </if>
-            <if test="updateUser != null">
-                and update_user = #{updateUser}
+            <if test="updateUser != null and updateUser.id > 0">
+                and update_user = #{updateUser.id}
             </if>
         </where>
+        order by insert_time desc
     </select>
 
     <!--统计总行数-->
@@ -104,10 +114,10 @@
             <if test="appraisal != null and appraisal != ''">
                 and appraisal = #{appraisal}
             </if>
-            <if test="systemId != null">
-                and system_id = #{systemId}
+            <if test=" systemId > 0">
+                and system_id = #{systemId.id}
             </if>
-            <if test="status != null">
+            <if test="status != null and status.id > 0">
                 and status = #{status.id}
             </if>
             <if test="insertTime != null">
@@ -119,11 +129,11 @@
             <if test="num != null">
                 and num = #{num}
             </if>
-            <if test="insertUser != null">
-                and insert_user = #{insertUser}
+            <if test="insertUser != null and insertUser.id > 0">
+                and insert_user = #{insertUser.id}
             </if>
-            <if test="updateUser != null">
-                and update_user = #{updateUser}
+            <if test="updateUser != null and updateUser.id>0">
+                and update_user = #{updateUser.id}
             </if>
         </where>
     </select>
@@ -164,10 +174,10 @@
             <if test="appraisal != null and appraisal != ''">
                 appraisal = #{appraisal},
             </if>
-            <if test="systemId != null">
+            <if test=" systemId > 0">
                 system_id = #{systemId},
             </if>
-            <if test="status != null and status > 0">
+            <if test="status != null and status.id > 0">
                 status = #{status.id},
             </if>
             <if test="insertTime != null">
@@ -176,7 +186,7 @@
             <if test="num != null">
                 num = #{num},
             </if>
-            <if test="updateUser != null">
+            <if test="updateUser != null and updateUser.id > 0">
                 update_user = #{updateUser.id},
             </if>
             update_time = now()

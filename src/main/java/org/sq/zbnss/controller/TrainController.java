@@ -13,6 +13,7 @@ import org.sq.zbnss.service.CompanyService;
 import org.sq.zbnss.service.LogService;
 import org.sq.zbnss.service.TrainService;
 import org.springframework.web.bind.annotation.*;
+import org.sq.zbnss.uitl.DateUtil;
 import org.sq.zbnss.uitl.ResultUtil;
 
 import javax.annotation.Resource;
@@ -52,11 +53,11 @@ public class TrainController {
      * @return 查询结果
      */
     @ApiOperation(value = "分页获取培训列表", tags = "培训管理")
-    @ApiOperationSupport(includeParameters = {"companyId.id","type","trainCompany","lacture","status"})
+//    @ApiOperationSupport(includeParameters = {"companyId.id","type","trainCompany","lacture","status"})
     @GetMapping("/list")
     @ResponseBody
-    public PageResultVo queryByPage(Train train, @RequestParam(value = "pageNum") Integer pageNum, @RequestParam(value = "pageSize") Integer gageSize) {
-        IPage<Train> pageTrain = this.tbTrainService.queryByPage(train,pageNum,gageSize);
+    public PageResultVo queryByPage(Train train, @RequestParam(value = "pageNumber") Integer pageNumber, @RequestParam(value = "pageSize") Integer gageSize) {
+        IPage<Train> pageTrain = this.tbTrainService.queryByPage(train,pageNumber,gageSize);
         return ResultUtil.table(pageTrain.getRecords(), pageTrain.getTotal());
     }
 
@@ -81,11 +82,14 @@ public class TrainController {
      */
     @ApiOperation(value = "新增培训信息", tags = "培训管理")
     @PostMapping("/add")
-    public ResponseVo add(@RequestBody Train train, HttpServletRequest request) {
+    public ResponseVo add(@RequestBody() Train train, HttpServletRequest request) {
         if(train.getCompanyId() == null || train.getCompanyId().getId() == 0 ||
                 train.getTrainCompany() == null || "".equals(train.getTrainCompany())||
                 train.getPlanStime() == null || train.getPlanEtime() == null|| train.getLacture() == null){
                 return  ResultUtil.error("请求参数错误");
+        }
+        if(DateUtil.isBefore(train.getPlanStime(),train.getPlanEtime())){
+            return  ResultUtil.error("计划开始时间不能晚于计划完成时间");
         }
         Company company = this.companyService.queryById(train.getCompanyId().getId());
         if(company == null){

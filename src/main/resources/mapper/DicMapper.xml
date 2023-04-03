@@ -24,7 +24,7 @@
         select
             id, dic_key, dic_value, dic_description, dic_type, create_time, update_time
         from tb_dic
-        where type = #{type}
+        where dic_type = #{type}
     </select>
 
     <!--查询指定行数据-->

@@ -31,7 +31,7 @@ public class Dictype implements Serializable {
     private String value;
 
     @TableField(exist = false)
-    private ArrayList<Dic> dics;
+    private ArrayList<Dic> dicList;
 
 
     public Integer getId() {
@@ -66,12 +66,12 @@ public class Dictype implements Serializable {
         this.value = value;
     }
 
-    public ArrayList<Dic> getDics() {
-        return dics;
+    public ArrayList<Dic> getDicList() {
+        return dicList;
     }
 
-    public void setDics(ArrayList<Dic> dics) {
-        this.dics = dics;
+    public void setDicList(ArrayList<Dic> dicList) {
+        this.dicList = dicList;
     }
 }
 

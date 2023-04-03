@@ -10,8 +10,8 @@
         <module name="sq-nss" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="15">
-      <module name="sq-nss" target="15" />
+    <bytecodeTargetLevel target="8">
+      <module name="sq-nss" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

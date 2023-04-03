@@ -40,10 +40,8 @@ public class DicServiceImpl implements DicService {
 
     @Override
     public ArrayList<Dic> queryByType(int type){
-        QueryWrapper<Dic> wrapper = new QueryWrapper<>();
-        wrapper.eq("type",type);
-        ArrayList<Dic> result = (ArrayList<Dic>) this.tbDicDao.selectList(wrapper);
-        return result;
+
+        return this.tbDicDao.queryByType(type);
     }
 
     /**

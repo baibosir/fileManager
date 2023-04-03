@@ -150,14 +150,14 @@ public class FileServiceImpl extends ServiceImpl<FileDao, FilePo> implements Fil
         filePo.setMachinerId(roomId);
         filePo.setInputUser(getLoginUser(request));
 
-        //插入文件信息
-        save(filePo);
         try {
 
             MinioUtils.putObject(comId,multipartFile,fileDir+"/"+code);
         } catch (Exception e) {
             return  ResultUtil.error("文件上上传失败"+e.getMessage());
         }
+        //插入文件信息
+        save(filePo);
         return ResultUtil.success("文件上传成功");
     }
 

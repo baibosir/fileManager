@@ -6,6 +6,7 @@ import org.sq.zbnss.dao.TrainDao;
 import org.sq.zbnss.service.TrainService;
 import org.springframework.stereotype.Service;
 import org.sq.zbnss.uitl.Pagination;
+import org.sq.zbnss.uitl.UUIDUtil;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -57,6 +58,7 @@ public class TrainServiceImpl implements TrainService {
      */
     @Override
     public Train insert(Train train) {
+        train.setTrainId(UUIDUtil.getUniqueIdByUUId());
         int num = this.trainDao.insert(train);
         if(num == 0){
             return null;

@@ -46,7 +46,9 @@ public class Machineroom implements Serializable {
     /**
      * 登记时间
      */
-    @ApiModelProperty(value = "机房启用状态")
+    @JsonFormat(pattern = "yyyy-MM-dd " , timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @ApiModelProperty(value = "机房启用时间")
     private Date regDate;
     /**
      * 机房状态
@@ -62,7 +64,7 @@ public class Machineroom implements Serializable {
      * 用途
      */
     @ApiModelProperty(value = "机房的用途")
-    private String use;
+    private String used;
     /**
      * 录入时间
      */
@@ -135,12 +137,12 @@ public class Machineroom implements Serializable {
         this.detail = detail;
     }
 
-    public String getUse() {
-        return use;
+    public String getUsed() {
+        return used;
     }
 
-    public void setUse(String use) {
-        this.use = use;
+    public void setUsed(String used) {
+        this.used = used;
     }
 
     public Date getRegistTime() {

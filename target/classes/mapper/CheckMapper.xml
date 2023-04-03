@@ -10,29 +10,32 @@
         <result property="detail" column="detail" jdbcType="VARCHAR"/>
         <result property="instertTime" column="instert_time" jdbcType="TIMESTAMP"/>
         <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="isCorrective" column="is_corrective" jdbcType="INTEGER"/>
+        <result property="correctiveTime" column="corrective_time" jdbcType="INTEGER"/>
         <association property="insertUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="insert_user" />
         <association property="updateUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="update_user" />
         <association property="checkUser" javaType="org.sq.zbnss.entity.User" select="org.sq.zbnss.dao.UserMapper.queryById" column="check_user" />
         <association property="companyId" javaType="org.sq.zbnss.entity.Company" select="org.sq.zbnss.dao.CompanyDao.queryById" column="company_id" />
         <association property="status" javaType="org.sq.zbnss.entity.Dic" select="org.sq.zbnss.dao.DicDao.queryById" column="status" />
+        <association property="type" javaType="org.sq.zbnss.entity.Dic" select="org.sq.zbnss.dao.DicDao.queryById" column="check_type" />
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="TbCheckMap">
         select
-          id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user
+          id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user,check_type,is_corrective,corrective_time
         from tb_check
         where id = #{id}
     </select>
 
     <select id="getMonthData" resultMap="TbCheckMap">
-        SELECT id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user
+        SELECT id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user,check_type,is_corrective,corrective_time
         FROM tb_check WHERE instert_time >= #{month} or update_time >=#{month};
     </select>
 
     <select id="selectCheck" resultMap="TbCheckMap" parameterType="org.sq.zbnss.entity.Check">
         select
-        id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user
+        id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user,check_type,is_corrective,corrective_time
         from tb_check
         <where>
             <if test="check != null and check.id > 0 ">
@@ -41,7 +44,7 @@
             <if test="check != null and check.checkId != null and checkId != ''">
                 and check_id = #{check.checkId}
             </if>
-            <if test="check != null and check.checkUser != null">
+            <if test="check != null and check.checkUser != null and check.checkUser.id > 0">
                 and check_user = #{check.checkUser.id}
             </if>
             <if test="check != null and check.planDate != null">
@@ -54,9 +57,9 @@
                 and detail = #{check.detail}
             </if>
             <if test="check != null and check.status != null and check.status.id > 0">
-                and status = #{check.status}
+                and status = #{check.status.id}
             </if>
-            <if test="check != null and check.companyId != null">
+            <if test="check != null and check.companyId != null and check.companyId.id > 0">
                 and company_id = #{check.companyId.id}
             </if>
             <if test="check != null and check.instertTime != null">
@@ -65,19 +68,29 @@
             <if test="check != null and check.updateTime != null">
                 and update_time = #{check.updateTime}
             </if>
-            <if test="check != null and check.updateUser != null">
-                and update_user = #{check.updateUser}
+            <if test="check != null and check.updateUser != null and check.insertUser.id > 0">
+                and update_user = #{check.updateUser.id}
             </if>
-            <if test="check != null and check.insertUser != null">
-                and insert_user = #{check.insertUser}
+            <if test="check != null and check.insertUser != null and check.insertUser.id > 0">
+                and insert_user = #{check.insertUser.id}
+            </if>
+            <if test="check != null and check.type != null and check.type.id > 0">
+                and check_type = #{check.type.id}
+            </if>
+            <if test="check != null and check.isCorrective > 0">
+                and is_corrective = #{check.isCorrective}
+            </if>
+            <if test="check != null and check.correctiveTime > 0">
+                and corrective_time = #{check.correctiveTime}
             </if>
         </where>
+        order by instert_time desc
     </select>
 
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="TbCheckMap">
         select
-          id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user
+          id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user,check_type,is_corrective,corrective_time
         from tb_check
         <where>
             <if test="id > 0">
@@ -86,8 +99,8 @@
             <if test="checkId != null and checkId != ''">
                 and check_id = #{checkId}
             </if>
-            <if test="checkUser != null">
-                and check_user = #{checkUser}
+            <if test="checkUser != null and checkUser.id > 0">
+                and check_user = #{checkUser.id}
             </if>
             <if test="planDate != null">
                 and plan_date = #{planDate}
@@ -101,7 +114,7 @@
             <if test="status != null and status.id > 0">
                 and status = #{status.id}
             </if>
-            <if test="companyId != null">
+            <if test="companyId != null and companyId.id > 0">
                 and company_id = #{companyId.id}
             </if>
             <if test="instertTime != null">
@@ -110,13 +123,23 @@
             <if test="updateTime != null">
                 and update_time = #{updateTime}
             </if>
-            <if test="updateUser != null">
-                and update_user = #{updateUser}
+            <if test="updateUser != null and updateUser.id > 0">
+                and update_user = #{updateUser.id}
             </if>
-            <if test="insertUser != null">
-                and insert_user = #{insertUser}
+            <if test="insertUser != null and insertUser.id > 0">
+                and insert_user = #{insertUser.id}
+            </if>
+            <if test="type != null and type.id > 0">
+                and check_type = #{type.id}
+            </if>
+            <if test="isCorrective > 0">
+                and is_corrective = #{isCorrective}
+            </if>
+            <if test="correctiveTime > 0">
+                and corrective_time = #{correctiveTime}
             </if>
         </where>
+        order by instert_time desc
     </select>
 
     <!--统计总行数-->
@@ -130,8 +153,8 @@
             <if test="checkId != null and checkId != ''">
                 and check_id = #{checkId}
             </if>
-            <if test="checkUser != null">
-                and check_user = #{checkUser}
+            <if test="checkUser != null and checkUser.id > 0">
+                and check_user = #{checkUser.id}
             </if>
             <if test="planDate != null">
                 and plan_date = #{planDate}
@@ -142,10 +165,10 @@
             <if test="detail != null and detail != ''">
                 and detail = #{detail}
             </if>
-            <if test="status != null and check.status.id > 0">
+            <if test="status != null and status.id > 0">
                 and status = #{status.id}
             </if>
-            <if test="companyId != null">
+            <if test="companyId != null and companyId.id > 0">
                 and company_id = #{companyId.id}
             </if>
             <if test="instertTime != null">
@@ -154,34 +177,43 @@
             <if test="updateTime != null">
                 and update_time = #{updateTime}
             </if>
-            <if test="updateUser != null">
+            <if test="updateUser != null and updateUser.id > 0">
                 and update_user = #{updateUser}
             </if>
-            <if test="insertUser != null">
+            <if test="insertUser != null and insertUser.id > 0">
                 and insert_user = #{insertUser}
+            </if>
+            <if test="type != null and type.id > 0">
+                and check_type = #{type.id}
+            </if>
+            <if test="isCorrective > 0">
+                and is_corrective = #{isCorrective}
+            </if>
+            <if test="correctiveTime > 0">
+                and corrective_time = #{correctiveTime}
             </if>
         </where>
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into tb_check(check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user)
-        values (#{checkId}, #{checkUser}, #{planDate}, #{checkDate}, #{detail}, 14, #{companyId.id},now(), now(), #{updateUser.id}, #{insertUser.id})
+        insert into tb_check(check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user,check_type,is_corrective,corrective_time)
+        values (#{checkId}, #{checkUser.id}, #{planDate}, #{checkDate}, #{detail}, 14, #{companyId.id},now(), now(), #{updateUser.id}, #{insertUser.id},#{type.id},#{isCorrective},#{correctiveTime})
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into tb_check(check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user)
+        insert into tb_check(check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user,check_type,is_corrective,corrective_time)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.checkId}, #{entity.checkUser}, #{entity.planDate}, #{entity.checkDate}, #{entity.detail}, 14, #{entity.companyId.id}, now(), now(), #{entity.updateUser.id}, #{entity.insertUser.id})
+        (#{entity.checkId}, #{entity.checkUser.id}, #{entity.planDate}, #{entity.checkDate}, #{entity.detail}, 14, #{entity.companyId.id}, now(), now(), #{entity.updateUser.id}, #{entity.insertUser.id},#{type.id},#{isCorrective},#{correctiveTime})
         </foreach>
     </insert>
 
     <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into tb_check(check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user)
+        insert into tb_check(check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user,check_type,is_corrective,corrective_time)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.checkId}, #{entity.checkUser}, #{entity.planDate}, #{entity.checkDate}, #{entity.detail}, 14, #{entity.companyId.id}, now(), now(), #{entity.updateUser.id}, #{entity.insertUser.id})
+            (#{entity.checkId}, #{entity.checkUser.id}, #{entity.planDate}, #{entity.checkDate}, #{entity.detail}, 14, #{entity.companyId.id}, now(), now(), #{entity.updateUser.id}, #{entity.insertUser.id},#{type.id},#{isCorrective},#{correctiveTime})
         </foreach>
         on duplicate key update
         check_id = values(check_id),
@@ -193,6 +225,9 @@
         company_id = values(company_id),
         update_time = values(update_time),
         update_user = values(update_user.id),
+        check_type= values(type.id),
+        is_corrective= values(isCorrective),
+        corrective_time= values(correctiveTime)
     </insert>
 
     <!--通过主键修改数据-->
@@ -202,7 +237,7 @@
             <if test="checkId != null and checkId != ''">
                 check_id = #{checkId},
             </if>
-            <if test="checkUser != null">
+            <if test="checkUser != null and checkUser.id > 0">
                 check_user = #{checkUser.id},
             </if>
             <if test="planDate != null">
@@ -214,17 +249,26 @@
             <if test="detail != null and detail != ''">
                 detail = #{detail},
             </if>
-            <if test="status != null  and check.status.id > 0">
+            <if test="status != null  and status.id > 0">
                 status = #{status.id},
             </if>
-            <if test="companyId != null">
+            <if test="companyId != null and companyId.id > 0">
                 company_id = #{companyId.id},
             </if>
             <if test="updateTime != null">
                 update_time = #{updateTime},
             </if>
-            <if test="updateUser != null">
-                update_user = #{updateUser},
+            <if test="updateUser != null and updateUser.id > 0">
+                update_user = #{updateUser.id},
+            </if>
+            <if test="type != null and type.id > 0">
+                and check_type = #{type.id}
+            </if>
+            <if test="isCorrective > 0">
+                and is_corrective = #{isCorrective}
+            </if>
+            <if test="correctiveTime > 0">
+                and corrective_time = #{correctiveTime}
             </if>
         </set>
         where id = #{id}

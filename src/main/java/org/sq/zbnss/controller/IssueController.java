@@ -63,7 +63,7 @@ public class IssueController {
     @ApiOperationSupport(includeParameters = {"companyId.id","issueCount","type","description"})
     @GetMapping("/list")
     @ResponseBody
-    public PageResultVo queryByPage(@RequestBody() Issue issue,
+    public PageResultVo queryByPage(Issue issue,
                                     @RequestParam(value = "pageNumber", required = true) int pageNumber,
                                     @RequestParam(value = "pageSize", required = true) int pageSize) {
         IPage<Issue> pageData = this.tbIssueService.queryByPage(issue,pageNumber,pageSize);
@@ -139,10 +139,16 @@ public class IssueController {
             return  ResultUtil.error("问题已解决，不能修改");
         }
         if(issue.getStatus()!= null && issue.getStatus().getId() > 0){
-            Dic dic = dicService.queryById(issue.getStatus().getId());
-            if(dic == null || dic.getType().getId() != 6){
-                return  ResultUtil.error("问题状态参数错误");
-            }
+            ArrayList<Dic> dics = dicService.queryByType(6);
+           boolean flg =true;
+           for(Dic d : dics){
+               if(d.getId() == issue.getStatus().getId()){
+                   flg = false;
+               }
+           }
+           if(flg){
+               return  ResultUtil.error("状态参数错误");
+           }
         }
         if(oldValue == null){
             return  ResultUtil.error("问题不存在");

@@ -13,7 +13,7 @@ public class MySubjectFactory extends DefaultWebSubjectFactory {
      */
     @Override
     public Subject createSubject(SubjectContext context) {
-        context.setSessionCreationEnabled(false);
+        context.setSessionCreationEnabled(true);
         return super.createSubject(context);
     }
 }

@@ -36,6 +36,7 @@
                 and operate = #{syslog.operate}
             </if>
         </where>
+        order by operate_date desc
     </select>
 
     <!--统计总行数-->

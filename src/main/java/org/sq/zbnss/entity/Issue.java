@@ -150,5 +150,18 @@ public class Issue implements Serializable {
     public void setStatus(Dic status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Issue{" +
+                "id=" + id +
+                ", companyId=" + companyId +
+                ", issueId='" + issueId + '\'' +
+                ", issueCount=" + issueCount +
+                ", type=" + type +
+                ", description='" + description + '\'' +
+                ", status=" + status +
+                '}';
+    }
 }
 

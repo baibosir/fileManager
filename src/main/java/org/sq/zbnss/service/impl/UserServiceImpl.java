@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
+import org.springframework.util.StringUtils;
 import org.sq.zbnss.base.UserOnlineVo;
 import org.sq.zbnss.dao.UserMapper;
 import org.sq.zbnss.dao.UserRoleMapper;
@@ -46,7 +47,6 @@ public class UserServiceImpl  implements UserService {
 
     @Override
     public int register(User user) {
-
         return userMapper.insert(user);
     }
 

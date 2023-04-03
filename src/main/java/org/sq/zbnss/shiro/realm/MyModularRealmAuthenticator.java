@@ -23,7 +23,7 @@ public class MyModularRealmAuthenticator extends ModularRealmAuthenticator {
     @Override
     protected AuthenticationInfo doMultiRealmAuthentication(Collection<Realm> realms, AuthenticationToken token) throws AuthenticationException {
         AuthenticationStrategy strategy = getAuthenticationStrategy();
-
+        System.out.println("uuuuuuuuuuuuu");
         AuthenticationInfo aggregate = strategy.beforeAllAttempts(realms, token);
 
         if (log.isTraceEnabled()) {

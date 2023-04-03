@@ -50,7 +50,7 @@ public class JWTFilter extends BearerHttpAuthenticationFilter {
             所以这里会自动包装成一个BearerToken作为参数代入subject.login(token)中，
             怎么包装的呢？原来它会从请求头里获取一个"Authorization"字段的值，拿到这个值去进行包装
              */
-            res = super.onAccessDenied(request, response);
+//            res = super.onAccessDenied(request, response);
         } catch (Exception e){
             Throwable cause = e.getCause();
             if (cause instanceof TokenExpiredException){

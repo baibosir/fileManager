@@ -32,11 +32,11 @@ public class FilePo implements Serializable {
     private String companyId;
 
     @ApiModelProperty(value = "文件上传时间")
-    @JsonFormat(pattern = "yyyy/MM/dd hh:mm:ss")
+    @JsonFormat(pattern = "yyyy/MM/dd hh:mm:ss" , timezone = "GMT+8")
     private Date inputTime;
 
     @ApiModelProperty(value = "文件删除时间")
-    @JsonFormat(pattern = "yyyy/MM/dd hh:mm:ss")
+    @JsonFormat(pattern = "yyyy/MM/dd hh:mm:ss" , timezone = "GMT+8")
     private Date deleteTime;
 
     @ApiModelProperty(value = "机房id")

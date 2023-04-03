@@ -51,11 +51,9 @@ public class CompanyController {
      * @return 查询结果
      */
     @ApiOperation(value = "获取单位列表", tags = "单位管理")
-    @ApiOperationSupport(includeParameters = {"principal.id","name","address","telephone","telephone","description","type"
-            ,"numSystem1","numSystem2","numSystem3","pageNumber","pageSize"})
-    @PostMapping("/list")
+    @GetMapping("/list")
     @ResponseBody
-    public PageResultVo queryByPage(@RequestBody()Company company,@RequestParam("pageNumber") Integer pageNumber, @RequestParam("pageSize")Integer pageSize) {
+    public PageResultVo queryByPage(@RequestBody(required = false) Company company,@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize) {
         IPage<Company> userPage = tbCompanyService.queryByPage(company,pageNumber,pageSize);
         return ResultUtil.table(userPage.getRecords(), userPage.getTotal());
     }

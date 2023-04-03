@@ -28,9 +28,11 @@
         where id = #{id}
     </select>
 
+
+
     <select id="selectCompany" resultMap="TbCompanyMap" parameterType="org.sq.zbnss.entity.Company">
         select
-            id, company_id, principal, address, telephone, description, type, num_system1, num_system2, num_system3, insert_time, update_time, insert_user, update_user
+            id, name,company_id, principal, address, telephone, description, type, num_system1, num_system2, num_system3, insert_time, update_time, insert_user, update_user
         from tb_company
         where 1 = 1
 
@@ -67,17 +69,17 @@
         <if test="company != null and company.name != null">
             and name = #{company.name}
         </if>
-
+        order by insert_time desc
     </select>
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="TbCompanyMap" parameterType="org.sq.zbnss.entity.Company">
         select
-          id, company_id, principal, address, telephone, description, type, num_system1, num_system2, num_system3, insert_time, update_time, insert_user, update_user
+          id,name, company_id, principal, address, telephone, description, type, num_system1, num_system2, num_system3, insert_time, update_time, insert_user, update_user
         from tb_company
         <where>
 
             <if test="id > 0">
-                and id = #{company.id}
+                and id = #{id}
             </if>
             <if test="companyId != null and companyId != ''">
                 and company_id = #{companyId}
@@ -110,6 +112,7 @@
                 and name = #{name}
             </if>
         </where>
+        order by insert_time desc
     </select>
 
     <!--统计总行数-->
@@ -153,10 +156,10 @@
             <if test="updateTime != null">
                 and update_time = #{updateTime}
             </if>
-            <if test="insertUser != null">
+            <if test="insertUser != null and insertUser.id > 0" >
                 and insert_user = #{insertUser.id}
             </if>
-            <if test="updateUser != null">
+            <if test="updateUser != null and updateUser.id > 0">
                 and update_user = #{updateUser.id}
             </if>
         </where>
@@ -169,14 +172,10 @@
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into tb_company(company_id, principal, address, telephone, description, type, num_system1, num_system2, num_system3, insert_time, update_time
-        <if test="updateUser != null">,update_user</if>
-        <if test="insert_user != null">,insert_user</if>)
+        insert into tb_company(company_id, principal, address, telephone, description, type, num_system1, num_system2, num_system3, insert_time, update_time)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.companyId}, #{entity.principal.id}, #{entity.address}, #{entity.telephone}, #{entity.description}, #{entity.type}, #{entity.numSystem1}, #{entity.numSystem2}, #{entity.numSystem3}, #{entity.insertTime}, #{entity.updateTime}
-            <if test="updateUser != null">, #{entity.updateUser.id})</if>
-            <if test="insert_user != null">, #{entity.insertUser.id}</if>)
+        (#{entity.companyId}, #{entity.principal.id}, #{entity.address}, #{entity.telephone}, #{entity.description}, #{entity.type}, #{entity.numSystem1}, #{entity.numSystem2}, #{entity.numSystem3}, #{entity.insertTime}, #{entity.updateTime})
 
         </foreach>
     </insert>
@@ -242,10 +241,7 @@
                 insert_time = #{insertTime},
             </if>
 
-            <if test="insertUser != null">
-                insert_user = #{insertUser.id},
-            </if>
-            <if test="updateUser != null">
+            <if test="updateUser != null and updateUser.id > 0">
                 update_user = #{updateUser.id},
             </if>
             update_time = now()

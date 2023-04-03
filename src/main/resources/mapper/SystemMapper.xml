@@ -15,6 +15,7 @@
                      select="org.sq.zbnss.dao.CompanyDao.queryById" column="company_id" />
         <association property="testStatus" javaType="org.sq.zbnss.entity.Dic"
                      select="org.sq.zbnss.dao.DicDao.queryById" column="test_status" />
+        <collection property="appraisalList" select="org.sq.zbnss.dao.AppraisalDao.queryBySysId" javaType="java.util.ArrayList" column="id"></collection>
     </resultMap>
 
     <!--查询单个-->
@@ -26,8 +27,9 @@
     </select>
 
     <select id="getMonthData" resultMap="TbSystemMap">
-        SELECT id, check_id, check_user, plan_date, check_date, detail, status, company_id, instert_time, update_time, update_user, insert_user
-        FROM tb_system WHERE regist_time >= #{month} or update_time >=#{month} and level = 2 ;
+        SELECT id, system_id, name, company_id, sys_level, online_date, test_status, regist_time, update_time,description
+        FROM tb_system WHERE regist_time >= #{month} or update_time >=#{month} and sys_level > 1
+        order by regist_time desc;
     </select>
 
     <select id="selectRecord" resultMap="TbSystemMap" parameterType="org.sq.zbnss.entity.RecordSystem" >
@@ -44,7 +46,7 @@
         <if test="recordSystem != null and recordSystem.name != null and recordSystem.name != ''">
             and name = #{recordSystem.name}
         </if>
-        <if test="recordSystem != null and recordSystem.company != null">
+        <if test="recordSystem != null and recordSystem.company != null and recordSystem.company.id > 0">
             and company_id = #{recordSystem.company.id}
         </if>
         <if test="recordSystem != null and recordSystem.level != null and recordSystem.level != ''">
@@ -53,7 +55,7 @@
         <if test="recordSystem != null and recordSystem.onlineDate != null">
             and online_date = #{recordSystem.onlineDate}
         </if>
-        <if test="recordSystem != null and recordSystem.testStatus != null">
+        <if test="recordSystem != null and recordSystem.testStatus != null and recordSystem.testStatus.id > 0">
             and test_status = #{recordSystem.testStatus.id}
         </if>
         <if test="recordSystem != null and recordSystem.registTime != null">
@@ -67,6 +69,7 @@
             and description = #{recordSystem.description}
         </if>
         </where>
+        order by regist_time desc
     </select>
 
     <!--查询指定行数据-->
@@ -84,7 +87,7 @@
             <if test="name != null and name != ''">
                 and name = #{name}
             </if>
-            <if test="company != null">
+            <if test="company != null and > 0">
                 and company_id = #{company.id}
             </if>
             <if test="level != null and level != ''">
@@ -93,7 +96,7 @@
             <if test="onlineDate != null">
                 and online_date = #{onlineDate}
             </if>
-            <if test="testStatus != null">
+            <if test="testStatus != null and testStatus.id > 0">
                 and test_status = #{testStatus.id}
             </if>
             <if test="registTime != null">
@@ -107,6 +110,7 @@
                 and description = #{description}
             </if>
         </where>
+        order by regist_time desc
     </select>
 
     <!--统计总行数-->
@@ -123,7 +127,7 @@
             <if test="name != null and name != ''">
                 and name = #{name}
             </if>
-            <if test="company != null">
+            <if test="company != null and company.id>0">
                 and company_id = #{company.id}
             </if>
             <if test="level != null and level != ''">
@@ -132,7 +136,7 @@
             <if test="onlineDate != null">
                 and online_date = #{onlineDate}
             </if>
-            <if test="testStatus != null">
+            <if test="testStatus != null and testStatus.id > 0">
                 and test_status = #{testStatus.id}
             </if>
             <if test="registTime != null">
@@ -185,7 +189,7 @@
             <if test="name != null and name != ''">
                 name = #{name},
             </if>
-            <if test="company != null">
+            <if test="company != null and company.id>0">
                 company_id = #{company.id},
             </if>
             <if test="level != null and level != ''">

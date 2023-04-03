@@ -30,6 +30,11 @@ public class Train implements Serializable {
      */
     @ApiModelProperty(value = "受配置的单位")
     private Company companyId;
+
+    private String name;
+
+    private String address;
+
     /**
      * 培训类型
      */
@@ -196,6 +201,22 @@ public class Train implements Serializable {
 
     public void setCompanyId(Company companyId) {
         this.companyId = companyId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
 

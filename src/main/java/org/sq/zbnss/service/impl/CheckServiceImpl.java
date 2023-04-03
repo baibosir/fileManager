@@ -8,6 +8,7 @@ import org.sq.zbnss.entity.User;
 import org.sq.zbnss.service.CheckService;
 import org.springframework.stereotype.Service;
 import org.sq.zbnss.uitl.Pagination;
+import org.sq.zbnss.uitl.UUIDUtil;
 
 import javax.annotation.Resource;
 import java.text.ParseException;
@@ -53,7 +54,6 @@ public class CheckServiceImpl implements CheckService {
      */
     @Override
     public ArrayList<Check> queryByPage(Check tbCheck) {
-
         return this.checkDao.queryAllByLimit(tbCheck);
     }
 
@@ -73,9 +73,7 @@ public class CheckServiceImpl implements CheckService {
      */
     @Override
     public Check insert(Check tbCheck) {
-        User loginUser = (User) SecurityUtils.getSubject().getPrincipal();
-        tbCheck.setInsertUser(loginUser);
-        tbCheck.setUpdateUser(loginUser);
+        tbCheck.setCheckId(UUIDUtil.getUniqueIdByUUId());
         int num = this.checkDao.insert(tbCheck);
         if(num == 0){
             return null;

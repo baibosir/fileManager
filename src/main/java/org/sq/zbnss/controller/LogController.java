@@ -36,8 +36,8 @@ public class LogController {
      */
     @ApiOperation(value = "分页查询日志",tags = "日志管理")
     @GetMapping("/list")
-    public PageResultVo queryByPage(Log log, Integer pageNum, Integer pageSize) {
-        IPage<Log>  pageLog = this.tbLogService.queryByPage(log, pageNum,pageSize);
+    public PageResultVo queryByPage(Log log, Integer pageNumber, Integer pageSize) {
+        IPage<Log>  pageLog = this.tbLogService.queryByPage(log, pageNumber,pageSize);
         return ResultUtil.table(pageLog.getRecords(), pageLog.getTotal());
     }
 

@@ -7,7 +7,7 @@
         <result property="typeId" column="type_id" jdbcType="VARCHAR"/>
         <result property="key" column="type_key" jdbcType="VARCHAR"/>
         <result property="value" column="type_value" jdbcType="VARCHAR"/>
-        <collection property="dics" select="org.sq.zbnss.dao.DicDao.queryById" javaType="org.sq.zbnss.entity.Dic" column="id"></collection>
+        <collection property="dicList" select="org.sq.zbnss.dao.DicDao.queryByType" javaType="java.util.ArrayList" column="id"></collection>
     </resultMap>
 
     <!--查询单个-->

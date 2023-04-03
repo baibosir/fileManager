@@ -118,7 +118,7 @@ public class MachineroomController {
      * @param machineroom 实体
      * @return 编辑结果
      */
-    @PutMapping
+    @PutMapping("/modify")
     @ApiOperation(value = "修改机房列表", tags = "机房管理")
     @ResponseBody
     public ResponseVo edit(@RequestBody()Machineroom machineroom , HttpServletRequest request) {
@@ -147,7 +147,7 @@ public class MachineroomController {
      * @param id 主键
      * @return 删除是否成功
      */
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public ResponseVo deleteById(Integer id) {
         boolean result = this.tbMachineroomService.deleteById(id);
         if(result){

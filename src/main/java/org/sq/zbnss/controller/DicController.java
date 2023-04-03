@@ -37,10 +37,10 @@ public class DicController {
      * @return 查询结果
      */
     @ApiOperation(value = "获取字典列表",tags = "字典管理")
-    @ApiOperationSupport(includeParameters = {"key","type.id","value","detail","description"})
+//    @ApiOperationSupport(includeParameters = {"key","type.id","value","detail","description"})
     @GetMapping("/list")
-    public PageResultVo queryByPage(Dic dic, int pageNum, int pageSize) {
-        IPage<Dic> pageData = this.tbDicService.queryByPage(dic, pageNum,pageSize);
+    public PageResultVo queryByPage(Dic dic, int pageNumber, int pageSize) {
+        IPage<Dic> pageData = this.tbDicService.queryByPage(dic, pageNumber,pageSize);
         return ResultUtil.table(pageData.getRecords(),pageData.getTotal());
     }
 

@@ -5,6 +5,7 @@ import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.sq.zbnss.base.PageResultVo;
 import org.sq.zbnss.base.ResponseVo;
 import org.sq.zbnss.entity.Company;

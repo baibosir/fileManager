@@ -123,7 +123,7 @@ public class JWTUtil {
 //        String token = JWTUtil.createToken("zhan");
 //        System.out.println(token);
 
-        boolean result = JWTUtil.verifyToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdXJyZW50IjoxNjc5NTU3MTA0NzczLCJ1c2VyTmFtZSI6InJvb3QiLCJleHAiOjE2Nzk2NDM1MDQsImlhdCI6MTY3OTU1NzEwNH0.U4oKmzS4qPuaYuYyKCUJMt2wWRzifWIuQj5lAZstJ6Y");
+        boolean result = JWTUtil.verifyToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdXJyZW50IjoxNjgwMDQzMjUyMDk4LCJ1c2VyTmFtZSI6InJvb3QiLCJleHAiOjE2ODAxMjk2NTIsInVzZXJJZCI6IjEwMDAwMDEwNTM0NjMyNjAiLCJpYXQiOjE2ODAwNDMyNTJ9.4jMcPUJ7tCaWaVGS_PQbghCzeQEFE23K3vKiGDPzH1\n");
         System.out.println(result);
     }
 }

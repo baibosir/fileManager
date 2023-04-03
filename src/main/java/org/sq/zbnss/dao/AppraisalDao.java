@@ -36,6 +36,8 @@ public interface AppraisalDao {
      */
     ArrayList<Appraisal> queryAllByLimit(Appraisal appraisal);
 
+    ArrayList<Appraisal> queryBySysId(int id);
+
     /**
      * 统计总行数
      *

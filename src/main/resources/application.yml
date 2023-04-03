@@ -64,11 +64,11 @@ spring:
         wall:
           config:
             multi-statement-allow: true
+
   # 资源信息
   messages:
     # 国际化资源文件路径
     basename: i18n/messages
-
   # 服务模块
   devtools:
     restart:
@@ -91,11 +91,46 @@ spring:
         max-active: 8
         # #连接池最大阻塞等待时间（使用负值表示没有限制）
         max-wait: -1ms
-  security:
-    user:
-      name: nss
-      password: nss@123
+  quartz:
+    # 将任务等保存化到数据库
+    job-store-type: jdbc
+    jdbc:
+      comment-prefix: qrtz_
+      initialize-schema: never
 
+    # 程序结束时会等待quartz相关的内容结束
+    wait-for-jobs-to-complete-on-shutdown: true
+    # QuartzScheduler启动时更新己存在的Job,这样就不用每次修改targetObject后删除qrtz_job_details表对应记录
+    overwrite-existing-jobs: true
+    # 这里居然是个map，搞得智能提示都没有，佛了
+#    properties:
+#      org:
+#        quartz:
+#          # scheduler相关
+#          scheduler:
+#            # scheduler的实例名
+#            instanceName: scheduler1
+#            instanceId: AUTO
+#          # 持久化相关
+#          jobStore:
+#            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+#            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+#            # 表示数据库中相关表是QRTZ_开头的
+#            tablePrefix: qrtz_
+#            useProperties: false
+#          # 线程池相关
+#          threadPool:
+#            class: org.quartz.simpl.SimpleThreadPool
+#            # 线程数
+#            threadCount: 10
+#            # 线程优先级
+#            threadPriority: 5
+#            threadsInheritContextClassLoaderOfInitializingThread: true
+
+#  security:
+#    user:
+#      name: nss
+#      password: nss@123
 #mybatis-plus
 mybatis-plus:
   # ExecutorType.SIMPLE：该执行器类型不做特殊的事情，为每个语句的执行创建一个新的预处理语句（PreparedStatement）
@@ -167,9 +202,12 @@ spring:
       enabled: true
       location: D:/test
 minio:
-  endpoint: http://127.0.0.1:9000 #MinIO服务所在地址
-  accessKey: root #访问的key
-  secretKey: root1234 #访问的秘钥
+#  endpoint: http://127.0.0.1:9000 #MinIO服务所在地址
+#  accessKey: root #访问的key
+#  secretKey: root1234 #访问的秘钥
+  endpoint: http://119.29.19.38:9000
+  accessKey: minioadmin #访问的key
+  secretKey: minioadmin #访问的秘钥
   fms: fms
 static:
   folder: D://your/html/path
@@ -187,3 +225,9 @@ shiro:
   sessionManager:
     sessionIdCookieEnabled: false
     sessionIdUrlRewritingEnabled: false
+
+application:
+  record-times: 30 # 系统备案后最迟测评开始时间（单位：天）
+  appraisal-times: 10 # 测评创建后做晚完成时间（单位：天）
+  check-times: 10 # 计划检查最晚开始时间（单位：天）
+  next-appraisal-interval: 365 #下一次测评时间间隔

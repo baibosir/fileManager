@@ -22,9 +22,10 @@ public class CorsFilter extends PathMatchingFilter {
         //防止乱码，适用于传输JSON数据
         httpResponse.setHeader("Content-Type","application/json;charset=UTF-8");
         // 跨域时会首先发送一个option请求，这里我们给option请求直接返回正常状态
+        httpResponse.setStatus(HttpStatus.OK.value());
+        System.out.println(httpResponse.getStatus());
         if (httpRequest.getMethod().equals(RequestMethod.OPTIONS.name())) {
             log.debug("收到一个OPTIONS请求--"+httpRequest.getRequestURI());
-            httpResponse.setStatus(HttpStatus.OK.value());
             return false;
         }
         return super.preHandle(request, response);

@@ -1,19 +1,21 @@
 package org.sq.zbnss.controller;
 
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.sq.zbnss.base.ResponseVo;
 import org.sq.zbnss.entity.Check;
 import org.sq.zbnss.entity.RecordSystem;
+import org.sq.zbnss.entity.UserMessage;
 import org.sq.zbnss.service.CheckService;
 import org.sq.zbnss.service.CompanyService;
 import org.sq.zbnss.service.SystemService;
+import org.sq.zbnss.service.UserMessageService;
 import org.sq.zbnss.uitl.ResultUtil;
 
+import javax.annotation.Resource;
 import java.text.ParseException;
 import java.util.ArrayList;
 
@@ -26,6 +28,28 @@ public class WorkSpaseController {
     private CheckService checkService;
     private SystemService systemService;
     private CompanyService tbCompanyService;
+    private UserMessageService userMessageService;
+
+    @ApiOperation(value = "获取未读消息列表", tags = "工作台")
+    @GetMapping("/message/list")
+    public ResponseVo getMessage(){
+        return ResultUtil.success("消息获取成功", userMessageService.getMessageList());
+    }
+
+
+    @ApiOperation(value = "修改状态为已读", tags = "工作台")
+    @PostMapping("/message/read")
+    public ResponseVo readMessage(@RequestParam("id") int id){
+        UserMessage message = userMessageService.getMessageList(id);
+        if(message == null){
+            return ResultUtil.error("消息不存在");
+        }
+        message.setStatus(2);
+        UpdateWrapper<UserMessage> wrapper = new UpdateWrapper<>();
+        wrapper.eq("id",id);
+        userMessageService.update(message,wrapper);
+        return ResultUtil.success("消息状态修改成功", userMessageService.getMessageList());
+    }
 
     @ApiOperation(value = "获取近一个月的检查信息", tags = "工作台")
     @GetMapping("/checks")

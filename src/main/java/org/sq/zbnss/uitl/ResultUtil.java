@@ -39,7 +39,7 @@ public class ResultUtil {
     }
 
     public static PageResultVo table(List<?> list, Long total) {
-        return new PageResultVo(list, total);
+        return new PageResultVo(CoreConst.SUCCESS_CODE,list, total);
     }
 
     public static ResponseVo vo(Integer status, String message, Object data) {

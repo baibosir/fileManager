@@ -1,0 +1,62 @@
+ yum -y install java-1.8.0-openjdk*
+
+# 防火墙开放端口权限
+firewall-cmd --zone=public --add-port=9000/tcp --permanent
+firewall-cmd --zone=public --add-port=9999/tcp --permanent
+firewall-cmd --reload
+
+
+minio 部署
+
+# 创建文件夹
+mkdir -p  /home/minio
+# 进入安装目录：
+cd /home/minio
+# 下载安装包
+wget https://dl.min.io/server/minio/release/linux-amd64/minio
+
+# 给minio赋权
+chmod +x minio
+# 设置用户名、密码
+export MINIO_ACCESS_KEY=minioadmin
+export MINIO_SECRET_KEY=minioadmin
+ 
+# 创建存储目录及日志文件
+mkdir -p /home/minio/data
+cd /home/minio/data
+# 创建日志文件
+touch minio.log
+ 
+
+# 进入minio的下载目录
+cd /home/minio
+# 直接启动
+./minio server /home/minio/data
+# 后台启动
+nohup ./minio server --address '0.0.0.0:9000' --console-address '0.0.0.0:9999' /home/minio/data >/home/minio/data/minio.log 2>&1 &
+ 
+ 
+ 
+[Unit]
+Description=MinIO
+Documentation=https://docs.min.io
+Wants=network-online.target
+After=network-online.target
+#minio文件具体位置
+AssertFileIsExecutable=/usr/local/minio/minio
+[Service]
+# User and group 用户 组
+User=root
+Group=root
+#创建的配置文件 minio.conf
+EnvironmentFile=/usr/local/minio/minio.conf
+ExecStart=/usr/local/minio/minio server $MINIO_OPTS $MINIO_VOLUMES
+# Let systemd restart this service always
+Restart=always
+# Specifies the maximum file descriptor number that can be opened by this process
+LimitNOFILE=65536
+# Disable timeout logic and wait until process is stopped
+TimeoutStopSec=infinity
+SendSIGKILL=no
+[Install]
+WantedBy=multi-user.target
